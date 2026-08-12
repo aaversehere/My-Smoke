@@ -40,10 +40,10 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Quest Navigation Pills bar */}
-      <div className="px-4 py-1.5 bg-zinc-900/90 border-t border-zinc-800/60 flex items-center justify-center gap-1.5 overflow-x-auto text-xs font-['Montserrat'] font-bold">
+      <div className="px-4 py-1.5 bg-zinc-900/90 border-t border-zinc-800/60 flex items-center justify-start md:justify-center gap-2 overflow-x-auto scrollbar-hide text-xs font-['Montserrat'] font-bold w-full">
         <button
           onClick={() => onNavigate('welcome')}
-          className={`px-3 py-1 rounded-full transition-all ${
+          className={`whitespace-nowrap flex-shrink-0 px-3 py-1 rounded-full transition-all ${
             currentScreen === 'welcome' 
               ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-xs' 
               : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'
@@ -53,7 +53,7 @@ export const Header: React.FC<HeaderProps> = ({
         </button>
         <button
           onClick={() => onNavigate('missions')}
-          className={`px-3 py-1 rounded-full transition-all ${
+          className={`whitespace-nowrap flex-shrink-0 px-3 py-1 rounded-full transition-all ${
             currentScreen === 'missions' 
               ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-xs' 
               : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'
@@ -63,7 +63,7 @@ export const Header: React.FC<HeaderProps> = ({
         </button>
         <button
           onClick={() => onNavigate('game2')}
-          className={`px-3 py-1 rounded-full transition-all ${
+          className={`whitespace-nowrap flex-shrink-0 px-3 py-1 rounded-full transition-all ${
             currentScreen === 'game2' 
               ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-xs' 
               : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'
@@ -73,7 +73,7 @@ export const Header: React.FC<HeaderProps> = ({
         </button>
         <button
           onClick={() => onNavigate('assessment')}
-          className={`px-3 py-1 rounded-full transition-all ${
+          className={`whitespace-nowrap flex-shrink-0 px-3 py-1 rounded-full transition-all ${
             currentScreen === 'assessment' 
               ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-xs' 
               : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'
@@ -83,7 +83,7 @@ export const Header: React.FC<HeaderProps> = ({
         </button>
         <button
           onClick={() => onNavigate('snapshot')}
-          className={`px-3 py-1 rounded-full transition-all ${
+          className={`whitespace-nowrap flex-shrink-0 px-3 py-1 rounded-full transition-all ${
             currentScreen === 'snapshot' 
               ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-xs' 
               : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'
@@ -93,7 +93,7 @@ export const Header: React.FC<HeaderProps> = ({
         </button>
         <button
           onClick={() => onNavigate('action_plan')}
-          className={`px-3 py-1 rounded-full transition-all ${
+          className={`whitespace-nowrap flex-shrink-0 px-3 py-1 rounded-full transition-all ${
             currentScreen === 'action_plan' 
               ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-xs' 
               : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'
