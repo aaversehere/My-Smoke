@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface IntelScreenProps {
   onComplete: () => void;
@@ -6,6 +7,7 @@ interface IntelScreenProps {
 }
 
 export const IntelScreen: React.FC<IntelScreenProps> = ({ onComplete, userXp }) => {
+  const { t } = useTranslation();
   const [completed, setCompleted] = useState(false);
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
@@ -25,16 +27,16 @@ export const IntelScreen: React.FC<IntelScreenProps> = ({ onComplete, userXp }) 
             science
           </span>
           <span className="font-['Montserrat'] font-bold text-xs uppercase tracking-wider">
-            Intel Gathered
+            {t('intel.header')}
           </span>
         </div>
 
         <h1 className="font-['Montserrat'] font-extrabold text-[26px] sm:text-[30px] text-zinc-900 dark:text-white">
-          What's Actually in There?
+          {t('intel.title')}
         </h1>
 
         <p className="font-['Quicksand'] font-medium text-base text-zinc-600 dark:text-zinc-400 max-w-[300px]">
-          It's not just dried leaves. Here's a quick look at the top three troublemakers hiding inside.
+          {t('intel.desc')}
         </p>
       </div>
 
@@ -54,14 +56,14 @@ export const IntelScreen: React.FC<IntelScreenProps> = ({ onComplete, userXp }) 
               </span>
             </div>
             <div className="flex flex-col pr-6">
-              <h2 className="font-['Montserrat'] font-bold text-xl text-zinc-900 dark:text-white">Nicotine</h2>
+              <h2 className="font-['Montserrat'] font-bold text-xl text-zinc-900 dark:text-white">{t('intel.nicotine.title')}</h2>
               <p className="font-['Quicksand'] font-medium text-zinc-600 dark:text-zinc-400 mt-1 text-sm leading-relaxed">
-                The hook. It rewires your brain to constantly crave more, making you feel anxious until your next fix.
+                {t('intel.nicotine.desc')}
               </p>
 
               {expandedCard === 1 && (
                 <div className="mt-3 pt-3 border-t border-zinc-200 dark:border-zinc-800 text-xs text-sage-300 font-['Quicksand'] font-bold bg-zinc-100 dark:bg-zinc-800/80 p-2.5 rounded-lg animate-fadeIn">
-                  💡 <strong>Smart Counter-move:</strong> Oral substitutes like mints, sugar-free gum, or deep breathing delay cravings by 10 minutes until nicotine spikes pass.
+                  💡 <strong>{t('intel.nicotine.tipTitle')}</strong> {t('intel.nicotine.tipDesc')}
                 </div>
               )}
             </div>
@@ -88,14 +90,14 @@ export const IntelScreen: React.FC<IntelScreenProps> = ({ onComplete, userXp }) 
               </span>
             </div>
             <div className="flex flex-col pr-6">
-              <h2 className="font-['Montserrat'] font-bold text-xl text-zinc-900 dark:text-white">Tar</h2>
+              <h2 className="font-['Montserrat'] font-bold text-xl text-zinc-900 dark:text-white">{t('intel.tar.title')}</h2>
               <p className="font-['Quicksand'] font-medium text-zinc-600 dark:text-zinc-400 mt-1 text-sm leading-relaxed">
-                The sticky stuff. It coats your lungs like paving a road, paralyzing the tiny hairs that keep them clean.
+                {t('intel.tar.desc')}
               </p>
 
               {expandedCard === 2 && (
                 <div className="mt-3 pt-3 border-t border-zinc-200 dark:border-zinc-800 text-xs text-amber-300 font-['Quicksand'] font-bold bg-zinc-100 dark:bg-zinc-800/80 p-2.5 rounded-lg animate-fadeIn">
-                  🌱 <strong>Lung Recovery:</strong> Within 1 to 9 months smoke-free, cilia hairs in your lungs regenerate to sweep away mucus and clean your airway!
+                  🌱 <strong>{t('intel.tar.tipTitle')}</strong> {t('intel.tar.tipDesc')}
                 </div>
               )}
             </div>
@@ -122,14 +124,14 @@ export const IntelScreen: React.FC<IntelScreenProps> = ({ onComplete, userXp }) 
               </span>
             </div>
             <div className="flex flex-col pr-6">
-              <h2 className="font-['Montserrat'] font-bold text-xl text-zinc-900 dark:text-white">Carbon Monoxide</h2>
+              <h2 className="font-['Montserrat'] font-bold text-xl text-zinc-900 dark:text-white">{t('intel.co.title')}</h2>
               <p className="font-['Quicksand'] font-medium text-zinc-600 dark:text-zinc-400 mt-1 text-sm leading-relaxed">
-                The oxygen thief. It replaces oxygen in your blood, making your heart work overtime just to keep up.
+                {t('intel.co.desc')}
               </p>
 
               {expandedCard === 3 && (
                 <div className="mt-3 pt-3 border-t border-zinc-200 dark:border-zinc-800 text-xs text-red-300 font-['Quicksand'] font-bold bg-zinc-100 dark:bg-zinc-800/80 p-2.5 rounded-lg animate-fadeIn">
-                  🫀 <strong>Quick Health Win:</strong> In just 12 hours after stopping, carbon monoxide level in your blood drops back to normal!
+                  🫀 <strong>{t('intel.co.tipTitle')}</strong> {t('intel.co.tipDesc')}
                 </div>
               )}
             </div>
@@ -156,14 +158,14 @@ export const IntelScreen: React.FC<IntelScreenProps> = ({ onComplete, userXp }) 
         >
           {completed ? (
             <>
-              <span className="font-['Montserrat'] font-extrabold">MISSION COMPLETE! 🎉</span>
+              <span className="font-['Montserrat'] font-extrabold">{t('intel.complete')}</span>
               <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>
                 verified
               </span>
             </>
           ) : (
             <>
-              <span className="relative z-10">GOT IT!</span>
+              <span className="relative z-10">{t('intel.gotIt')}</span>
               <span className="material-symbols-outlined relative z-10" style={{ fontVariationSettings: "'FILL' 1" }}>
                 task_alt
               </span>
@@ -172,7 +174,7 @@ export const IntelScreen: React.FC<IntelScreenProps> = ({ onComplete, userXp }) 
         </button>
 
         <p className="font-['Quicksand'] font-bold text-zinc-600 dark:text-zinc-400 text-sm text-center flex items-center justify-center gap-1">
-          <span>Knowledge is power.</span>
+          <span>{t('intel.knowledge')}</span>
           <span className="bg-amber-500/10 border border-amber-500/20 text-amber-400 px-2 py-0.5 rounded-full text-xs font-['Montserrat'] font-bold">
             +50 XP
           </span>

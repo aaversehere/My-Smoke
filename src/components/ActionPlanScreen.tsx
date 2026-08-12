@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { UserStats } from '../types';
 
 interface ActionPlanScreenProps {
@@ -7,6 +8,7 @@ interface ActionPlanScreenProps {
 }
 
 export const ActionPlanScreen: React.FC<ActionPlanScreenProps> = ({ stats, onSavePlan }) => {
+  const { t } = useTranslation();
   const [selectedTriggers, setSelectedTriggers] = useState<string[]>([]);
   const [selectedToolkit, setSelectedToolkit] = useState<string[]>([]);
 
@@ -80,12 +82,12 @@ export const ActionPlanScreen: React.FC<ActionPlanScreenProps> = ({ stats, onSav
 
         <div className="grid grid-cols-2 gap-2 mt-1">
           {[
-            'Morning Coffee',
-            'After Meals',
-            'Driving / Commute',
-            'Stress / Work Pressure',
-            'Social Gathering',
-            'Boredom',
+            t('actionPlan.triggers.list.morningCoffee'),
+            t('actionPlan.triggers.list.afterMeals'),
+            t('actionPlan.triggers.list.driving'),
+            t('actionPlan.triggers.list.stress'),
+            t('actionPlan.triggers.list.social'),
+            t('actionPlan.triggers.list.boredom'),
           ].map((trigger) => {
             const isChecked = selectedTriggers.includes(trigger);
             return (
@@ -120,12 +122,12 @@ export const ActionPlanScreen: React.FC<ActionPlanScreenProps> = ({ stats, onSav
 
         <div className="flex flex-col gap-2 mt-1">
           {[
-            'Deep Breathing (4-7-8)',
-            'Ice Water Sip',
-            'Walk Outside',
-            'Call a Support Buddy',
-            'Sugar-free Mints / Gum',
-            'Fidget Ring / Stress Ball',
+            t('actionPlan.toolkit.list.breathing'),
+            t('actionPlan.toolkit.list.water'),
+            t('actionPlan.toolkit.list.walk'),
+            t('actionPlan.toolkit.list.support'),
+            t('actionPlan.toolkit.list.gum'),
+            t('actionPlan.toolkit.list.fidget'),
           ].map((tool) => {
             const isChecked = selectedToolkit.includes(tool);
             return (
@@ -155,7 +157,7 @@ export const ActionPlanScreen: React.FC<ActionPlanScreenProps> = ({ stats, onSav
           onClick={() => onSavePlan(selectedTriggers, selectedToolkit)}
           className="w-full py-3 text-sm text-zinc-600 dark:text-zinc-400 font-['Montserrat'] font-bold hover:text-sage-600 dark:text-sage-400 transition-colors text-center cursor-pointer"
         >
-          🏠 Save Plan & Return Home
+          {t('actionPlan.save')}
         </button>
       </div>
     </div>

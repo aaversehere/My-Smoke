@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface BeatCravingGameProps {
   onComplete: () => void;
 }
 
 export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) => {
+  const { t } = useTranslation();
   const [level, setLevel] = useState(1);
   const [l1Choice, setL1Choice] = useState<string | null>(null);
   const [l2Choices, setL2Choices] = useState<string[]>([]);
@@ -35,24 +37,23 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
   const renderLevel1 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
       <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-sage-600 dark:text-sage-400 mb-6 text-center">
-        Game: Beat the Craving
+        {t('game.title')}
       </h2>
-      <div className="text-zinc-600 dark:text-zinc-400 uppercase tracking-widest font-bold mb-4">LEVEL 1</div>
+      <div className="text-zinc-600 dark:text-zinc-400 uppercase tracking-widest font-bold mb-4">{t('game.level')} 1</div>
       
       <div className="bg-zinc-100 dark:bg-zinc-800/50 p-6 rounded-2xl border border-zinc-300 dark:border-zinc-700 w-full max-w-lg mb-8 text-center">
         <p className="text-zinc-900 dark:text-white text-lg md:text-xl font-medium">
-          You are hanging out with friends.<br/>
-          Someone offers you a cigarette.
+          <span dangerouslySetInnerHTML={{ __html: t('game.l1.q') }} />
         </p>
       </div>
 
       {!showL1Feedback ? (
         <div className="flex flex-col gap-3 w-full max-w-md">
           {[
-            { id: 'A', text: 'Take it immediately' },
-            { id: 'B', text: 'Say no and change the activity', isCorrect: true },
-            { id: 'C', text: 'Stay silent and wait' },
-            { id: 'D', text: 'Smoke because everyone else is smoking' },
+            { id: 'A', text: t('game.l1.optA') },
+            { id: 'B', text: t('game.l1.optB'), isCorrect: true },
+            { id: 'C', text: t('game.l1.optC') },
+            { id: 'D', text: t('game.l1.optD') },
           ].map((opt) => (
             <button
               key={opt.id}
@@ -71,23 +72,23 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
               <div className="w-16 h-16 bg-sage-500/20 rounded-full flex items-center justify-center mb-4">
                 <span className="text-4xl">✅</span>
               </div>
-              <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">Great choice!</h3>
-              <p className="text-sage-600 dark:text-sage-400 text-lg mb-8">You prepared a healthier response.</p>
+              <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">{t('game.l1.greatChoice')}</h3>
+              <p className="text-sage-600 dark:text-sage-400 text-lg mb-8">{t('game.l1.greatDesc')}</p>
             </>
           ) : (
             <>
               <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mb-4">
                 <span className="text-4xl">❌</span>
               </div>
-              <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">Not quite!</h3>
-              <p className="text-red-400 text-lg mb-8 text-center max-w-sm">Saying no and changing the activity is the best way to avoid the temptation.</p>
+              <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">{t('game.l1.notQuite')}</h3>
+              <p className="text-red-400 text-lg mb-8 text-center max-w-sm">{t('game.l1.notQuiteDesc')}</p>
             </>
           )}
           <button
             onClick={nextLevel}
             className="bg-sage-500 hover:bg-sage-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(92,131,88,0.3)] flex items-center gap-2"
           >
-            Next Level <span className="material-symbols-outlined">arrow_forward</span>
+            {t('game.l1.next')} <span className="material-symbols-outlined">arrow_forward</span>
           </button>
         </div>
       )}
@@ -96,10 +97,10 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
 
   const renderLevel2 = () => {
     const options = [
-      { id: 'water', icon: '💧', text: 'Drink water' },
-      { id: 'music', icon: '🎧', text: 'Listen to music' },
-      { id: 'walk', icon: '🚶', text: 'Take a short walk' },
-      { id: 'smoke', icon: '🚬', text: 'Smoke' },
+      { id: 'water', icon: '💧', text: t('game.l2.water') },
+      { id: 'music', icon: '🎧', text: t('game.l2.music') },
+      { id: 'walk', icon: '🚶', text: t('game.l2.walk') },
+      { id: 'smoke', icon: '🚬', text: t('game.l2.smoke') },
     ];
 
     const hasGoodChoices = l2Choices.length > 0 && !l2Choices.includes('smoke');
@@ -108,19 +109,19 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
     return (
       <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
         <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-sage-600 dark:text-sage-400 mb-4 text-center">
-          Game: Beat the Craving
+          {t('game.title')}
         </h2>
-        <div className="text-zinc-600 dark:text-zinc-400 uppercase tracking-widest font-bold mb-4">LEVEL 2</div>
+        <div className="text-zinc-600 dark:text-zinc-400 uppercase tracking-widest font-bold mb-4">{t('game.level')} 2</div>
         
         <div className="bg-zinc-100 dark:bg-zinc-800/50 p-6 rounded-2xl border border-zinc-300 dark:border-zinc-700 w-full max-w-lg mb-6 text-center">
           <p className="text-zinc-900 dark:text-white text-lg md:text-xl font-medium">
-            You feel stressed after an exam and suddenly want to smoke.
+            {t('game.l2.q')}
           </p>
         </div>
 
         {!showL2Feedback ? (
           <>
-            <p className="text-zinc-600 dark:text-zinc-400 mb-4 text-sm font-bold uppercase tracking-wider">Select one or more healthy options:</p>
+            <p className="text-zinc-600 dark:text-zinc-400 mb-4 text-sm font-bold uppercase tracking-wider">{t('game.l2.subtitle')}</p>
             <div className="flex flex-col gap-3 w-full max-w-md mb-8">
               {options.map((opt) => {
                 const isSelected = l2Choices.includes(opt.id);
@@ -152,9 +153,7 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
                   ? 'bg-sage-500 hover:bg-sage-400 text-black shadow-[0_0_20px_rgba(92,131,88,0.3)]'
                   : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 cursor-not-allowed'
               }`}
-            >
-              Confirm Choice
-            </button>
+            >{t('game.l2.confirm')}</button>
           </>
         ) : (
           <div className="flex flex-col items-center animate-in zoom-in duration-300 w-full max-w-md">
@@ -163,23 +162,22 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
                 <div className="w-16 h-16 bg-sage-500/20 rounded-full flex items-center justify-center mb-4">
                   <span className="text-4xl">✨</span>
                 </div>
-                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">Excellent!</h3>
-                <p className="text-sage-600 dark:text-sage-400 text-lg mb-8 text-center">Replacing smoking with healthier habits helps beat stress effectively.</p>
+                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">{t('game.l2.excellent')}</h3>
+                <p className="text-sage-600 dark:text-sage-400 text-lg mb-8 text-center">{t('game.l2.excellentDesc')}</p>
               </>
             ) : (
               <>
                 <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mb-4">
                   <span className="text-4xl">⚠️</span>
                 </div>
-                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">Careful!</h3>
-                <p className="text-red-400 text-lg mb-8 text-center max-w-sm">Smoking might seem to relieve stress temporarily, but the healthier choices are much better for your long-term wellbeing.</p>
+                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">{t('game.l2.careful')}</h3>
+                <p className="text-red-400 text-lg mb-8 text-center max-w-sm">{t('game.l2.carefulDesc')}</p>
               </>
             )}
             <button
               onClick={nextLevel}
               className="bg-sage-500 hover:bg-sage-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(92,131,88,0.3)] flex items-center gap-2"
-            >
-              Continue <span className="material-symbols-outlined">arrow_forward</span>
+            >{t('game.l2.continue')} <span className="material-symbols-outlined">arrow_forward</span>
             </button>
           </div>
         )}
@@ -190,29 +188,28 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
   const renderLevel3 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-500 w-full">
       <h2 className="font-['Montserrat'] font-black text-4xl md:text-5xl text-sage-600 dark:text-sage-400 mb-8 flex items-center gap-3">
-        4D POWER <span className="text-5xl">⚡</span>
+        {t('game.l3.power')} <span className="text-5xl">⚡</span>
       </h2>
       
       <div className="flex flex-col gap-4 w-full max-w-sm mb-10 text-left">
         <div className="bg-zinc-100 dark:bg-zinc-800/80 p-5 rounded-2xl border-l-4 border-sage-500">
-          <h3 className="text-zinc-900 dark:text-white font-bold text-xl">Delay</h3>
+          <h3 className="text-zinc-900 dark:text-white font-bold text-xl">{t('game.l3.delay')}</h3>
         </div>
         <div className="bg-zinc-100 dark:bg-zinc-800/80 p-5 rounded-2xl border-l-4 border-sage-500">
-          <h3 className="text-zinc-900 dark:text-white font-bold text-xl">Deep Breathing</h3>
+          <h3 className="text-zinc-900 dark:text-white font-bold text-xl">{t('game.l3.deepBreathing')}</h3>
         </div>
         <div className="bg-zinc-100 dark:bg-zinc-800/80 p-5 rounded-2xl border-l-4 border-sage-500">
-          <h3 className="text-zinc-900 dark:text-white font-bold text-xl">Drink Water</h3>
+          <h3 className="text-zinc-900 dark:text-white font-bold text-xl">{t('game.l3.drinkWater')}</h3>
         </div>
         <div className="bg-zinc-100 dark:bg-zinc-800/80 p-5 rounded-2xl border-l-4 border-sage-500">
-          <h3 className="text-zinc-900 dark:text-white font-bold text-xl">Do Something Else</h3>
+          <h3 className="text-zinc-900 dark:text-white font-bold text-xl">{t('game.l3.doSomethingElse')}</h3>
         </div>
       </div>
 
       <button
         onClick={onComplete}
         className="bg-sage-500 hover:bg-sage-400 text-black font-['Montserrat'] font-bold text-lg py-4 px-12 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(92,131,88,0.3)] flex items-center gap-2"
-      >
-        Start Assessment <span className="material-symbols-outlined">arrow_forward</span>
+      >{t('game.l3.startAssessment')} <span className="material-symbols-outlined">arrow_forward</span>
       </button>
     </div>
   );

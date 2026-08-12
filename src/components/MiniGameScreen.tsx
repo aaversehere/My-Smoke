@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface MiniGameScreenProps {
   onComplete: () => void;
@@ -12,6 +13,7 @@ const POWERS = [
 ];
 
 export const MiniGameScreen: React.FC<MiniGameScreenProps> = ({ onComplete }) => {
+  const { t } = useTranslation();
   const [selectedPower, setSelectedPower] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
 
@@ -29,10 +31,10 @@ export const MiniGameScreen: React.FC<MiniGameScreenProps> = ({ onComplete }) =>
         {!showResult ? (
           <div className="flex flex-col items-center animate-in fade-in zoom-in duration-500">
             <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-sage-600 dark:text-sage-400 mb-2">
-              Choose Your Power
+              {t('minigame.chooseTitle')}
             </h2>
             <p className="text-zinc-700 dark:text-zinc-300 text-lg mb-8">
-              Which power do you want to strengthen today?
+              {t('minigame.chooseDesc')}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-lg">
@@ -47,7 +49,7 @@ export const MiniGameScreen: React.FC<MiniGameScreenProps> = ({ onComplete }) =>
                   }`}
                 >
                   <span className="text-3xl">{power.icon}</span>
-                  <span className="font-bold text-zinc-900 dark:text-white font-['Quicksand']">{power.label}</span>
+                  <span className="font-bold text-zinc-900 dark:text-white font-['Quicksand']">{t(`minigame.powers.${power.id}`)}</span>
                 </button>
               ))}
             </div>
@@ -60,16 +62,16 @@ export const MiniGameScreen: React.FC<MiniGameScreenProps> = ({ onComplete }) =>
               </span>
             </div>
             <h2 className="font-['Montserrat'] font-bold text-3xl md:text-4xl text-zinc-900 dark:text-white">
-              Great choice!
+              {t('minigame.greatChoice')}
             </h2>
             <p className="text-zinc-600 dark:text-zinc-400 text-lg md:text-xl max-w-md">
-              Let's discover your smoke-free strengths.
+              {t('minigame.discover')}
             </p>
             <button
               onClick={onComplete}
               className="mt-6 bg-sage-500 hover:bg-sage-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-8 rounded-full transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
             >
-              Start Assessment
+              {t('minigame.start')}
               <span className="material-symbols-outlined">arrow_forward</span>
             </button>
           </div>

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface MissionsScreenProps {
   onComplete: () => void;
 }
 
 export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) => {
+  const { t } = useTranslation();
   const [mission, setMission] = useState(1);
 
   // Mission 1 State
@@ -76,9 +78,7 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
               ? 'bg-sage-500 text-black shadow-[0_0_10px_rgba(92,131,88,0.5)]' 
               : 'bg-zinc-200 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-600'
           }`}
-        >
-          True
-        </button>
+        >{t('missions.true')}</button>
         <button 
           onClick={() => handleAnswer(q.id, false)}
           className={`flex-1 py-2 rounded-lg font-bold text-sm transition-all ${
@@ -86,16 +86,14 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
               ? 'bg-red-500 text-zinc-900 dark:text-white shadow-[0_0_10px_rgba(239,68,68,0.5)]' 
               : 'bg-zinc-200 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-600'
           }`}
-        >
-          False
-        </button>
+        >{t('missions.false')}</button>
       </div>
       
       {answers[q.id] !== null && (
         <div className={`text-sm font-bold animate-in fade-in ${answers[q.id] === true ? 'text-sage-600 dark:text-sage-400' : 'text-amber-400'}`}>
           {answers[q.id] === true 
-            ? '✅ Correct! This is true.' 
-            : '❌ Actually, this is True!'}
+            ? t('missions.correct') 
+            : t('missions.incorrect')}
         </div>
       )}
     </div>
@@ -104,18 +102,18 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
   const renderMission1 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
       <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-sage-600 dark:text-sage-400 mb-6 flex items-center justify-center gap-3 text-center">
-        Mission 1 — What's Really Inside a Cigarette? <span className="text-3xl">🚬</span>
+        {t('missions.m1.title')} <span className="text-3xl">🚬</span>
       </h2>
       <div className="flex justify-center mb-6 w-24 h-24 bg-zinc-100 dark:bg-zinc-800/80 rounded-full items-center">
          <span className="material-symbols-outlined text-5xl text-sage-500">pulmonology</span>
       </div>
-      <p className="text-zinc-900 dark:text-white mb-6 font-bold text-lg">True or False?</p>
+      <p className="text-zinc-900 dark:text-white mb-6 font-bold text-lg">{t('missions.trueOrFalse')}</p>
       
       <div className="flex flex-col gap-4 w-full max-w-lg mb-8 text-left">
         {[
-          { id: 'nicotine', title: 'Nicotine', desc: 'Can make your body dependent on cigarettes.' },
-          { id: 'tar', title: 'Tar', desc: 'Can damage your lungs.' },
-          { id: 'co', title: 'Carbon Monoxide', desc: 'Reduces the oxygen carried in your blood.' },
+          { id: 'nicotine', title: t('missions.m1.nicotine.title'), desc: t('missions.m1.nicotine.desc') },
+          { id: 'tar', title: t('missions.m1.tar.title'), desc: t('missions.m1.tar.desc') },
+          { id: 'co', title: t('missions.m1.co.title'), desc: t('missions.m1.co.desc') },
         ].map(q => renderQuizCard(q, mission1Answers, handleMission1Answer))}
       </div>
       
@@ -128,7 +126,7 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
             : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 cursor-not-allowed'
         }`}
       >
-        GOT IT! <span className="material-symbols-outlined">arrow_forward</span>
+        {t('missions.gotIt')} <span className="material-symbols-outlined">arrow_forward</span>
       </button>
     </div>
   );
@@ -136,16 +134,16 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
   const renderMission2 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
       <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-sage-600 dark:text-sage-400 mb-6 text-center">
-        Mission 2 — What Smoking Does to Your Body
+        {t('missions.m2.title')}
       </h2>
       <p className="text-zinc-900 dark:text-white mb-6 font-bold text-lg">True or False?</p>
       
       <div className="flex flex-col gap-4 w-full max-w-lg mb-8 text-left">
         {[
-          { id: 'breathing', icon: '😮‍💨', title: 'Breathing', desc: 'Smoking can make breathing harder.' },
-          { id: 'heart', icon: '🫀', title: 'Heart', desc: 'Smoking increases the risk of heart disease.' },
-          { id: 'focus', icon: '🧠', title: 'Focus', desc: 'Nicotine dependence can affect concentration.' },
-          { id: 'energy', icon: '🏃', title: 'Energy', desc: 'Smoking can reduce stamina.' },
+          { id: 'breathing', icon: '😮‍💨', title: t('missions.m2.breathing.title'), desc: t('missions.m2.breathing.desc') },
+          { id: 'heart', icon: '🫀', title: t('missions.m2.heart.title'), desc: t('missions.m2.heart.desc') },
+          { id: 'focus', icon: '🧠', title: t('missions.m2.focus.title'), desc: t('missions.m2.focus.desc') },
+          { id: 'energy', icon: '🏃', title: t('missions.m2.energy.title'), desc: t('missions.m2.energy.desc') },
         ].map(q => renderQuizCard(q, mission2Answers, handleMission2Answer))}
       </div>
       
@@ -158,7 +156,7 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
             : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 cursor-not-allowed'
         }`}
       >
-        Next <span className="material-symbols-outlined">arrow_forward</span>
+        {t('missions.next')} <span className="material-symbols-outlined">arrow_forward</span>
       </button>
     </div>
   );
@@ -166,19 +164,19 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
   const renderMission3 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
       <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-sage-600 dark:text-sage-400 mb-6 text-center">
-        Mission 3 — Why Do Teens Smoke?
+        {t('missions.m3.title')}
       </h2>
       <p className="text-zinc-900 dark:text-white font-bold text-lg mb-6 text-center">
-        Are these common reasons teens smoke? (True or False)
+        {t('missions.m3.subtitle')}
       </p>
       
       <div className="flex flex-col gap-4 w-full max-w-lg mb-8 text-left">
         {[
-          { id: 'peer', icon: '👥', title: 'Peer pressure' },
-          { id: 'cool', icon: '😎', title: 'Wanting to look cool' },
-          { id: 'curiosity', icon: '🤔', title: 'Curiosity' },
-          { id: 'stress', icon: '😫', title: 'Stress' },
-          { id: 'social', icon: '📱', title: 'Social environment' },
+          { id: 'peer', icon: '👥', title: t('missions.m3.peer.title') },
+          { id: 'cool', icon: '😎', title: t('missions.m3.cool.title') },
+          { id: 'curiosity', icon: '🤔', title: t('missions.m3.curiosity.title') },
+          { id: 'stress', icon: '😫', title: t('missions.m3.stress.title') },
+          { id: 'social', icon: '📱', title: t('missions.m3.social.title') },
         ].map(q => renderQuizCard(q, mission3Answers, handleMission3Answer))}
       </div>
       
@@ -191,7 +189,7 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
             : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 cursor-not-allowed'
         }`}
       >
-        Next <span className="material-symbols-outlined">arrow_forward</span>
+        {t('missions.next')} <span className="material-symbols-outlined">arrow_forward</span>
       </button>
     </div>
   );
@@ -199,18 +197,16 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
   const renderMission4 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
       <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-sage-600 dark:text-sage-400 mb-6 text-center">
-        Mission 4 — Why Quitting Is Worth It
+        {t('missions.m4.title')}
       </h2>
-      <p className="text-zinc-900 dark:text-white font-bold text-lg mb-6 text-center">
-        Is it True or False?
-      </p>
+      <p className="text-zinc-900 dark:text-white font-bold text-lg mb-6 text-center">{t('missions.m4.subtitle')}</p>
 
       <div className="flex flex-col gap-4 w-full max-w-lg mb-8 text-left">
         {[
-          { id: 'm20', icon: '💗', title: 'After 20 minutes', desc: 'Your heart begins adjusting.' },
-          { id: 'days', icon: '🌬️', title: 'Days to Weeks', desc: 'Breathing and circulation begin improving.' },
-          { id: 'weeks', icon: '🏃', title: 'Weeks to Months', desc: 'You may feel fitter and more energetic.' },
-          { id: 'everyday', icon: '💰', title: 'Every day', desc: 'You save money.' },
+          { id: 'm20', icon: '💗', title: t('missions.m4.m20.title'), desc: t('missions.m4.m20.desc') },
+          { id: 'days', icon: '🌬️', title: t('missions.m4.days.title'), desc: t('missions.m4.days.desc') },
+          { id: 'weeks', icon: '🏃', title: t('missions.m4.weeks.title'), desc: t('missions.m4.weeks.desc') },
+          { id: 'everyday', icon: '💰', title: t('missions.m4.everyday.title'), desc: t('missions.m4.everyday.desc') },
         ].map(q => renderQuizCard(q, mission4Answers, handleMission4Answer))}
       </div>
 
@@ -223,7 +219,7 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
             : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 cursor-not-allowed'
         }`}
       >
-        Next <span className="material-symbols-outlined">arrow_forward</span>
+        {t('missions.next')} <span className="material-symbols-outlined">arrow_forward</span>
       </button>
     </div>
   );
@@ -231,48 +227,48 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
   const renderMission5 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
       <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-sage-600 dark:text-sage-400 mb-8 text-center flex flex-col items-center gap-2">
-        Proactive Coping
-        <span className="text-zinc-900 dark:text-white text-xl">THINK AHEAD 🧠</span>
+        {t('missions.m5.title')}
+        <span className="text-zinc-900 dark:text-white text-xl">{t('missions.m5.thinkAhead')}</span>
       </h2>
       
       <div className="w-full max-w-lg mb-8 text-left bg-zinc-100 dark:bg-zinc-800/50 p-6 rounded-2xl border border-zinc-300 dark:border-zinc-700">
-        <h3 className="text-sage-600 dark:text-sage-400 font-bold text-lg mb-2">If this happens...</h3>
-        <p className="text-zinc-900 dark:text-white text-xl mb-6">My friends offer me a cigarette.</p>
+        <h3 className="text-sage-600 dark:text-sage-400 font-bold text-lg mb-2">{t('missions.m5.ifHappens')}</h3>
+        <p className="text-zinc-900 dark:text-white text-xl mb-6">{t('missions.m5.situation')}</p>
         
-        <h3 className="text-sage-600 dark:text-sage-400 font-bold text-lg mb-4">I will...</h3>
+        <h3 className="text-sage-600 dark:text-sage-400 font-bold text-lg mb-4">{t('missions.m5.iWill')}</h3>
         <ul className="flex flex-col gap-3">
           <li className="flex items-center gap-3 text-zinc-700 dark:text-zinc-200">
             <span className="material-symbols-outlined text-sage-500">check_circle</span>
-            Say "No, thanks."
+            {t('missions.m5.action1')}
           </li>
           <li className="flex items-center gap-3 text-zinc-700 dark:text-zinc-200">
             <span className="material-symbols-outlined text-sage-500">check_circle</span>
-            Move away for a while.
+            {t('missions.m5.action2')}
           </li>
           <li className="flex items-center gap-3 text-zinc-700 dark:text-zinc-200">
             <span className="material-symbols-outlined text-sage-500">check_circle</span>
-            Drink water.
+            {t('missions.m5.action3')}
           </li>
           <li className="flex items-center gap-3 text-zinc-700 dark:text-zinc-200">
             <span className="material-symbols-outlined text-sage-500">check_circle</span>
-            Talk to a friend.
+            {t('missions.m5.action4')}
           </li>
           <li className="flex items-center gap-3 text-zinc-700 dark:text-zinc-200">
             <span className="material-symbols-outlined text-sage-500">check_circle</span>
-            Do another activity.
+            {t('missions.m5.action5')}
           </li>
         </ul>
       </div>
 
       <p className="text-zinc-700 dark:text-zinc-300 text-lg mb-8 text-center max-w-md font-medium">
-        Planning before temptation happens is proactive coping.
+        {t('missions.m5.conclusion')}
       </p>
 
       <button
         onClick={nextMission}
         className="bg-sage-500 hover:bg-sage-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-8 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(92,131,88,0.3)] flex items-center gap-2"
       >
-        Start Assessment <span className="material-symbols-outlined">arrow_forward</span>
+        {t('missions.m5.startAssessment')} <span className="material-symbols-outlined">arrow_forward</span>
       </button>
     </div>
   );

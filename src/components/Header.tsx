@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { ScreenMode } from '../types';
 
 interface HeaderProps {
@@ -18,6 +19,8 @@ export const Header: React.FC<HeaderProps> = ({
   theme,
   toggleTheme,
 }) => {
+  const { t, i18n } = useTranslation();
+
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-white/90 dark:bg-[#09090b]/90 backdrop-blur-xl pt-safe border-b border-zinc-200/80 dark:border-zinc-800/80 transition-all">
       {/* Primary Header Row */}
@@ -33,6 +36,13 @@ export const Header: React.FC<HeaderProps> = ({
           <span className="font-['Montserrat'] font-bold text-[12px] uppercase text-sage-600 dark:text-sage-400 tracking-wider bg-sage-500/10 border border-sage-500/20 px-2.5 py-1 rounded-full">
             {respondentId}
           </span>
+          <button
+            onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'id' : 'en')}
+            className="px-2 h-8 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 flex items-center justify-center shadow hover:scale-105 active:scale-95 transition-all font-bold text-[10px]"
+            title="Toggle Language"
+          >
+            {i18n.language === 'en' ? 'ID' : 'EN'}
+          </button>
           <button
             onClick={toggleTheme}
             className="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 flex items-center justify-center shadow hover:scale-105 active:scale-95 transition-all"
@@ -62,7 +72,7 @@ export const Header: React.FC<HeaderProps> = ({
               : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-200'
           }`}
         >
-          Welcome
+          {t('header.welcome', 'Welcome')}
         </button>
         <button
           onClick={() => onNavigate('missions')}
@@ -72,7 +82,7 @@ export const Header: React.FC<HeaderProps> = ({
               : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-200'
           }`}
         >
-          Missions
+          {t('header.missions', 'Missions')}
         </button>
         <button
           onClick={() => onNavigate('game2')}
@@ -82,7 +92,7 @@ export const Header: React.FC<HeaderProps> = ({
               : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-200'
           }`}
         >
-          Game
+          {t('header.game', 'Game')}
         </button>
         <button
           onClick={() => onNavigate('assessment')}
@@ -92,7 +102,7 @@ export const Header: React.FC<HeaderProps> = ({
               : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-200'
           }`}
         >
-          Assessment
+          {t('header.assessment', 'Assessment')}
         </button>
         <button
           onClick={() => onNavigate('snapshot')}
@@ -102,7 +112,7 @@ export const Header: React.FC<HeaderProps> = ({
               : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-200'
           }`}
         >
-          Snapshot
+          {t('header.snapshot', 'Snapshot')}
         </button>
         <button
           onClick={() => onNavigate('action_plan')}
@@ -112,7 +122,7 @@ export const Header: React.FC<HeaderProps> = ({
               : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-200'
           }`}
         >
-          Action Plan
+          {t('header.actionPlan', 'Action Plan')}
         </button>
       </div>
 

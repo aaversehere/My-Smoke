@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { UserStats } from '../types';
 
 interface SnapshotScreenProps {
@@ -12,6 +13,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
   onProceed,
   onRetakeQuest,
 }) => {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col w-full gap-8 relative z-10 pb-12 pt-4 px-6 md:px-12 lg:px-24 min-h-[calc(100vh-80px)]">
       {/* Celebration Header */}
@@ -28,36 +30,36 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
         </div>
 
         <h1 className="font-['Montserrat'] font-extrabold text-[26px] text-zinc-900 dark:text-white relative z-10">
-          Quest Snapshot!
+          {t('snapshot.title')}
         </h1>
 
         <p className="font-['Quicksand'] font-medium text-base text-zinc-600 dark:text-zinc-400 max-w-sm relative z-10 leading-relaxed">
-          Every journey starts with understanding where you are. Here’s a look at your current strengths and growth areas.
+          {t('snapshot.desc')}
         </p>
       </div>      {/* Key Metrics (Growth Framing) */}
       <div className="grid grid-cols-2 gap-4">
-        {/* Coping Strength */}
+        {/* {t('snapshot.metrics.coping')} */}
         <div className="bg-white dark:bg-zinc-900 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-lg relative overflow-hidden group border border-zinc-200 dark:border-zinc-800">
           <div className="absolute top-0 inset-x-0 h-1 bg-amber-500 group-hover:h-2 transition-all duration-300" />
           <span className="material-symbols-outlined text-amber-400 text-3xl mb-2" style={{ fontVariationSettings: "'FILL' 1" }}>
             shield
           </span>
           <span className="font-['Montserrat'] font-bold text-xs uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1">
-            Coping Strength
+            {t('snapshot.metrics.coping')}
           </span>
           <span className="font-['Montserrat'] font-extrabold text-xl text-amber-400">
             {stats.copingStrength}
           </span>
         </div>
 
-        {/* Confidence Level */}
+        {/* {t('snapshot.metrics.confidence')} */}
         <div className="bg-white dark:bg-zinc-900 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-lg relative overflow-hidden group border border-zinc-200 dark:border-zinc-800">
           <div className="absolute top-0 inset-x-0 h-1 bg-sage-500 group-hover:h-2 transition-all duration-300" />
           <span className="material-symbols-outlined text-sage-600 dark:text-sage-400 text-3xl mb-2" style={{ fontVariationSettings: "'FILL' 1" }}>
             trending_up
           </span>
           <span className="font-['Montserrat'] font-bold text-xs uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1">
-            Confidence Level
+            {t('snapshot.metrics.confidence')}
           </span>
           <span className="font-['Montserrat'] font-extrabold text-xl text-sage-600 dark:text-sage-400">
             {stats.confidenceLevel}
@@ -74,7 +76,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
             analytics
           </span>
           <h2 className="font-['Montserrat'] font-bold text-2xl text-zinc-900 dark:text-white">
-            Skill Breakdown
+            {t('snapshot.skills.title')}
           </h2>
         </div>
 
@@ -82,9 +84,9 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           {/* Skill 1: Support Seeking */}
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
-              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">Support Seeking</span>
+              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">{t('snapshot.skills.support')}</span>
               <span className="font-['Montserrat'] font-bold text-xs uppercase text-blue-400">
-                {stats.supportSeekingScore >= 75 ? 'High' : stats.supportSeekingScore >= 40 ? 'Moderate' : 'Growing'}
+                {stats.supportSeekingScore >= 75 ? t('snapshot.skills.levels.high') : stats.supportSeekingScore >= 40 ? t('snapshot.skills.levels.moderate') : t('snapshot.skills.levels.growing')}
               </span>
             </div>
             <div className="w-full h-3 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden border border-zinc-300 dark:border-zinc-700/50">
@@ -98,9 +100,9 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           {/* Skill 2: Reflective Coping */}
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
-              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">Reflective Coping</span>
+              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">{t('snapshot.skills.reflective')}</span>
               <span className="font-['Montserrat'] font-bold text-xs uppercase text-amber-400">
-                {stats.reflectiveCopingScore >= 75 ? 'High' : stats.reflectiveCopingScore >= 45 ? 'Moderate' : 'Growing'}
+                {stats.reflectiveCopingScore >= 75 ? 'High' : stats.reflectiveCopingScore >= 45 ? 'Moderate' : t('snapshot.skills.levels.growing')}
               </span>
             </div>
             <div className="w-full h-3 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden border border-zinc-300 dark:border-zinc-700/50">
@@ -114,9 +116,9 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           {/* Skill 3: Strategic Coping */}
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
-              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">Strategic Coping</span>
+              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">{t('snapshot.skills.strategic')}</span>
               <span className="font-['Montserrat'] font-bold text-xs uppercase text-sage-600 dark:text-sage-400">
-                {stats.strategicCopingScore >= 75 ? 'High' : stats.strategicCopingScore >= 45 ? 'Moderate' : 'Growing'}
+                {stats.strategicCopingScore >= 75 ? 'High' : stats.strategicCopingScore >= 45 ? 'Moderate' : t('snapshot.skills.levels.growing')}
               </span>
             </div>
             <div className="w-full h-3 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden border border-zinc-300 dark:border-zinc-700/50">
@@ -130,9 +132,9 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           {/* Skill 4: Proactive Coping */}
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
-              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">Proactive Coping</span>
+              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">{t('snapshot.skills.proactive')}</span>
               <span className="font-['Montserrat'] font-bold text-xs uppercase text-purple-400">
-                {stats.proactiveCopingScore >= 75 ? 'High' : stats.proactiveCopingScore >= 45 ? 'Moderate' : 'Growing'}
+                {stats.proactiveCopingScore >= 75 ? 'High' : stats.proactiveCopingScore >= 45 ? 'Moderate' : t('snapshot.skills.levels.growing')}
               </span>
             </div>
             <div className="w-full h-3 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden border border-zinc-300 dark:border-zinc-700/50">
@@ -146,9 +148,9 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           {/* Skill 5: Avoidance Coping */}
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
-              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">Avoidance Coping</span>
+              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">{t('snapshot.skills.avoidance')}</span>
               <span className="font-['Montserrat'] font-bold text-xs uppercase text-red-400">
-                {stats.avoidanceCopingScore >= 75 ? 'High' : stats.avoidanceCopingScore >= 45 ? 'Moderate' : 'Needs Focus'}
+                {stats.avoidanceCopingScore >= 75 ? 'High' : stats.avoidanceCopingScore >= 45 ? 'Moderate' : t('snapshot.skills.levels.needsFocus')}
               </span>
             </div>
             <div className="w-full h-3 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden border border-zinc-300 dark:border-zinc-700/50">
@@ -162,9 +164,9 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           {/* Skill 6: Preventive Coping */}
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
-              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">Preventive Coping</span>
+              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">{t('snapshot.skills.preventive')}</span>
               <span className="font-['Montserrat'] font-bold text-xs uppercase text-teal-400">
-                {stats.preventiveCopingScore >= 75 ? 'High' : stats.preventiveCopingScore >= 45 ? 'Moderate' : 'Growing'}
+                {stats.preventiveCopingScore >= 75 ? 'High' : stats.preventiveCopingScore >= 45 ? 'Moderate' : t('snapshot.skills.levels.growing')}
               </span>
             </div>
             <div className="w-full h-3 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden border border-zinc-300 dark:border-zinc-700/50">
@@ -187,11 +189,11 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           <div className="w-10 h-10 rounded-full bg-sage-500/10 border border-sage-500/20 text-sage-600 dark:text-sage-400 flex items-center justify-center shadow-sm">
             <span className="material-symbols-outlined text-sage-600 dark:text-sage-400 text-xl">lightbulb</span>
           </div>
-          <h3 className="font-['Montserrat'] font-bold text-2xl text-zinc-900 dark:text-white">Insight</h3>
+          <h3 className="font-['Montserrat'] font-bold text-2xl text-zinc-900 dark:text-white">{t('snapshot.insight.title')}</h3>
         </div>
 
         <p className="font-['Quicksand'] font-medium text-lg text-zinc-700 dark:text-zinc-300 relative z-10 italic leading-relaxed">
-          "Your Coping Skills Are Still Growing — You may still need more preparation and support... Small steps can make a big difference."
+          {t('snapshot.insight.desc')}
         </p>
       </div>
 
@@ -201,7 +203,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           onClick={onProceed}
           className="w-full h-14 bg-sage-500 hover:bg-sage-400 text-black font-['Montserrat'] font-extrabold text-lg rounded-full shadow-[0_8px_20px_rgba(92,131,88,0.3)] transform transition-all duration-200 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
         >
-          <span>CREATE MY ACTION PLAN</span>
+          <span>{t('snapshot.cta.createPlan')}</span>
           <span className="material-symbols-outlined">arrow_forward</span>
         </button>
 

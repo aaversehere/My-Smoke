@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface WelcomeScreenProps {
   onStart: () => void;
@@ -7,22 +8,36 @@ interface WelcomeScreenProps {
 }
 
 export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart, theme, toggleTheme }) => {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className="flex flex-col md:flex-row w-full px-6 md:px-12 lg:px-24 py-10 gap-8 md:gap-12 lg:gap-20 items-center justify-center min-h-[calc(100vh-80px)] relative overflow-hidden max-w-7xl mx-auto">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-sage-500/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-0 -ml-16 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Floating Theme Toggle */}
-      <button
-        onClick={toggleTheme}
-        className="absolute top-6 right-6 md:top-10 md:right-10 z-50 w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 flex items-center justify-center shadow hover:scale-105 active:scale-95 transition-all"
-        title="Toggle Light/Dark Mode"
-      >
-        <span className="material-symbols-outlined text-[20px]">
-          {theme === 'dark' ? 'light_mode' : 'dark_mode'}
-        </span>
-      </button>
+      {/* Floating Controls */}
+      <div className="absolute top-6 right-6 md:top-10 md:right-10 z-50 flex items-center gap-3">
+        {/* Language Toggle */}
+        <button
+          onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'id' : 'en')}
+          className="px-3 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 flex items-center justify-center shadow hover:scale-105 active:scale-95 transition-all font-bold text-sm"
+          title="Toggle Language"
+        >
+          {i18n.language === 'en' ? 'ID' : 'EN'}
+        </button>
+
+        {/* Theme Toggle */}
+        <button
+          onClick={toggleTheme}
+          className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 flex items-center justify-center shadow hover:scale-105 active:scale-95 transition-all"
+          title="Toggle Light/Dark Mode"
+        >
+          <span className="material-symbols-outlined text-[20px]">
+            {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+          </span>
+        </button>
+      </div>
 
       {/* Hero Illustration Area */}
       <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg flex-1 aspect-square rounded-[2rem] bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.8)] flex items-center justify-center overflow-hidden z-10 group transition-transform duration-500 hover:scale-[1.02]">
@@ -39,10 +54,10 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart, theme, to
       <div className="flex flex-col items-center md:items-start text-center md:text-left z-10 w-full max-w-md md:max-w-xl lg:max-w-2xl gap-6 flex-1 mt-6 md:mt-0">
         <div className="flex flex-col gap-3">
           <h1 className="font-['Montserrat'] font-extrabold text-[36px] sm:text-[40px] md:text-[48px] lg:text-[56px] leading-[44px] sm:leading-[48px] md:leading-[56px] lg:leading-[64px] tracking-tight text-zinc-900 dark:text-white">
-            Welcome to SmokeFree Quest!
+            {t('welcome.title')}
           </h1>
           <p className="font-['Quicksand'] font-medium text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 max-w-[290px] md:max-w-md mx-auto md:mx-0 leading-relaxed">
-            Ready to discover how strong your plan is to live smoke-free?
+            {t('welcome.subtitle')}
           </p>
         </div>
 
@@ -53,7 +68,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart, theme, to
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
           <span className="relative z-10 flex items-center justify-center gap-2 tracking-wide">
-            START MY JOURNEY
+            {t('welcome.startBtn')}
             <span className="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1" style={{ fontVariationSettings: "'FILL' 1" }}>
               arrow_forward
             </span>
@@ -63,7 +78,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart, theme, to
         {/* Footer Note */}
         <div className="flex items-center gap-2 text-zinc-500 mt-1">
           <span className="material-symbols-outlined text-sm">schedule</span>
-          <span className="font-['Quicksand'] font-medium text-sm">It only takes about 20–30 minutes.</span>
+          <span className="font-['Quicksand'] font-medium text-sm">{t('welcome.timeNote')}</span>
         </div>
       </div>
     </div>

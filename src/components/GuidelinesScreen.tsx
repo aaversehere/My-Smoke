@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface GuidelinesScreenProps {
   onReady: () => void;
 }
 
 export const GuidelinesScreen: React.FC<GuidelinesScreenProps> = ({ onReady }) => {
+  const { t } = useTranslation();
   const [understood, setUnderstood] = useState(false);
   const [agreed, setAgreed] = useState(false);
 
@@ -16,13 +18,13 @@ export const GuidelinesScreen: React.FC<GuidelinesScreenProps> = ({ onReady }) =
         
         <div className="mb-8 md:mb-10 text-center md:text-left">
           <p className="text-sage-600 dark:text-sage-400 font-bold text-xs uppercase tracking-wider mb-2 font-['Montserrat']">
-            GUIDELINES
+            {t('guidelines.header')}
           </p>
           <h2 className="font-['Montserrat'] font-extrabold text-3xl md:text-4xl text-zinc-900 dark:text-white mb-2">
-            Before We Begin
+            {t('guidelines.title')}
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 font-medium text-sm md:text-base">
-            Essential principles of privacy and user autonomy for your journey.
+            {t('guidelines.desc')}
           </p>
         </div>
 
@@ -33,9 +35,9 @@ export const GuidelinesScreen: React.FC<GuidelinesScreenProps> = ({ onReady }) =
               <span className="material-symbols-outlined">lock</span>
             </div>
             <div>
-              <h3 className="font-bold text-zinc-900 dark:text-white mb-1">Confidential & Secure</h3>
+              <h3 className="font-bold text-zinc-900 dark:text-white mb-1">{t('guidelines.card1.title')}</h3>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
-                Everything you share remains strictly confidential. Data is used solely for your personal empowerment and growth.
+                {t('guidelines.card1.desc')}
               </p>
             </div>
           </div>
@@ -46,9 +48,9 @@ export const GuidelinesScreen: React.FC<GuidelinesScreenProps> = ({ onReady }) =
               <span className="material-symbols-outlined">tune</span>
             </div>
             <div>
-              <h3 className="font-bold text-zinc-900 dark:text-white mb-1">Full Autonomy</h3>
+              <h3 className="font-bold text-zinc-900 dark:text-white mb-1">{t('guidelines.card2.title')}</h3>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
-                You progress at your own pace. Pause, adjust, or proceed whenever you are ready.
+                {t('guidelines.card2.desc')}
               </p>
             </div>
           </div>
@@ -69,7 +71,7 @@ export const GuidelinesScreen: React.FC<GuidelinesScreenProps> = ({ onReady }) =
               </span>
             </div>
             <span className="text-zinc-700 dark:text-zinc-300 text-sm font-medium">
-              I understand how my information will be handled with discretion.
+              {t('guidelines.check1')}
             </span>
           </label>
 
@@ -87,7 +89,7 @@ export const GuidelinesScreen: React.FC<GuidelinesScreenProps> = ({ onReady }) =
               </span>
             </div>
             <span className="text-zinc-700 dark:text-zinc-300 text-sm font-medium">
-              I agree to participate in this smoke-free quest edition.
+              {t('guidelines.check2')}
             </span>
           </label>
         </div>
@@ -101,7 +103,7 @@ export const GuidelinesScreen: React.FC<GuidelinesScreenProps> = ({ onReady }) =
               : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 cursor-not-allowed'
           }`}
         >
-          I'm Ready
+          {t('guidelines.btnReady')}
           <span className="material-symbols-outlined">arrow_forward</span>
         </button>
       </div>

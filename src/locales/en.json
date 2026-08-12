@@ -1,0 +1,421 @@
+{
+  "welcome": {
+    "title": "Welcome to SmokeFree Quest!",
+    "subtitle": "Ready to discover how strong your plan is to live smoke-free?",
+    "startBtn": "START MY JOURNEY",
+    "timeNote": "It only takes about 20–30 minutes."
+  },
+  "header": {
+    "welcome": "Welcome",
+    "missions": "Missions",
+    "game": "Game",
+    "assessment": "Assessment",
+    "snapshot": "Snapshot",
+    "actionPlan": "Action Plan"
+  },
+  "missions": {
+    "trueOrFalse": "True or False?",
+    "true": "True",
+    "false": "False",
+    "correct": "✅ Correct! This is true.",
+    "incorrect": "❌ Actually, this is True!",
+    "next": "Next",
+    "gotIt": "GOT IT!",
+    "m1": {
+      "title": "Mission 1 — What's Really Inside a Cigarette?",
+      "nicotine": {
+        "title": "Nicotine",
+        "desc": "Can make your body dependent on cigarettes."
+      },
+      "tar": {
+        "title": "Tar",
+        "desc": "Can damage your lungs."
+      },
+      "co": {
+        "title": "Carbon Monoxide",
+        "desc": "Reduces the oxygen carried in your blood."
+      }
+    },
+    "m2": {
+      "title": "Mission 2 — What Smoking Does to Your Body",
+      "breathing": {
+        "title": "Breathing",
+        "desc": "Smoking can make breathing harder."
+      },
+      "heart": {
+        "title": "Heart",
+        "desc": "Smoking increases the risk of heart disease."
+      },
+      "focus": {
+        "title": "Focus",
+        "desc": "Nicotine dependence can affect concentration."
+      },
+      "energy": {
+        "title": "Energy",
+        "desc": "Smoking can reduce stamina."
+      }
+    },
+    "m3": {
+      "title": "Mission 3 — Why Do Teens Smoke?",
+      "subtitle": "Are these common reasons teens smoke? (True or False)",
+      "peer": {
+        "title": "Peer pressure"
+      },
+      "cool": {
+        "title": "Wanting to look cool"
+      },
+      "curiosity": {
+        "title": "Curiosity"
+      },
+      "stress": {
+        "title": "Stress"
+      },
+      "social": {
+        "title": "Social environment"
+      }
+    },
+    "m4": {
+      "title": "Mission 4 — Why Quitting Is Worth It",
+      "subtitle": "Is it True or False?",
+      "m20": {
+        "title": "After 20 minutes",
+        "desc": "Your heart begins adjusting."
+      },
+      "days": {
+        "title": "Days to Weeks",
+        "desc": "Breathing and circulation begin improving."
+      },
+      "weeks": {
+        "title": "Weeks to Months",
+        "desc": "You may feel fitter and more energetic."
+      },
+      "everyday": {
+        "title": "Every day",
+        "desc": "You save money."
+      }
+    },
+    "m5": {
+      "title": "Proactive Coping",
+      "thinkAhead": "THINK AHEAD 🧠",
+      "ifHappens": "If this happens...",
+      "situation": "My friends offer me a cigarette.",
+      "iWill": "I will...",
+      "action1": "Say \"No, thanks.\"",
+      "action2": "Move away for a while.",
+      "action3": "Drink water.",
+      "action4": "Talk to a friend.",
+      "action5": "Do another activity.",
+      "conclusion": "Planning before temptation happens is proactive coping.",
+      "startAssessment": "Start Assessment"
+    }
+  },
+  "game": {
+    "title": "Game: Beat the Craving",
+    "level": "LEVEL",
+    "l1": {
+      "q": "You are hanging out with friends.<br/>Someone offers you a cigarette.",
+      "optA": "Take it immediately",
+      "optB": "Say no and change the activity",
+      "optC": "Stay silent and wait",
+      "optD": "Smoke because everyone else is smoking",
+      "greatChoice": "Great choice!",
+      "greatDesc": "You prepared a healthier response.",
+      "notQuite": "Not quite!",
+      "notQuiteDesc": "Saying no and changing the activity is the best way to avoid the temptation.",
+      "next": "Next Level"
+    },
+    "l2": {
+      "q": "You feel stressed after an exam and suddenly want to smoke.",
+      "subtitle": "Select one or more healthy options:",
+      "water": "Drink water",
+      "music": "Listen to music",
+      "walk": "Take a short walk",
+      "smoke": "Smoke",
+      "confirm": "Confirm Choice",
+      "excellent": "Excellent!",
+      "excellentDesc": "Replacing smoking with healthier habits helps beat stress effectively.",
+      "careful": "Careful!",
+      "carefulDesc": "Smoking might seem to relieve stress temporarily, but the healthier choices are much better for your long-term wellbeing.",
+      "continue": "Continue"
+    },
+    "l3": {
+      "power": "4D POWER",
+      "delay": "Delay",
+      "deepBreathing": "Deep Breathing",
+      "drinkWater": "Drink Water",
+      "doSomethingElse": "Do Something Else",
+      "startAssessment": "Start Assessment"
+    }
+  },
+  "assessmentIntro": {
+    "title": "Let’s Discover Your Coping Strength",
+    "p1": "Think about yourself honestly.",
+    "p2": "There are no right or wrong answers.",
+    "stats": {
+      "q": "36 questions",
+      "time": "About 7–10 minutes"
+    },
+    "scaleTitle": "Answer Scale:",
+    "scale1": "Not true at all",
+    "scale2": "Barely true",
+    "scale3": "Somewhat true",
+    "scale4": "Completely true",
+    "start": "START"
+  },
+  "snapshot": {
+    "title": "Quest Snapshot!",
+    "desc": "Every journey starts with understanding where you are. Here’s a look at your current strengths and growth areas.",
+    "metrics": {
+      "coping": "Coping Strength",
+      "confidence": "Confidence Level"
+    },
+    "skills": {
+      "title": "Skill Breakdown",
+      "support": "Support Seeking",
+      "reflective": "Reflective Coping",
+      "strategic": "Strategic Coping",
+      "proactive": "Proactive Coping",
+      "avoidance": "Avoidance Coping",
+      "preventive": "Preventive Coping",
+      "levels": {
+        "high": "High",
+        "moderate": "Moderate",
+        "growing": "Growing",
+        "needsFocus": "Needs Focus"
+      }
+    },
+    "insight": {
+      "title": "Insight",
+      "desc": "\"Your Coping Skills Are Still Growing — You may still need more preparation and support... Small steps can make a big difference.\""
+    },
+    "cta": {
+      "createPlan": "CREATE MY ACTION PLAN",
+      "retake": "↺ Re-assess Questions"
+    }
+  },
+  "actionPlan": {
+    "header": "Personal Action Plan",
+    "title": "My SmokeFree Quest Plan",
+    "desc": "Your customized roadmap to conquer cravings and stay smoke-free.",
+    "triggers": {
+      "title": "My Key Triggers",
+      "desc": "Select situations where you feel the strongest urge:",
+      "list": {
+        "morningCoffee": "Morning Coffee",
+        "afterMeals": "After Meals",
+        "driving": "Driving / Commute",
+        "stress": "Stress / Work Pressure",
+        "social": "Social Gathering",
+        "boredom": "Boredom"
+      }
+    },
+    "toolkit": {
+      "title": "My Coping Toolkit",
+      "desc": "Tools to replace smoking when a trigger happens:",
+      "list": {
+        "breathing": "Deep Breathing (4-7-8)",
+        "water": "Ice Water Sip",
+        "walk": "Walk Outside",
+        "support": "Call a Support Buddy",
+        "gum": "Sugar-free Mints / Gum",
+        "fidget": "Fidget Ring / Stress Ball"
+      }
+    },
+    "save": "🏠 Save Plan & Return Home"
+  },
+  "profile": {
+    "s0": {
+      "title": "Tell Us About Yourself 👋",
+      "codeLabel": "Your Participant Code",
+      "continue": "Continue"
+    },
+    "s1": {
+      "title": "How old are you?",
+      "other": "Other"
+    },
+    "s2": {
+      "title": "Gender",
+      "male": "Male",
+      "female": "Female",
+      "preferNot": "Prefer not to say",
+      "other": "Other"
+    },
+    "s3": {
+      "title": "School Grade",
+      "g10": "Grade 10",
+      "g11": "Grade 11",
+      "g12": "Grade 12"
+    },
+    "s4": {
+      "title": "Do you currently smoke cigarettes?",
+      "everyday": "Every day",
+      "someDays": "Some days",
+      "rarely": "Rarely",
+      "stopped": "I have stopped smoking"
+    },
+    "s5": {
+      "title": "How many cigarettes do you usually smoke per day?",
+      "moreThan20": "More than 20"
+    },
+    "s6": {
+      "title": "At what age did you first try smoking?",
+      "agePlaceholder": "Age",
+      "years": "years",
+      "next": "Next"
+    },
+    "s7": {
+      "title": "Have you ever tried to quit smoking?",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "s8": {
+      "title": "Profile Complete!",
+      "desc": "Now let's learn how you can prepare yourself for a smoke-free future.",
+      "progress": "Progress:",
+      "complete": "20% COMPLETE",
+      "startModule": "START THE MODULE"
+    }
+  },
+  "microBreak": {
+    "title": "Nice Work!",
+    "desc": "You've completed the first assessment.",
+    "progress": "Progress",
+    "complete": "85% COMPLETE",
+    "breakTitle": "Take a 10-second micro-break:",
+    "stretch": "Stretch your shoulders.",
+    "breathe": "Take a deep breath.",
+    "ready": "Ready for the last part?",
+    "btnReady": "I'M READY",
+    "sec": "s"
+  },
+  "intel": {
+    "header": "Intel Gathered",
+    "title": "What's Actually in There?",
+    "desc": "It's not just dried leaves. Here's a quick look at the top three troublemakers hiding inside.",
+    "nicotine": {
+      "title": "Nicotine",
+      "desc": "The hook. It rewires your brain to constantly crave more, making you feel anxious until your next fix.",
+      "tipTitle": "Smart Counter-move:",
+      "tipDesc": "Oral substitutes like mints, sugar-free gum, or deep breathing delay cravings by 10 minutes until nicotine spikes pass."
+    },
+    "tar": {
+      "title": "Tar",
+      "desc": "The sticky stuff. It coats your lungs like paving a road, paralyzing the tiny hairs that keep them clean.",
+      "tipTitle": "Lung Recovery:",
+      "tipDesc": "Within 1 to 9 months smoke-free, cilia hairs in your lungs regenerate to sweep away mucus and clean your airway!"
+    },
+    "co": {
+      "title": "Carbon Monoxide",
+      "desc": "The oxygen thief. It replaces oxygen in your blood, making your heart work overtime just to keep up.",
+      "tipTitle": "Quick Health Win:",
+      "tipDesc": "In just 12 hours after stopping, carbon monoxide level in your blood drops back to normal!"
+    },
+    "complete": "MISSION COMPLETE! 🎉",
+    "gotIt": "GOT IT!",
+    "knowledge": "Knowledge is power."
+  },
+  "guidelines": {
+    "header": "GUIDELINES",
+    "title": "Before We Begin",
+    "desc": "Essential principles of privacy and user autonomy for your journey.",
+    "card1": {
+      "title": "Confidential & Secure",
+      "desc": "Everything you share remains strictly confidential. Data is used solely for your personal empowerment and growth."
+    },
+    "card2": {
+      "title": "Full Autonomy",
+      "desc": "You progress at your own pace. Pause, adjust, or proceed whenever you are ready."
+    },
+    "check1": "I understand how my information will be handled with discretion.",
+    "check2": "I agree to participate in this smoke-free quest edition.",
+    "btnReady": "I'm Ready"
+  },
+  "assessment": {
+    "progress": "Quest Progress",
+    "scale1": "Not true at all",
+    "scale2": "Barely true",
+    "scale3": "Somewhat true",
+    "scale4": "Completely true",
+    "prev": "Previous",
+    "viewSnapshot": "View Quest Snapshot ➔",
+    "saving": "Saving Progress...",
+    "continue": "Continue Journey"
+  },
+  "questions": {
+    "categories": {
+      "SupportSeeking": "Support Seeking",
+      "ReflectiveCoping": "Reflective Coping",
+      "StrategicCoping": "Strategic Coping",
+      "ProactiveCoping": "Proactive Coping",
+      "AvoidanceCoping": "Avoidance Coping",
+      "PreventiveCoping": "Preventive Coping"
+    },
+    "q1": "My friends will listen to my complaints if there is difficulty quitting smoking.",
+    "q2": "My family will listen to my complaints if it's difficult to quit smoking.",
+    "q3": "I ask for help from others to control my efforts to quit smoking.",
+    "q4": "My friends encourage me to quit smoking.",
+    "q5": "I will involve the closest people who support my efforts to quit smoking.",
+    "q6": "Motivation from other people (teachers, friends and family) helps me to quit smoking.",
+    "q7": "Information from others about the dangers of smoking helped me to quit smoking.",
+    "q8": "I try to discuss and explain my efforts to quit smoking to get feedback from other people.",
+    "q9": "I replace smoking with candy or snacks.",
+    "q10": "I will prepare myself to overcome the difficulties of quitting smoking.",
+    "q11": "I made a smoking cessation plan and will follow it.",
+    "q12": "I think I can save money if I quit smoking.",
+    "q13": "Quitting smoking can improve my finances.",
+    "q14": "My goal is to quit smoking for my own health.",
+    "q15": "I think quitting smoking will improve my health.",
+    "q16": "I imagine that exercise and positive activities can help me quit smoking.",
+    "q17": "I am able to control myself to quit smoking.",
+    "q18": "My goal is to quit smoking for the health of my family and those around me.",
+    "q19": "I have a plan to overcome the challenges of quitting smoking.",
+    "q20": "I will always improve my smoking cessation efforts by evaluating the actions that have been taken.",
+    "q21": "I plan a strategy to quit smoking, I hope it will be the best result.",
+    "q22": "I will quit smoking gradually by reducing the number of cigarettes.",
+    "q23": "I exercise or other positive activities to not smoke.",
+    "q24": "I protect my family's health by not smoking.",
+    "q25": "I imagine it will be difficult to quit smoking but I will continue to do it.",
+    "q26": "I see quitting smoking as a challenge to deal with.",
+    "q27": "I will strengthen my intention to quit smoking, if I encounter obstacles.",
+    "q28": "I will convince others that I can quit smoking.",
+    "q29": "I will consider the difficulty of facing the challenge of smoking as a positive experience.",
+    "q30": "Health problems make me take the initiative to quit smoking.",
+    "q31": "I prefer to sleep than smoking.",
+    "q32": "I choose not to hang out with friends to avoid the desire to smoke.",
+    "q33": "I better avoid people who invite smoking.",
+    "q34": "I try to show others that I can avoid smoking.",
+    "q35": "I'm always trying to find a way to quit smoking.",
+    "q36": "Although quitting smoking is difficult, I will try to achieve it."
+  },
+  "selfEfficacyQuestions": {
+    "categories": {
+      "InternalStimuli": "Internal Stimuli",
+      "ExternalStimuli": "External Stimuli"
+    },
+    "q1": "When I feel nervous",
+    "q2": "When I feel depressed",
+    "q3": "When I am angry",
+    "q4": "When I feel very anxious",
+    "q5": "When I want to think about a difficult problem",
+    "q6": "When I feel the urge to smoke.",
+    "q7": "When having a drink with friends",
+    "q8": "When celebrating something",
+    "q9": "When drinking beer, wine or other spirits",
+    "q10": "When I am with smokers",
+    "q11": "After a meal",
+    "q12": "When having coffee or tea"
+  },
+  "minigame": {
+    "powers": {
+      "focus": "Stay Focused",
+      "strong": "Stay Strong",
+      "healthy": "Stay Healthy",
+      "goals": "Reach My Goals"
+    },
+    "chooseTitle": "Choose Your Power",
+    "chooseDesc": "Which power do you want to strengthen today?",
+    "greatChoice": "Great choice!",
+    "discover": "Let's discover your smoke-free strengths.",
+    "start": "Start Assessment"
+  }
+}

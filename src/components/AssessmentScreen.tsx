@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Question, EmojiValue } from '../types';
 
 interface AssessmentScreenProps {
@@ -20,6 +21,7 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
   onPrev,
   onCompleteQuest,
 }) => {
+  const { t } = useTranslation();
   const currentQuestion = questions[currentQuestionIndex] || questions[0]; // Default to question #1 if out of range
   const selectedValue = answers[currentQuestion.id] || null;
   const [localSelected, setLocalSelected] = useState<EmojiValue | null>(selectedValue);
@@ -58,7 +60,7 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
         <div className="flex items-center gap-2">
           <div className="w-2.5 h-2.5 rounded-full bg-sage-400 animate-pulse" />
           <span className="font-['Montserrat'] font-bold text-sage-600 dark:text-sage-400 text-sm tracking-wider uppercase">
-            Quest Progress
+            {t('assessment.progress')}
           </span>
         </div>
         <span className="font-['Quicksand'] font-bold text-zinc-600 dark:text-zinc-400">
@@ -91,7 +93,7 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
 
           {/* Question Title */}
           <h2 className="font-['Montserrat'] font-bold text-[22px] sm:text-[26px] text-zinc-900 dark:text-white mb-8 leading-tight">
-            "{currentQuestion.text}"
+            {t(`questions.q${currentQuestion.id}`)}
           </h2>
 
           {/* Emoji Scale Options */}
@@ -109,7 +111,7 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
                 😕
               </span>
               <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 1 ? 'text-sage-300 font-bold' : 'text-zinc-600 dark:text-zinc-400'}`}>
-                Not true at all
+                {t('assessment.scale1')}
               </span>
             </button>
 
@@ -126,7 +128,7 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
                 🙂
               </span>
               <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 2 ? 'text-sage-300 font-bold' : 'text-zinc-600 dark:text-zinc-400'}`}>
-                Barely true
+                {t('assessment.scale2')}
               </span>
             </button>
 
@@ -143,7 +145,7 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
                 😊
               </span>
               <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 3 ? 'text-sage-300 font-bold' : 'text-zinc-600 dark:text-zinc-400'}`}>
-                Somewhat true
+                {t('assessment.scale3')}
               </span>
             </button>
 
@@ -160,7 +162,7 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
                 💪
               </span>
               <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 4 ? 'text-sage-300 font-bold' : 'text-zinc-600 dark:text-zinc-400'}`}>
-                Completely true
+                {t('assessment.scale4')}
               </span>
             </button>
           </div>
@@ -174,14 +176,14 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
             className="flex items-center gap-1 hover:text-sage-600 dark:text-sage-400 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer transition-colors"
           >
             <span className="material-symbols-outlined text-sm">arrow_back</span>
-            Previous
+            {t('assessment.prev')}
           </button>
 
           <button 
             onClick={onCompleteQuest}
             className="text-sage-600 dark:text-sage-400 hover:text-sage-300 underline cursor-pointer transition-colors"
           >
-            View Quest Snapshot ➔
+            {t('assessment.viewSnapshot')}
           </button>
         </div>
       </div>
@@ -200,11 +202,11 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
           {isSaving ? (
             <>
               <span className="material-symbols-outlined animate-spin text-[20px]">autorenew</span>
-              <span>Saving Progress...</span>
+              <span>{t('assessment.saving')}</span>
             </>
           ) : (
             <>
-              <span>Continue Journey</span>
+              <span> {t('assessment.continue')} </span>
               <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
             </>
           )}

@@ -1,0 +1,421 @@
+{
+  "welcome": {
+    "title": "Selamat datang di SmokeFree Quest!",
+    "subtitle": "Siap untuk mengetahui seberapa kuat rencana Anda untuk hidup bebas asap rokok?",
+    "startBtn": "MULAI PERJALANAN SAYA",
+    "timeNote": "Hanya butuh sekitar 20–30 menit."
+  },
+  "header": {
+    "welcome": "Beranda",
+    "missions": "Misi",
+    "game": "Permainan",
+    "assessment": "Penilaian",
+    "snapshot": "Ringkasan",
+    "actionPlan": "Rencana Aksi"
+  },
+  "missions": {
+    "trueOrFalse": "Benar atau Salah?",
+    "true": "Benar",
+    "false": "Salah",
+    "correct": "✅ Tepat sekali! Ini benar.",
+    "incorrect": "❌ Sebenarnya, ini Benar!",
+    "next": "Selanjutnya",
+    "gotIt": "MENGERTI!",
+    "m1": {
+      "title": "Misi 1 — Apa yang Sebenarnya Ada di Dalam Rokok?",
+      "nicotine": {
+        "title": "Nikotin",
+        "desc": "Dapat membuat tubuh Anda bergantung pada rokok."
+      },
+      "tar": {
+        "title": "Tar",
+        "desc": "Dapat merusak paru-paru Anda."
+      },
+      "co": {
+        "title": "Karbon Monoksida",
+        "desc": "Mengurangi oksigen yang dibawa dalam darah Anda."
+      }
+    },
+    "m2": {
+      "title": "Misi 2 — Apa yang Rokok Lakukan pada Tubuh Anda",
+      "breathing": {
+        "title": "Pernapasan",
+        "desc": "Merokok dapat membuat pernapasan lebih sulit."
+      },
+      "heart": {
+        "title": "Jantung",
+        "desc": "Merokok meningkatkan risiko penyakit jantung."
+      },
+      "focus": {
+        "title": "Fokus",
+        "desc": "Ketergantungan nikotin dapat memengaruhi konsentrasi."
+      },
+      "energy": {
+        "title": "Energi",
+        "desc": "Merokok dapat mengurangi stamina."
+      }
+    },
+    "m3": {
+      "title": "Misi 3 — Mengapa Remaja Merokok?",
+      "subtitle": "Apakah ini alasan umum remaja merokok? (Benar atau Salah)",
+      "peer": {
+        "title": "Tekanan teman sebaya"
+      },
+      "cool": {
+        "title": "Ingin terlihat keren"
+      },
+      "curiosity": {
+        "title": "Rasa ingin tahu"
+      },
+      "stress": {
+        "title": "Stres"
+      },
+      "social": {
+        "title": "Lingkungan sosial"
+      }
+    },
+    "m4": {
+      "title": "Misi 4 — Mengapa Berhenti Merokok Sepadan",
+      "subtitle": "Apakah ini Benar atau Salah?",
+      "m20": {
+        "title": "Setelah 20 menit",
+        "desc": "Jantung Anda mulai menyesuaikan."
+      },
+      "days": {
+        "title": "Berhari-hari hingga berminggu-minggu",
+        "desc": "Pernapasan dan sirkulasi mulai membaik."
+      },
+      "weeks": {
+        "title": "Berminggu-minggu hingga berbulan-bulan",
+        "desc": "Anda mungkin merasa lebih bugar dan berenergi."
+      },
+      "everyday": {
+        "title": "Setiap hari",
+        "desc": "Anda menghemat uang."
+      }
+    },
+    "m5": {
+      "title": "Koping Proaktif",
+      "thinkAhead": "PIKIRKAN KE DEPAN 🧠",
+      "ifHappens": "Jika ini terjadi...",
+      "situation": "Teman saya menawari saya rokok.",
+      "iWill": "Saya akan...",
+      "action1": "Berkata \"Tidak, terima kasih.\"",
+      "action2": "Menjauh sejenak.",
+      "action3": "Minum air.",
+      "action4": "Bicara dengan teman.",
+      "action5": "Melakukan aktivitas lain.",
+      "conclusion": "Merencanakan sebelum godaan datang adalah koping proaktif.",
+      "startAssessment": "Mulai Penilaian"
+    }
+  },
+  "game": {
+    "title": "Permainan: Kalahkan Rasa Ingin Merokok",
+    "level": "LEVEL",
+    "l1": {
+      "q": "Anda sedang berkumpul dengan teman.<br/>Seseorang menawari Anda rokok.",
+      "optA": "Langsung mengambilnya",
+      "optB": "Menolak dan mengubah aktivitas",
+      "optC": "Diam dan menunggu",
+      "optD": "Merokok karena yang lain merokok",
+      "greatChoice": "Pilihan bagus!",
+      "greatDesc": "Anda menyiapkan respons yang lebih sehat.",
+      "notQuite": "Kurang tepat!",
+      "notQuiteDesc": "Menolak dan mengubah aktivitas adalah cara terbaik untuk menghindari godaan.",
+      "next": "Lanjut"
+    },
+    "l2": {
+      "q": "Anda merasa stres setelah ujian dan tiba-tiba ingin merokok.",
+      "subtitle": "Pilih satu atau lebih opsi sehat:",
+      "water": "Minum air",
+      "music": "Mendengarkan musik",
+      "walk": "Berjalan kaki sebentar",
+      "smoke": "Merokok",
+      "confirm": "Konfirmasi",
+      "excellent": "Luar Biasa!",
+      "excellentDesc": "Mengganti merokok dengan kebiasaan sehat membantu mengatasi stres secara efektif.",
+      "careful": "Hati-hati!",
+      "carefulDesc": "Merokok mungkin tampak meredakan stres sementara, tetapi pilihan yang lebih sehat jauh lebih baik untuk kesejahteraan jangka panjang Anda.",
+      "continue": "Lanjutkan"
+    },
+    "l3": {
+      "power": "KEKUATAN 4D",
+      "delay": "Tunda (Delay)",
+      "deepBreathing": "Tarik Napas Dalam",
+      "drinkWater": "Minum Air",
+      "doSomethingElse": "Lakukan Hal Lain",
+      "startAssessment": "Mulai Penilaian"
+    }
+  },
+  "assessmentIntro": {
+    "title": "Mari Temukan Kekuatan Koping Anda",
+    "p1": "Pikirkan tentang diri Anda sejujurnya.",
+    "p2": "Tidak ada jawaban benar atau salah.",
+    "stats": {
+      "q": "36 pertanyaan",
+      "time": "Sekitar 7–10 menit"
+    },
+    "scaleTitle": "Skala Jawaban:",
+    "scale1": "Sama sekali tidak benar",
+    "scale2": "Hampir tidak benar",
+    "scale3": "Agak benar",
+    "scale4": "Sepenuhnya benar",
+    "start": "MULAI"
+  },
+  "snapshot": {
+    "title": "Ringkasan Misi!",
+    "desc": "Setiap perjalanan dimulai dengan memahami posisi Anda. Berikut adalah kekuatan dan area pertumbuhan Anda saat ini.",
+    "metrics": {
+      "coping": "Kekuatan Koping",
+      "confidence": "Tingkat Kepercayaan Diri"
+    },
+    "skills": {
+      "title": "Rincian Keterampilan",
+      "support": "Mencari Dukungan",
+      "reflective": "Koping Reflektif",
+      "strategic": "Koping Strategis",
+      "proactive": "Koping Proaktif",
+      "avoidance": "Koping Penghindaran",
+      "preventive": "Koping Preventif",
+      "levels": {
+        "high": "Tinggi",
+        "moderate": "Sedang",
+        "growing": "Berkembang",
+        "needsFocus": "Perlu Fokus"
+      }
+    },
+    "insight": {
+      "title": "Wawasan",
+      "desc": "\"Keterampilan Koping Anda Masih Berkembang — Anda mungkin masih membutuhkan lebih banyak persiapan dan dukungan... Langkah kecil bisa membuat perbedaan besar.\""
+    },
+    "cta": {
+      "createPlan": "BUAT RENCANA AKSI SAYA",
+      "retake": "↺ Nilai Ulang Pertanyaan"
+    }
+  },
+  "actionPlan": {
+    "header": "Rencana Aksi Pribadi",
+    "title": "Rencana Misi Bebas Asap Saya",
+    "desc": "Peta jalan khusus Anda untuk menaklukkan keinginan merokok dan tetap bebas asap.",
+    "triggers": {
+      "title": "Pemicu Utama Saya",
+      "desc": "Pilih situasi di mana Anda merasakan dorongan paling kuat:",
+      "list": {
+        "morningCoffee": "Kopi Pagi",
+        "afterMeals": "Setelah Makan",
+        "driving": "Mengemudi / Perjalanan",
+        "stress": "Stres / Tekanan Pekerjaan",
+        "social": "Pertemuan Sosial",
+        "boredom": "Kebosanan"
+      }
+    },
+    "toolkit": {
+      "title": "Alat Koping Saya",
+      "desc": "Alat untuk mengganti merokok saat pemicu terjadi:",
+      "list": {
+        "breathing": "Tarik Napas Dalam (4-7-8)",
+        "water": "Teguk Air Es",
+        "walk": "Jalan Keluar",
+        "support": "Hubungi Teman Dukungan",
+        "gum": "Permen Mint / Permen Karet Bebas Gula",
+        "fidget": "Cincin Fidget / Bola Stres"
+      }
+    },
+    "save": "🏠 Simpan Rencana & Kembali ke Beranda"
+  },
+  "profile": {
+    "s0": {
+      "title": "Ceritakan Tentang Diri Anda 👋",
+      "codeLabel": "Kode Peserta Anda",
+      "continue": "Lanjutkan"
+    },
+    "s1": {
+      "title": "Berapa usia Anda?",
+      "other": "Lainnya"
+    },
+    "s2": {
+      "title": "Jenis Kelamin",
+      "male": "Laki-laki",
+      "female": "Perempuan",
+      "preferNot": "Memilih untuk tidak menjawab",
+      "other": "Lainnya"
+    },
+    "s3": {
+      "title": "Kelas",
+      "g10": "Kelas 10",
+      "g11": "Kelas 11",
+      "g12": "Kelas 12"
+    },
+    "s4": {
+      "title": "Apakah Anda saat ini merokok?",
+      "everyday": "Setiap hari",
+      "someDays": "Beberapa hari",
+      "rarely": "Jarang",
+      "stopped": "Saya sudah berhenti merokok"
+    },
+    "s5": {
+      "title": "Berapa banyak rokok yang biasanya Anda hisap per hari?",
+      "moreThan20": "Lebih dari 20"
+    },
+    "s6": {
+      "title": "Pada usia berapa Anda pertama kali mencoba merokok?",
+      "agePlaceholder": "Usia",
+      "years": "tahun",
+      "next": "Selanjutnya"
+    },
+    "s7": {
+      "title": "Apakah Anda pernah mencoba berhenti merokok?",
+      "yes": "Ya",
+      "no": "Tidak"
+    },
+    "s8": {
+      "title": "Profil Selesai!",
+      "desc": "Sekarang mari kita pelajari bagaimana Anda dapat mempersiapkan diri untuk masa depan bebas asap.",
+      "progress": "Progres:",
+      "complete": "SELESAI 20%",
+      "startModule": "MULAI MODUL"
+    }
+  },
+  "microBreak": {
+    "title": "Kerja Bagus!",
+    "desc": "Anda telah menyelesaikan penilaian pertama.",
+    "progress": "Progres",
+    "complete": "SELESAI 85%",
+    "breakTitle": "Ambil jeda mikro 10 detik:",
+    "stretch": "Regangkan bahu Anda.",
+    "breathe": "Tarik napas dalam-dalam.",
+    "ready": "Siap untuk bagian terakhir?",
+    "btnReady": "SAYA SIAP",
+    "sec": "dtk"
+  },
+  "intel": {
+    "header": "Info Terkumpul",
+    "title": "Apa yang Sebenarnya Ada di Dalam?",
+    "desc": "Bukan sekadar daun kering. Berikut sekilas tentang tiga pengganggu utama yang bersembunyi di dalamnya.",
+    "nicotine": {
+      "title": "Nikotin",
+      "desc": "Sang pengait. Ia mengubah otak Anda untuk terus mendambakan lebih banyak, membuat Anda merasa cemas hingga isapan berikutnya.",
+      "tipTitle": "Tindakan Balasan Cerdas:",
+      "tipDesc": "Pengganti oral seperti permen mint, permen karet bebas gula, atau pernapasan dalam menunda keinginan selama 10 menit sampai lonjakan nikotin berlalu."
+    },
+    "tar": {
+      "title": "Tar",
+      "desc": "Bahan lengket. Ini melapisi paru-paru Anda seperti mengaspal jalan, melumpuhkan bulu-bulu halus yang menjaganya tetap bersih.",
+      "tipTitle": "Pemulihan Paru-paru:",
+      "tipDesc": "Dalam 1 hingga 9 bulan bebas asap rokok, bulu silia di paru-paru Anda beregenerasi untuk menyapu lendir dan membersihkan jalan napas Anda!"
+    },
+    "co": {
+      "title": "Karbon Monoksida",
+      "desc": "Pencuri oksigen. Ia menggantikan oksigen dalam darah Anda, membuat jantung Anda bekerja lembur hanya untuk mengimbanginya.",
+      "tipTitle": "Kemenangan Kesehatan Cepat:",
+      "tipDesc": "Hanya dalam 12 jam setelah berhenti, kadar karbon monoksida dalam darah Anda turun kembali ke normal!"
+    },
+    "complete": "MISI SELESAI! 🎉",
+    "gotIt": "MENGERTI!",
+    "knowledge": "Pengetahuan adalah kekuatan."
+  },
+  "guidelines": {
+    "header": "PEDOMAN",
+    "title": "Sebelum Kita Mulai",
+    "desc": "Prinsip penting privasi dan otonomi pengguna untuk perjalanan Anda.",
+    "card1": {
+      "title": "Rahasia & Aman",
+      "desc": "Semua yang Anda bagikan tetap sangat rahasia. Data digunakan semata-mata untuk pemberdayaan dan pertumbuhan pribadi Anda."
+    },
+    "card2": {
+      "title": "Otonomi Penuh",
+      "desc": "Anda maju dengan kecepatan Anda sendiri. Jeda, sesuaikan, atau lanjutkan kapan pun Anda siap."
+    },
+    "check1": "Saya mengerti bagaimana informasi saya akan ditangani dengan kebijaksanaan.",
+    "check2": "Saya setuju untuk berpartisipasi dalam edisi misi bebas asap ini.",
+    "btnReady": "Saya Siap"
+  },
+  "assessment": {
+    "progress": "Progres Misi",
+    "scale1": "Sama sekali tidak benar",
+    "scale2": "Hampir tidak benar",
+    "scale3": "Agak benar",
+    "scale4": "Sepenuhnya benar",
+    "prev": "Sebelumnya",
+    "viewSnapshot": "Lihat Ringkasan Misi ➔",
+    "saving": "Menyimpan Progres...",
+    "continue": "Lanjutkan Perjalanan"
+  },
+  "questions": {
+    "categories": {
+      "SupportSeeking": "Mencari Dukungan",
+      "ReflectiveCoping": "Koping Reflektif",
+      "StrategicCoping": "Koping Strategis",
+      "ProactiveCoping": "Koping Proaktif",
+      "AvoidanceCoping": "Koping Penghindaran",
+      "PreventiveCoping": "Koping Preventif"
+    },
+    "q1": "Teman-teman saya akan mendengarkan keluhan saya jika ada kesulitan berhenti merokok.",
+    "q2": "Keluarga saya akan mendengarkan keluhan saya jika sulit berhenti merokok.",
+    "q3": "Saya meminta bantuan orang lain untuk mengontrol upaya saya berhenti merokok.",
+    "q4": "Teman-teman saya mendorong saya untuk berhenti merokok.",
+    "q5": "Saya akan melibatkan orang-orang terdekat yang mendukung upaya saya berhenti merokok.",
+    "q6": "Motivasi dari orang lain (guru, teman, dan keluarga) membantu saya berhenti merokok.",
+    "q7": "Informasi dari orang lain tentang bahaya merokok membantu saya berhenti merokok.",
+    "q8": "Saya mencoba mendiskusikan dan menjelaskan upaya saya berhenti merokok untuk mendapatkan masukan dari orang lain.",
+    "q9": "Saya mengganti merokok dengan permen atau camilan.",
+    "q10": "Saya akan mempersiapkan diri untuk mengatasi kesulitan berhenti merokok.",
+    "q11": "Saya membuat rencana berhenti merokok dan akan mengikutinya.",
+    "q12": "Saya pikir saya bisa menghemat uang jika saya berhenti merokok.",
+    "q13": "Berhenti merokok dapat meningkatkan keuangan saya.",
+    "q14": "Tujuan saya adalah berhenti merokok untuk kesehatan saya sendiri.",
+    "q15": "Saya pikir berhenti merokok akan meningkatkan kesehatan saya.",
+    "q16": "Saya membayangkan bahwa olahraga dan aktivitas positif dapat membantu saya berhenti merokok.",
+    "q17": "Saya mampu mengontrol diri saya untuk berhenti merokok.",
+    "q18": "Tujuan saya adalah berhenti merokok untuk kesehatan keluarga dan orang-orang di sekitar saya.",
+    "q19": "Saya punya rencana untuk mengatasi tantangan berhenti merokok.",
+    "q20": "Saya akan selalu meningkatkan upaya berhenti merokok dengan mengevaluasi tindakan yang telah diambil.",
+    "q21": "Saya merencanakan strategi untuk berhenti merokok, saya harap ini akan menjadi hasil terbaik.",
+    "q22": "Saya akan berhenti merokok secara bertahap dengan mengurangi jumlah rokok.",
+    "q23": "Saya berolahraga atau aktivitas positif lainnya agar tidak merokok.",
+    "q24": "Saya melindungi kesehatan keluarga saya dengan tidak merokok.",
+    "q25": "Saya membayangkan akan sulit untuk berhenti merokok tetapi saya akan terus melakukannya.",
+    "q26": "Saya melihat berhenti merokok sebagai tantangan yang harus dihadapi.",
+    "q27": "Saya akan memperkuat niat saya untuk berhenti merokok, jika saya menemui rintangan.",
+    "q28": "Saya akan meyakinkan orang lain bahwa saya bisa berhenti merokok.",
+    "q29": "Saya akan menganggap kesulitan menghadapi tantangan merokok sebagai pengalaman positif.",
+    "q30": "Masalah kesehatan membuat saya berinisiatif untuk berhenti merokok.",
+    "q31": "Saya lebih suka tidur daripada merokok.",
+    "q32": "Saya memilih untuk tidak bergaul dengan teman-teman untuk menghindari keinginan merokok.",
+    "q33": "Saya lebih baik menghindari orang yang mengajak merokok.",
+    "q34": "Saya mencoba menunjukkan kepada orang lain bahwa saya bisa menghindari merokok.",
+    "q35": "Saya selalu berusaha mencari cara untuk berhenti merokok.",
+    "q36": "Meskipun berhenti merokok itu sulit, saya akan berusaha mencapainya."
+  },
+  "selfEfficacyQuestions": {
+    "categories": {
+      "InternalStimuli": "Stimulus Internal",
+      "ExternalStimuli": "Stimulus Eksternal"
+    },
+    "q1": "Saat saya merasa gugup",
+    "q2": "Saat saya merasa depresi",
+    "q3": "Saat saya sedang marah",
+    "q4": "Saat saya merasa sangat cemas",
+    "q5": "Saat saya ingin memikirkan masalah yang sulit",
+    "q6": "Saat saya merasakan dorongan untuk merokok.",
+    "q7": "Saat minum-minum dengan teman",
+    "q8": "Saat merayakan sesuatu",
+    "q9": "Saat minum bir, anggur, atau minuman keras lainnya",
+    "q10": "Saat saya bersama perokok",
+    "q11": "Setelah makan",
+    "q12": "Saat minum kopi atau teh"
+  },
+  "minigame": {
+    "powers": {
+      "focus": "Tetap Fokus",
+      "strong": "Tetap Kuat",
+      "healthy": "Tetap Sehat",
+      "goals": "Capai Tujuan"
+    },
+    "chooseTitle": "Pilih Kekuatan Anda",
+    "chooseDesc": "Kekuatan apa yang ingin Anda perkuat hari ini?",
+    "greatChoice": "Pilihan yang bagus!",
+    "discover": "Mari temukan kekuatan bebas asap rokok Anda.",
+    "start": "Mulai Penilaian"
+  }
+}
