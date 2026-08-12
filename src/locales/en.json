@@ -181,7 +181,9 @@
         "high": "High",
         "moderate": "Moderate",
         "growing": "Growing",
-        "needsFocus": "Needs Focus"
+        "needsFocus": "Needs Focus",
+        "strong": "Strong",
+        "developing": "Developing"
       }
     },
     "insight": {

@@ -57,14 +57,14 @@ export const ActionPlanScreen: React.FC<ActionPlanScreenProps> = ({ stats, onSav
         <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-sage-500/10 border border-sage-500/20 text-sage-600 dark:text-sage-400 rounded-full shadow-sm">
           <span className="material-symbols-outlined text-[16px]">verified_user</span>
           <span className="font-['Montserrat'] font-bold text-xs uppercase tracking-wider">
-            Personal Action Plan
+            {t('actionPlan.header')}
           </span>
         </div>
         <h1 className="font-['Montserrat'] font-extrabold text-[26px] text-zinc-900 dark:text-white">
-          My SmokeFree Quest Plan
+          {t('actionPlan.title')}
         </h1>
         <p className="font-['Quicksand'] font-medium text-base text-zinc-600 dark:text-zinc-400 max-w-xs">
-          Your customized roadmap to conquer cravings and stay smoke-free.
+          {t('actionPlan.desc')}
         </p>
       </div>
 
@@ -74,10 +74,10 @@ export const ActionPlanScreen: React.FC<ActionPlanScreenProps> = ({ stats, onSav
       <div className="bg-white dark:bg-zinc-900 rounded-2xl p-5 shadow-lg border border-zinc-200 dark:border-zinc-800 flex flex-col gap-3">
         <h3 className="font-['Montserrat'] font-bold text-lg text-zinc-900 dark:text-white flex items-center gap-2">
           <span className="material-symbols-outlined text-amber-400">warning</span>
-          My Key Triggers
+          {t('actionPlan.triggers.title')}
         </h3>
         <p className="font-['Quicksand'] text-xs text-zinc-600 dark:text-zinc-400">
-          Select situations where you feel the strongest urge:
+          {t('actionPlan.triggers.desc')}
         </p>
 
         <div className="grid grid-cols-2 gap-2 mt-1">
@@ -114,10 +114,10 @@ export const ActionPlanScreen: React.FC<ActionPlanScreenProps> = ({ stats, onSav
       <div className="bg-white dark:bg-zinc-900 rounded-2xl p-5 shadow-lg border border-zinc-200 dark:border-zinc-800 flex flex-col gap-3">
         <h3 className="font-['Montserrat'] font-bold text-lg text-zinc-900 dark:text-white flex items-center gap-2">
           <span className="material-symbols-outlined text-blue-400">handshake</span>
-          My Coping Toolkit
+          {t('actionPlan.toolkit.title')}
         </h3>
         <p className="font-['Quicksand'] text-xs text-zinc-600 dark:text-zinc-400">
-          Tools to replace smoking when a trigger happens:
+          {t('actionPlan.toolkit.desc')}
         </p>
 
         <div className="flex flex-col gap-2 mt-1">

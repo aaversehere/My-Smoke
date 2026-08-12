@@ -181,7 +181,9 @@
         "high": "Tinggi",
         "moderate": "Sedang",
         "growing": "Berkembang",
-        "needsFocus": "Perlu Fokus"
+        "needsFocus": "Perlu Fokus",
+        "strong": "Kuat",
+        "developing": "Berkembang"
       }
     },
     "insight": {
