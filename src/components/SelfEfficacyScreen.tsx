@@ -136,7 +136,7 @@ export const SelfEfficacyScreen: React.FC<SelfEfficacyScreenProps> = ({ onComple
       </div>
 
       {/* Sticky Bottom Action */}
-      <div className="mt-auto w-full sticky bottom-0 pb-safe bg-gradient-to-t from-[#09090b] via-[#09090b]/90 to-transparent pt-4 z-20">
+      <div className="mt-auto w-full sticky bottom-0 pb-safe z-20">
         <button
           onClick={handleNext}
           disabled={!localSelected || isSaving}
