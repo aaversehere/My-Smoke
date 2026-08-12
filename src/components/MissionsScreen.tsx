@@ -6,19 +6,47 @@ interface MissionsScreenProps {
 
 export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) => {
   const [mission, setMission] = useState(1);
-  const [selectedReason, setSelectedReason] = useState<string | null>(null);
 
+  // Mission 1 State
   const [mission1Answers, setMission1Answers] = useState<Record<string, boolean | null>>({
     nicotine: null,
     tar: null,
     co: null,
   });
-
-  const handleMission1Answer = (id: string, answer: boolean) => {
-    setMission1Answers((prev) => ({ ...prev, [id]: answer }));
-  };
-
+  const handleMission1Answer = (id: string, answer: boolean) => setMission1Answers((prev) => ({ ...prev, [id]: answer }));
   const isMission1Complete = Object.values(mission1Answers).every((a) => a !== null);
+
+  // Mission 2 State
+  const [mission2Answers, setMission2Answers] = useState<Record<string, boolean | null>>({
+    breathing: null,
+    heart: null,
+    focus: null,
+    energy: null,
+  });
+  const handleMission2Answer = (id: string, answer: boolean) => setMission2Answers((prev) => ({ ...prev, [id]: answer }));
+  const isMission2Complete = Object.values(mission2Answers).every((a) => a !== null);
+
+  // Mission 3 State
+  const [mission3Answers, setMission3Answers] = useState<Record<string, boolean | null>>({
+    peer: null,
+    cool: null,
+    curiosity: null,
+    stress: null,
+    social: null,
+  });
+  const handleMission3Answer = (id: string, answer: boolean) => setMission3Answers((prev) => ({ ...prev, [id]: answer }));
+  const isMission3Complete = Object.values(mission3Answers).every((a) => a !== null);
+
+  // Mission 4 State
+  const [mission4Answers, setMission4Answers] = useState<Record<string, boolean | null>>({
+    m20: null,
+    days: null,
+    weeks: null,
+    everyday: null,
+  });
+  const handleMission4Answer = (id: string, answer: boolean) => setMission4Answers((prev) => ({ ...prev, [id]: answer }));
+  const isMission4Complete = Object.values(mission4Answers).every((a) => a !== null);
+
 
   const nextMission = () => {
     if (mission < 5) {
@@ -28,9 +56,54 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
     }
   };
 
+  const renderQuizCard = (
+    q: { id: string; icon?: string; title: string; desc?: string }, 
+    answers: Record<string, boolean | null>, 
+    handleAnswer: (id: string, ans: boolean) => void
+  ) => (
+    <div key={q.id} className="bg-zinc-800/50 p-4 rounded-xl border border-zinc-700">
+      <div className="flex items-center gap-3 mb-2">
+        {q.icon && <span className="text-2xl">{q.icon}</span>}
+        <h3 className="text-white font-bold text-lg">{q.title}</h3>
+      </div>
+      {q.desc && <p className="text-zinc-400 mb-4">{q.desc}</p>}
+      
+      <div className="flex gap-2 mb-2">
+        <button 
+          onClick={() => handleAnswer(q.id, true)}
+          className={`flex-1 py-2 rounded-lg font-bold text-sm transition-all ${
+            answers[q.id] === true 
+              ? 'bg-emerald-500 text-black shadow-[0_0_10px_rgba(16,185,129,0.5)]' 
+              : 'bg-zinc-700 text-zinc-300 hover:bg-zinc-600'
+          }`}
+        >
+          True
+        </button>
+        <button 
+          onClick={() => handleAnswer(q.id, false)}
+          className={`flex-1 py-2 rounded-lg font-bold text-sm transition-all ${
+            answers[q.id] === false 
+              ? 'bg-red-500 text-white shadow-[0_0_10px_rgba(239,68,68,0.5)]' 
+              : 'bg-zinc-700 text-zinc-300 hover:bg-zinc-600'
+          }`}
+        >
+          False
+        </button>
+      </div>
+      
+      {answers[q.id] !== null && (
+        <div className={`text-sm font-bold animate-in fade-in ${answers[q.id] === true ? 'text-emerald-400' : 'text-amber-400'}`}>
+          {answers[q.id] === true 
+            ? '✅ Correct! This is true.' 
+            : '❌ Actually, this is True!'}
+        </div>
+      )}
+    </div>
+  );
+
   const renderMission1 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-emerald-400 mb-6 flex items-center justify-center gap-3">
+      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-emerald-400 mb-6 flex items-center justify-center gap-3 text-center">
         Mission 1 — What's Really Inside a Cigarette? <span className="text-3xl">🚬</span>
       </h2>
       <div className="flex justify-center mb-6 w-24 h-24 bg-zinc-800/80 rounded-full items-center">
@@ -43,43 +116,7 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
           { id: 'nicotine', title: 'Nicotine', desc: 'Can make your body dependent on cigarettes.' },
           { id: 'tar', title: 'Tar', desc: 'Can damage your lungs.' },
           { id: 'co', title: 'Carbon Monoxide', desc: 'Reduces the oxygen carried in your blood.' },
-        ].map((q) => (
-          <div key={q.id} className="bg-zinc-800/50 p-4 rounded-xl border border-zinc-700">
-            <h3 className="text-white font-bold text-lg mb-1">{q.title}</h3>
-            <p className="text-zinc-400 mb-4">{q.desc}</p>
-            
-            <div className="flex gap-2 mb-2">
-              <button 
-                onClick={() => handleMission1Answer(q.id, true)}
-                className={`flex-1 py-2 rounded-lg font-bold text-sm transition-all ${
-                  mission1Answers[q.id] === true 
-                    ? 'bg-emerald-500 text-black shadow-[0_0_10px_rgba(16,185,129,0.5)]' 
-                    : 'bg-zinc-700 text-zinc-300 hover:bg-zinc-600'
-                }`}
-              >
-                True
-              </button>
-              <button 
-                onClick={() => handleMission1Answer(q.id, false)}
-                className={`flex-1 py-2 rounded-lg font-bold text-sm transition-all ${
-                  mission1Answers[q.id] === false 
-                    ? 'bg-red-500 text-white shadow-[0_0_10px_rgba(239,68,68,0.5)]' 
-                    : 'bg-zinc-700 text-zinc-300 hover:bg-zinc-600'
-                }`}
-              >
-                False
-              </button>
-            </div>
-            
-            {mission1Answers[q.id] !== null && (
-              <div className={`text-sm font-bold animate-in fade-in ${mission1Answers[q.id] === true ? 'text-emerald-400' : 'text-amber-400'}`}>
-                {mission1Answers[q.id] === true 
-                  ? '✅ Correct! This is a real danger.' 
-                  : '❌ Actually, this is True!'}
-              </div>
-            )}
-          </div>
-        ))}
+        ].map(q => renderQuizCard(q, mission1Answers, handleMission1Answer))}
       </div>
       
       <button
@@ -98,42 +135,28 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
 
   const renderMission2 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-emerald-400 mb-8 text-center">
+      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-emerald-400 mb-6 text-center">
         Mission 2 — What Smoking Does to Your Body
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-xl mb-8 text-left">
-        <div className="flex gap-4 items-start bg-zinc-800/50 p-4 rounded-xl border border-zinc-700">
-          <span className="text-3xl mt-1">😮‍💨</span>
-          <div>
-            <h3 className="text-white font-bold text-lg mb-1">Breathing</h3>
-            <p className="text-zinc-400 text-sm">Smoking can make breathing harder.</p>
-          </div>
-        </div>
-        <div className="flex gap-4 items-start bg-zinc-800/50 p-4 rounded-xl border border-zinc-700">
-          <span className="text-3xl mt-1">🫀</span>
-          <div>
-            <h3 className="text-white font-bold text-lg mb-1">Heart</h3>
-            <p className="text-zinc-400 text-sm">Smoking increases the risk of heart disease.</p>
-          </div>
-        </div>
-        <div className="flex gap-4 items-start bg-zinc-800/50 p-4 rounded-xl border border-zinc-700">
-          <span className="text-3xl mt-1">🧠</span>
-          <div>
-            <h3 className="text-white font-bold text-lg mb-1">Focus</h3>
-            <p className="text-zinc-400 text-sm">Nicotine dependence can affect concentration.</p>
-          </div>
-        </div>
-        <div className="flex gap-4 items-start bg-zinc-800/50 p-4 rounded-xl border border-zinc-700">
-          <span className="text-3xl mt-1">🏃</span>
-          <div>
-            <h3 className="text-white font-bold text-lg mb-1">Energy</h3>
-            <p className="text-zinc-400 text-sm">Smoking can reduce stamina.</p>
-          </div>
-        </div>
+      <p className="text-white mb-6 font-bold text-lg">True or False?</p>
+      
+      <div className="flex flex-col gap-4 w-full max-w-lg mb-8 text-left">
+        {[
+          { id: 'breathing', icon: '😮‍💨', title: 'Breathing', desc: 'Smoking can make breathing harder.' },
+          { id: 'heart', icon: '🫀', title: 'Heart', desc: 'Smoking increases the risk of heart disease.' },
+          { id: 'focus', icon: '🧠', title: 'Focus', desc: 'Nicotine dependence can affect concentration.' },
+          { id: 'energy', icon: '🏃', title: 'Energy', desc: 'Smoking can reduce stamina.' },
+        ].map(q => renderQuizCard(q, mission2Answers, handleMission2Answer))}
       </div>
+      
       <button
         onClick={nextMission}
-        className="bg-emerald-500 hover:bg-emerald-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(16,185,129,0.3)] flex items-center gap-2"
+        disabled={!isMission2Complete}
+        className={`bg-emerald-500 hover:bg-emerald-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all flex items-center gap-2 ${
+          isMission2Complete
+            ? 'shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:scale-105'
+            : 'bg-zinc-800 text-zinc-500 cursor-not-allowed'
+        }`}
       >
         Next <span className="material-symbols-outlined">arrow_forward</span>
       </button>
@@ -142,42 +165,29 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
 
   const renderMission3 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-emerald-400 mb-2 text-center">
+      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-emerald-400 mb-6 text-center">
         Mission 3 — Why Do Teens Smoke?
       </h2>
       <p className="text-white font-bold text-lg mb-6 text-center">
-        Which situation feels most familiar to you?
+        Are these common reasons teens smoke? (True or False)
       </p>
       
-      <div className="flex flex-col gap-3 w-full max-w-md mb-8">
+      <div className="flex flex-col gap-4 w-full max-w-lg mb-8 text-left">
         {[
-          { icon: '👥', text: 'Peer pressure' },
-          { icon: '😎', text: 'Wanting to look cool' },
-          { icon: '🤔', text: 'Curiosity' },
-          { icon: '😫', text: 'Stress' },
-          { icon: '📱', text: 'Social environment' },
-        ].map((item) => (
-          <button
-            key={item.text}
-            onClick={() => setSelectedReason(item.text)}
-            className={`flex items-center gap-4 p-4 rounded-xl border transition-all duration-300 ${
-              selectedReason === item.text
-                ? 'bg-emerald-500/20 border-emerald-500 scale-[1.02] shadow-[0_0_15px_rgba(16,185,129,0.2)]'
-                : 'bg-zinc-800/80 border-zinc-700 hover:border-zinc-500 hover:bg-zinc-800'
-            }`}
-          >
-            <span className="text-2xl">{item.icon}</span>
-            <span className="text-white font-bold">{item.text}</span>
-          </button>
-        ))}
+          { id: 'peer', icon: '👥', title: 'Peer pressure' },
+          { id: 'cool', icon: '😎', title: 'Wanting to look cool' },
+          { id: 'curiosity', icon: '🤔', title: 'Curiosity' },
+          { id: 'stress', icon: '😫', title: 'Stress' },
+          { id: 'social', icon: '📱', title: 'Social environment' },
+        ].map(q => renderQuizCard(q, mission3Answers, handleMission3Answer))}
       </div>
       
       <button
         onClick={nextMission}
-        disabled={!selectedReason}
+        disabled={!isMission3Complete}
         className={`font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all flex items-center gap-2 ${
-          selectedReason
-            ? 'bg-emerald-500 hover:bg-emerald-400 text-black shadow-[0_0_20px_rgba(16,185,129,0.3)]'
+          isMission3Complete
+            ? 'bg-emerald-500 hover:bg-emerald-400 text-black shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:scale-105'
             : 'bg-zinc-800 text-zinc-500 cursor-not-allowed'
         }`}
       >
@@ -188,57 +198,30 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
 
   const renderMission4 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-emerald-400 mb-8 text-center">
+      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-emerald-400 mb-6 text-center">
         Mission 4 — Why Quitting Is Worth It
       </h2>
-      <div className="relative w-full max-w-lg mb-10 pl-6 text-left">
-        {/* Vertical line for timeline */}
-        <div className="absolute left-[39px] top-4 bottom-4 w-0.5 bg-zinc-700"></div>
-        
-        <div className="flex gap-6 items-start relative mb-8">
-          <div className="w-12 h-12 rounded-full bg-zinc-800 border-2 border-emerald-500 flex items-center justify-center shrink-0 z-10 text-xl">
-            💗
-          </div>
-          <div className="pt-2">
-            <h3 className="text-white font-bold text-lg">20 minutes</h3>
-            <p className="text-zinc-400">Your heart begins adjusting.</p>
-          </div>
-        </div>
+      <p className="text-white font-bold text-lg mb-6 text-center">
+        Is it True or False?
+      </p>
 
-        <div className="flex gap-6 items-start relative mb-8">
-          <div className="w-12 h-12 rounded-full bg-zinc-800 border-2 border-emerald-500 flex items-center justify-center shrink-0 z-10 text-xl">
-            🌬️
-          </div>
-          <div className="pt-2">
-            <h3 className="text-white font-bold text-lg">Days–Weeks</h3>
-            <p className="text-zinc-400">Breathing and circulation begin improving.</p>
-          </div>
-        </div>
-
-        <div className="flex gap-6 items-start relative mb-8">
-          <div className="w-12 h-12 rounded-full bg-zinc-800 border-2 border-emerald-500 flex items-center justify-center shrink-0 z-10 text-xl">
-            🏃
-          </div>
-          <div className="pt-2">
-            <h3 className="text-white font-bold text-lg">Weeks–Months</h3>
-            <p className="text-zinc-400">You may feel fitter and more energetic.</p>
-          </div>
-        </div>
-
-        <div className="flex gap-6 items-start relative">
-          <div className="w-12 h-12 rounded-full bg-zinc-800 border-2 border-emerald-500 flex items-center justify-center shrink-0 z-10 text-xl">
-            💰
-          </div>
-          <div className="pt-2">
-            <h3 className="text-white font-bold text-lg">Every day</h3>
-            <p className="text-zinc-400">You save money.</p>
-          </div>
-        </div>
+      <div className="flex flex-col gap-4 w-full max-w-lg mb-8 text-left">
+        {[
+          { id: 'm20', icon: '💗', title: 'After 20 minutes', desc: 'Your heart begins adjusting.' },
+          { id: 'days', icon: '🌬️', title: 'Days to Weeks', desc: 'Breathing and circulation begin improving.' },
+          { id: 'weeks', icon: '🏃', title: 'Weeks to Months', desc: 'You may feel fitter and more energetic.' },
+          { id: 'everyday', icon: '💰', title: 'Every day', desc: 'You save money.' },
+        ].map(q => renderQuizCard(q, mission4Answers, handleMission4Answer))}
       </div>
 
       <button
         onClick={nextMission}
-        className="bg-emerald-500 hover:bg-emerald-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-8 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(16,185,129,0.3)] flex items-center gap-2"
+        disabled={!isMission4Complete}
+        className={`font-['Montserrat'] font-bold text-lg py-3 px-8 rounded-full transition-all flex items-center gap-2 ${
+          isMission4Complete
+            ? 'bg-emerald-500 hover:bg-emerald-400 text-black shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:scale-105'
+            : 'bg-zinc-800 text-zinc-500 cursor-not-allowed'
+        }`}
       >
         Next <span className="material-symbols-outlined">arrow_forward</span>
       </button>
@@ -321,3 +304,4 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
     </div>
   );
 };
+
