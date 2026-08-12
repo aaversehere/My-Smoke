@@ -15,7 +15,7 @@ export const GuidelinesScreen: React.FC<GuidelinesScreenProps> = ({ onReady }) =
       <div className="flex-1 w-full max-w-3xl py-10 md:py-16 flex flex-col justify-center">
         
         <div className="mb-8 md:mb-10 text-center md:text-left">
-          <p className="text-green-600 dark:text-green-400 font-bold text-xs uppercase tracking-wider mb-2 font-['Montserrat']">
+          <p className="text-sage-600 dark:text-sage-400 font-bold text-xs uppercase tracking-wider mb-2 font-['Montserrat']">
             GUIDELINES
           </p>
           <h2 className="font-['Montserrat'] font-extrabold text-3xl md:text-4xl text-zinc-900 dark:text-white mb-2">
@@ -29,7 +29,7 @@ export const GuidelinesScreen: React.FC<GuidelinesScreenProps> = ({ onReady }) =
         <div className="flex flex-col gap-4 mb-8 md:mb-10">
           {/* Card 1 */}
           <div className="flex gap-4 items-start p-4 md:p-6 bg-white dark:bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-xl">
-            <div className="w-12 h-12 shrink-0 bg-green-500/20 text-green-600 dark:text-green-400 rounded-xl flex items-center justify-center">
+            <div className="w-12 h-12 shrink-0 bg-sage-500/20 text-sage-600 dark:text-sage-400 rounded-xl flex items-center justify-center">
               <span className="material-symbols-outlined">lock</span>
             </div>
             <div>
@@ -42,7 +42,7 @@ export const GuidelinesScreen: React.FC<GuidelinesScreenProps> = ({ onReady }) =
 
           {/* Card 2 */}
           <div className="flex gap-4 items-start p-4 md:p-6 bg-white dark:bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-xl">
-            <div className="w-12 h-12 shrink-0 bg-green-500/20 text-green-600 dark:text-green-400 rounded-xl flex items-center justify-center">
+            <div className="w-12 h-12 shrink-0 bg-sage-500/20 text-sage-600 dark:text-sage-400 rounded-xl flex items-center justify-center">
               <span className="material-symbols-outlined">tune</span>
             </div>
             <div>
@@ -60,7 +60,7 @@ export const GuidelinesScreen: React.FC<GuidelinesScreenProps> = ({ onReady }) =
             <div className="relative flex items-center shrink-0">
               <input
                 type="checkbox"
-                className="peer appearance-none w-5 h-5 border-2 border-zinc-400 dark:border-zinc-600 rounded cursor-pointer checked:bg-green-500 checked:border-green-500 transition-all"
+                className="peer appearance-none w-5 h-5 border-2 border-zinc-400 dark:border-zinc-600 rounded cursor-pointer checked:bg-sage-500 checked:border-sage-500 transition-all"
                 checked={understood}
                 onChange={(e) => setUnderstood(e.target.checked)}
               />
@@ -78,7 +78,7 @@ export const GuidelinesScreen: React.FC<GuidelinesScreenProps> = ({ onReady }) =
             <div className="relative flex items-center shrink-0">
               <input
                 type="checkbox"
-                className="peer appearance-none w-5 h-5 border-2 border-zinc-400 dark:border-zinc-600 rounded cursor-pointer checked:bg-green-500 checked:border-green-500 transition-all"
+                className="peer appearance-none w-5 h-5 border-2 border-zinc-400 dark:border-zinc-600 rounded cursor-pointer checked:bg-sage-500 checked:border-sage-500 transition-all"
                 checked={agreed}
                 onChange={(e) => setAgreed(e.target.checked)}
               />
@@ -97,7 +97,7 @@ export const GuidelinesScreen: React.FC<GuidelinesScreenProps> = ({ onReady }) =
           disabled={!isReady}
           className={`w-full py-4 rounded-xl font-bold font-['Montserrat'] flex items-center justify-center gap-2 transition-all ${
             isReady
-              ? 'bg-green-500 hover:bg-green-400 text-black shadow-[0_0_20px_rgba(34,197,94,0.3)] cursor-pointer'
+              ? 'bg-sage-500 hover:bg-sage-400 text-black shadow-[0_0_20px_rgba(92,131,88,0.3)] cursor-pointer'
               : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 cursor-not-allowed'
           }`}
         >

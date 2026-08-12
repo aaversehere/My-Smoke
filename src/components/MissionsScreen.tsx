@@ -73,7 +73,7 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
           onClick={() => handleAnswer(q.id, true)}
           className={`flex-1 py-2 rounded-lg font-bold text-sm transition-all ${
             answers[q.id] === true 
-              ? 'bg-green-500 text-black shadow-[0_0_10px_rgba(34,197,94,0.5)]' 
+              ? 'bg-sage-500 text-black shadow-[0_0_10px_rgba(92,131,88,0.5)]' 
               : 'bg-zinc-200 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-600'
           }`}
         >
@@ -92,7 +92,7 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
       </div>
       
       {answers[q.id] !== null && (
-        <div className={`text-sm font-bold animate-in fade-in ${answers[q.id] === true ? 'text-green-600 dark:text-green-400' : 'text-amber-400'}`}>
+        <div className={`text-sm font-bold animate-in fade-in ${answers[q.id] === true ? 'text-sage-600 dark:text-sage-400' : 'text-amber-400'}`}>
           {answers[q.id] === true 
             ? '✅ Correct! This is true.' 
             : '❌ Actually, this is True!'}
@@ -103,11 +103,11 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
 
   const renderMission1 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-green-600 dark:text-green-400 mb-6 flex items-center justify-center gap-3 text-center">
+      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-sage-600 dark:text-sage-400 mb-6 flex items-center justify-center gap-3 text-center">
         Mission 1 — What's Really Inside a Cigarette? <span className="text-3xl">🚬</span>
       </h2>
       <div className="flex justify-center mb-6 w-24 h-24 bg-zinc-100 dark:bg-zinc-800/80 rounded-full items-center">
-         <span className="material-symbols-outlined text-5xl text-green-500">pulmonology</span>
+         <span className="material-symbols-outlined text-5xl text-sage-500">pulmonology</span>
       </div>
       <p className="text-zinc-900 dark:text-white mb-6 font-bold text-lg">True or False?</p>
       
@@ -124,7 +124,7 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
         disabled={!isMission1Complete}
         className={`font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all flex items-center justify-center gap-2 ${
           isMission1Complete
-            ? 'bg-green-500 hover:bg-green-400 text-black shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:scale-105'
+            ? 'bg-sage-500 hover:bg-sage-400 text-black shadow-[0_0_20px_rgba(92,131,88,0.3)] hover:scale-105'
             : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 cursor-not-allowed'
         }`}
       >
@@ -135,7 +135,7 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
 
   const renderMission2 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-green-600 dark:text-green-400 mb-6 text-center">
+      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-sage-600 dark:text-sage-400 mb-6 text-center">
         Mission 2 — What Smoking Does to Your Body
       </h2>
       <p className="text-zinc-900 dark:text-white mb-6 font-bold text-lg">True or False?</p>
@@ -152,9 +152,9 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
       <button
         onClick={nextMission}
         disabled={!isMission2Complete}
-        className={`bg-green-500 hover:bg-green-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all flex items-center gap-2 ${
+        className={`bg-sage-500 hover:bg-sage-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all flex items-center gap-2 ${
           isMission2Complete
-            ? 'shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:scale-105'
+            ? 'shadow-[0_0_20px_rgba(92,131,88,0.3)] hover:scale-105'
             : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 cursor-not-allowed'
         }`}
       >
@@ -165,7 +165,7 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
 
   const renderMission3 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-green-600 dark:text-green-400 mb-6 text-center">
+      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-sage-600 dark:text-sage-400 mb-6 text-center">
         Mission 3 — Why Do Teens Smoke?
       </h2>
       <p className="text-zinc-900 dark:text-white font-bold text-lg mb-6 text-center">
@@ -187,7 +187,7 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
         disabled={!isMission3Complete}
         className={`font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all flex items-center gap-2 ${
           isMission3Complete
-            ? 'bg-green-500 hover:bg-green-400 text-black shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:scale-105'
+            ? 'bg-sage-500 hover:bg-sage-400 text-black shadow-[0_0_20px_rgba(92,131,88,0.3)] hover:scale-105'
             : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 cursor-not-allowed'
         }`}
       >
@@ -198,7 +198,7 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
 
   const renderMission4 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-green-600 dark:text-green-400 mb-6 text-center">
+      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-sage-600 dark:text-sage-400 mb-6 text-center">
         Mission 4 — Why Quitting Is Worth It
       </h2>
       <p className="text-zinc-900 dark:text-white font-bold text-lg mb-6 text-center">
@@ -219,7 +219,7 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
         disabled={!isMission4Complete}
         className={`font-['Montserrat'] font-bold text-lg py-3 px-8 rounded-full transition-all flex items-center gap-2 ${
           isMission4Complete
-            ? 'bg-green-500 hover:bg-green-400 text-black shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:scale-105'
+            ? 'bg-sage-500 hover:bg-sage-400 text-black shadow-[0_0_20px_rgba(92,131,88,0.3)] hover:scale-105'
             : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 cursor-not-allowed'
         }`}
       >
@@ -230,35 +230,35 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
 
   const renderMission5 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-green-600 dark:text-green-400 mb-8 text-center flex flex-col items-center gap-2">
+      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-sage-600 dark:text-sage-400 mb-8 text-center flex flex-col items-center gap-2">
         Proactive Coping
         <span className="text-zinc-900 dark:text-white text-xl">THINK AHEAD 🧠</span>
       </h2>
       
       <div className="w-full max-w-lg mb-8 text-left bg-zinc-100 dark:bg-zinc-800/50 p-6 rounded-2xl border border-zinc-300 dark:border-zinc-700">
-        <h3 className="text-green-600 dark:text-green-400 font-bold text-lg mb-2">If this happens...</h3>
+        <h3 className="text-sage-600 dark:text-sage-400 font-bold text-lg mb-2">If this happens...</h3>
         <p className="text-zinc-900 dark:text-white text-xl mb-6">My friends offer me a cigarette.</p>
         
-        <h3 className="text-green-600 dark:text-green-400 font-bold text-lg mb-4">I will...</h3>
+        <h3 className="text-sage-600 dark:text-sage-400 font-bold text-lg mb-4">I will...</h3>
         <ul className="flex flex-col gap-3">
           <li className="flex items-center gap-3 text-zinc-200">
-            <span className="material-symbols-outlined text-green-500">check_circle</span>
+            <span className="material-symbols-outlined text-sage-500">check_circle</span>
             Say "No, thanks."
           </li>
           <li className="flex items-center gap-3 text-zinc-200">
-            <span className="material-symbols-outlined text-green-500">check_circle</span>
+            <span className="material-symbols-outlined text-sage-500">check_circle</span>
             Move away for a while.
           </li>
           <li className="flex items-center gap-3 text-zinc-200">
-            <span className="material-symbols-outlined text-green-500">check_circle</span>
+            <span className="material-symbols-outlined text-sage-500">check_circle</span>
             Drink water.
           </li>
           <li className="flex items-center gap-3 text-zinc-200">
-            <span className="material-symbols-outlined text-green-500">check_circle</span>
+            <span className="material-symbols-outlined text-sage-500">check_circle</span>
             Talk to a friend.
           </li>
           <li className="flex items-center gap-3 text-zinc-200">
-            <span className="material-symbols-outlined text-green-500">check_circle</span>
+            <span className="material-symbols-outlined text-sage-500">check_circle</span>
             Do another activity.
           </li>
         </ul>
@@ -270,7 +270,7 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
 
       <button
         onClick={nextMission}
-        className="bg-green-500 hover:bg-green-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-8 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(34,197,94,0.3)] flex items-center gap-2"
+        className="bg-sage-500 hover:bg-sage-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-8 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(92,131,88,0.3)] flex items-center gap-2"
       >
         Start Assessment <span className="material-symbols-outlined">arrow_forward</span>
       </button>
@@ -286,7 +286,7 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
             <div 
               key={m} 
               className={`h-2 rounded-full transition-all duration-300 ${
-                m === mission ? 'w-10 bg-green-400' : m < mission ? 'w-3 bg-green-500/50' : 'w-3 bg-zinc-100 dark:bg-zinc-800'
+                m === mission ? 'w-10 bg-sage-400' : m < mission ? 'w-3 bg-sage-500/50' : 'w-3 bg-zinc-100 dark:bg-zinc-800'
               }`}
             />
           ))}

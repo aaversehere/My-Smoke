@@ -28,7 +28,7 @@ export const MiniGameScreen: React.FC<MiniGameScreenProps> = ({ onComplete }) =>
         
         {!showResult ? (
           <div className="flex flex-col items-center animate-in fade-in zoom-in duration-500">
-            <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-green-600 dark:text-green-400 mb-2">
+            <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-sage-600 dark:text-sage-400 mb-2">
               Choose Your Power
             </h2>
             <p className="text-zinc-700 dark:text-zinc-300 text-lg mb-8">
@@ -42,7 +42,7 @@ export const MiniGameScreen: React.FC<MiniGameScreenProps> = ({ onComplete }) =>
                   onClick={() => handleSelect(power.id)}
                   className={`flex items-center gap-4 p-4 rounded-2xl border transition-all duration-300 ${
                     selectedPower === power.id
-                      ? 'bg-green-500/20 border-green-500 scale-105 shadow-[0_0_20px_rgba(34,197,94,0.3)]'
+                      ? 'bg-sage-500/20 border-sage-500 scale-105 shadow-[0_0_20px_rgba(92,131,88,0.3)]'
                       : 'bg-zinc-100 dark:bg-zinc-800/50 border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:bg-zinc-800 hover:border-zinc-400 dark:border-zinc-600 hover:scale-[1.02]'
                   }`}
                 >
@@ -54,7 +54,7 @@ export const MiniGameScreen: React.FC<MiniGameScreenProps> = ({ onComplete }) =>
           </div>
         ) : (
           <div className="flex flex-col items-center gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="w-24 h-24 bg-green-500/20 rounded-full flex items-center justify-center mb-2 animate-bounce">
+            <div className="w-24 h-24 bg-sage-500/20 rounded-full flex items-center justify-center mb-2 animate-bounce">
               <span className="text-5xl">
                 {POWERS.find((p) => p.id === selectedPower)?.icon}
               </span>
@@ -67,7 +67,7 @@ export const MiniGameScreen: React.FC<MiniGameScreenProps> = ({ onComplete }) =>
             </p>
             <button
               onClick={onComplete}
-              className="mt-6 bg-green-500 hover:bg-green-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-8 rounded-full transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
+              className="mt-6 bg-sage-500 hover:bg-sage-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-8 rounded-full transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
             >
               Start Assessment
               <span className="material-symbols-outlined">arrow_forward</span>

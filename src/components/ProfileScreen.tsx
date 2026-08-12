@@ -33,7 +33,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
       case 0:
         return (
           <div className="flex flex-col items-center animate-in fade-in zoom-in duration-500">
-            <h2 className="font-['Montserrat'] font-bold text-3xl md:text-4xl text-green-600 dark:text-green-400 mb-4">
+            <h2 className="font-['Montserrat'] font-bold text-3xl md:text-4xl text-sage-600 dark:text-sage-400 mb-4">
               Tell Us About Yourself 👋
             </h2>
             <div className="bg-zinc-100 dark:bg-zinc-800/50 rounded-xl p-6 mb-8 w-full border border-zinc-300 dark:border-zinc-700">
@@ -42,7 +42,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
             </div>
             <button
               onClick={nextStep}
-              className="bg-green-500 hover:bg-green-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-8 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(34,197,94,0.3)] flex items-center gap-2"
+              className="bg-sage-500 hover:bg-sage-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-8 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(92,131,88,0.3)] flex items-center gap-2"
             >
               Continue
               <span className="material-symbols-outlined">arrow_forward</span>
@@ -60,7 +60,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-green-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
+                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -79,7 +79,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-green-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
+                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -98,7 +98,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-green-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
+                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -117,7 +117,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-green-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
+                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -136,7 +136,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-green-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
+                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -155,7 +155,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 type="number"
                 value={smokeAgeInput}
                 onChange={(e) => setSmokeAgeInput(e.target.value)}
-                className="bg-white dark:bg-zinc-900 border-2 border-zinc-300 dark:border-zinc-700 focus:border-green-500 rounded-xl px-4 py-3 text-zinc-900 dark:text-white text-xl text-center w-24 outline-none transition-colors"
+                className="bg-white dark:bg-zinc-900 border-2 border-zinc-300 dark:border-zinc-700 focus:border-sage-500 rounded-xl px-4 py-3 text-zinc-900 dark:text-white text-xl text-center w-24 outline-none transition-colors"
                 placeholder="Age"
                 min="5"
                 max="30"
@@ -167,7 +167,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
               disabled={!smokeAgeInput}
               className={`font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all flex items-center gap-2 ${
                 smokeAgeInput 
-                  ? 'bg-green-500 hover:bg-green-400 text-black shadow-[0_0_20px_rgba(34,197,94,0.3)]'
+                  ? 'bg-sage-500 hover:bg-sage-400 text-black shadow-[0_0_20px_rgba(92,131,88,0.3)]'
                   : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 cursor-not-allowed'
               }`}
             >
@@ -187,7 +187,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="flex-1 bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-green-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 py-6 rounded-xl font-bold text-xl transition-all hover:scale-[1.02]"
+                  className="flex-1 bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 py-6 rounded-xl font-bold text-xl transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -198,7 +198,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
       case 8:
         return (
           <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-500 w-full">
-            <h2 className="font-['Montserrat'] font-bold text-3xl md:text-4xl text-green-600 dark:text-green-400 mb-4 flex items-center gap-3">
+            <h2 className="font-['Montserrat'] font-bold text-3xl md:text-4xl text-sage-600 dark:text-sage-400 mb-4 flex items-center gap-3">
               <span className="text-4xl">🎉</span> Profile Complete!
             </h2>
             <p className="text-zinc-700 dark:text-zinc-300 text-lg md:text-xl mb-8 text-center max-w-md">
@@ -206,11 +206,11 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
             </p>
             <div className="w-full max-w-sm bg-zinc-100 dark:bg-zinc-800/50 rounded-xl p-6 mb-8 border border-zinc-300 dark:border-zinc-700">
               <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-2 uppercase tracking-wider font-bold">Progress:</p>
-              <p className="text-green-600 dark:text-green-400 text-2xl font-bold font-['Montserrat']">20% COMPLETE</p>
+              <p className="text-sage-600 dark:text-sage-400 text-2xl font-bold font-['Montserrat']">20% COMPLETE</p>
             </div>
             <button
               onClick={nextStep}
-              className="bg-green-500 hover:bg-green-400 text-black font-['Montserrat'] font-bold text-lg py-4 px-10 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(34,197,94,0.3)] flex items-center gap-2"
+              className="bg-sage-500 hover:bg-sage-400 text-black font-['Montserrat'] font-bold text-lg py-4 px-10 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(92,131,88,0.3)] flex items-center gap-2"
             >
               START THE MODULE
               <span className="material-symbols-outlined">arrow_forward</span>
@@ -233,7 +233,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
               <div 
                 key={s} 
                 className={`h-1.5 rounded-full transition-all duration-300 ${
-                  s === step ? 'w-8 bg-green-400' : s < step ? 'w-2 bg-green-500/50' : 'w-2 bg-zinc-100 dark:bg-zinc-800'
+                  s === step ? 'w-8 bg-sage-400' : s < step ? 'w-2 bg-sage-500/50' : 'w-2 bg-zinc-100 dark:bg-zinc-800'
                 }`}
               />
             ))}

@@ -56,8 +56,8 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
       {/* Top Header info */}
       <div className="w-full flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
-          <span className="font-['Montserrat'] font-bold text-green-600 dark:text-green-400 text-sm tracking-wider uppercase">
+          <div className="w-2.5 h-2.5 rounded-full bg-sage-400 animate-pulse" />
+          <span className="font-['Montserrat'] font-bold text-sage-600 dark:text-sage-400 text-sm tracking-wider uppercase">
             Quest Progress
           </span>
         </div>
@@ -69,22 +69,22 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
       {/* Progress Bar */}
       <div className="w-full bg-zinc-100 dark:bg-zinc-800 rounded-full h-2.5 mb-8 overflow-hidden flex relative border border-zinc-300 dark:border-zinc-700/50">
         <div 
-          className="bg-green-500 h-full rounded-full transition-all duration-[600ms] ease-out shadow-[0_0_12px_rgba(34,197,94,0.5)]" 
+          className="bg-sage-500 h-full rounded-full transition-all duration-[600ms] ease-out shadow-[0_0_12px_rgba(92,131,88,0.5)]" 
           style={{ width: `${progressPercent}%` }}
         />
       </div>
 
       {/* Center Question Card */}
       <div className="flex-grow flex flex-col justify-center items-center relative z-10 w-full">
-        <div className="absolute inset-0 bg-green-500/10 rounded-[32px] -z-10 blur-2xl opacity-60 pointer-events-none" />
+        <div className="absolute inset-0 bg-sage-500/10 rounded-[32px] -z-10 blur-2xl opacity-60 pointer-events-none" />
         
         <div className="bg-white dark:bg-zinc-900 rounded-[32px] shadow-2xl w-full p-6 transition-transform duration-300 transform scale-100 mb-4 relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
           {/* Top accent line */}
-          <div className="absolute top-0 left-0 w-full h-1.5 bg-green-500" />
+          <div className="absolute top-0 left-0 w-full h-1.5 bg-sage-500" />
           
           {/* Category Icon */}
-          <div className="w-12 h-12 bg-green-500/10 border border-green-500/30 text-green-600 dark:text-green-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm rotate-3">
-            <span className="material-symbols-outlined text-green-600 dark:text-green-400 text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>
+          <div className="w-12 h-12 bg-sage-500/10 border border-sage-500/30 text-sage-600 dark:text-sage-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm rotate-3">
+            <span className="material-symbols-outlined text-sage-600 dark:text-sage-400 text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>
               {currentQuestion.icon || 'psychology'}
             </span>
           </div>
@@ -101,14 +101,14 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
               onClick={() => handleSelect(1)}
               className={`emoji-btn relative flex flex-col items-center justify-center gap-2 p-4 rounded-2xl transition-all duration-200 active:scale-95 group focus:outline-none cursor-pointer ${
                 localSelected === 1
-                  ? 'bg-green-500/20 border-2 border-green-500 shadow-lg scale-105 z-10 ring-2 ring-green-500/40'
+                  ? 'bg-sage-500/20 border-2 border-sage-500 shadow-lg scale-105 z-10 ring-2 ring-sage-500/40'
                   : 'bg-zinc-100 dark:bg-zinc-800/80 hover:bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700/60'
               }`}
             >
               <span className={`text-4xl transition-transform duration-300 ${localSelected === 1 ? 'scale-125' : 'group-hover:scale-110'}`}>
                 😕
               </span>
-              <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 1 ? 'text-green-300 font-bold' : 'text-zinc-600 dark:text-zinc-400'}`}>
+              <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 1 ? 'text-sage-300 font-bold' : 'text-zinc-600 dark:text-zinc-400'}`}>
                 Not true at all
               </span>
             </button>
@@ -118,14 +118,14 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
               onClick={() => handleSelect(2)}
               className={`emoji-btn relative flex flex-col items-center justify-center gap-2 p-4 rounded-2xl transition-all duration-200 active:scale-95 group focus:outline-none cursor-pointer ${
                 localSelected === 2
-                  ? 'bg-green-500/20 border-2 border-green-500 shadow-lg scale-105 z-10 ring-2 ring-green-500/40'
+                  ? 'bg-sage-500/20 border-2 border-sage-500 shadow-lg scale-105 z-10 ring-2 ring-sage-500/40'
                   : 'bg-zinc-100 dark:bg-zinc-800/80 hover:bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700/60'
               }`}
             >
               <span className={`text-4xl transition-transform duration-300 ${localSelected === 2 ? 'scale-125' : 'group-hover:scale-110'}`}>
                 🙂
               </span>
-              <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 2 ? 'text-green-300 font-bold' : 'text-zinc-600 dark:text-zinc-400'}`}>
+              <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 2 ? 'text-sage-300 font-bold' : 'text-zinc-600 dark:text-zinc-400'}`}>
                 Barely true
               </span>
             </button>
@@ -135,14 +135,14 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
               onClick={() => handleSelect(3)}
               className={`emoji-btn relative flex flex-col items-center justify-center gap-2 p-4 rounded-2xl transition-all duration-200 active:scale-95 group focus:outline-none cursor-pointer ${
                 localSelected === 3
-                  ? 'bg-green-500/20 border-2 border-green-500 shadow-lg scale-105 z-10 ring-2 ring-green-500/40'
+                  ? 'bg-sage-500/20 border-2 border-sage-500 shadow-lg scale-105 z-10 ring-2 ring-sage-500/40'
                   : 'bg-zinc-100 dark:bg-zinc-800/80 hover:bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700/60'
               }`}
             >
               <span className={`text-4xl transition-transform duration-300 ${localSelected === 3 ? 'scale-125' : 'group-hover:scale-110'}`}>
                 😊
               </span>
-              <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 3 ? 'text-green-300 font-bold' : 'text-zinc-600 dark:text-zinc-400'}`}>
+              <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 3 ? 'text-sage-300 font-bold' : 'text-zinc-600 dark:text-zinc-400'}`}>
                 Somewhat true
               </span>
             </button>
@@ -152,14 +152,14 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
               onClick={() => handleSelect(4)}
               className={`emoji-btn relative flex flex-col items-center justify-center gap-2 p-4 rounded-2xl transition-all duration-200 active:scale-95 group focus:outline-none cursor-pointer ${
                 localSelected === 4
-                  ? 'bg-green-500/20 border-2 border-green-500 shadow-lg scale-105 z-10 ring-2 ring-green-500/40'
+                  ? 'bg-sage-500/20 border-2 border-sage-500 shadow-lg scale-105 z-10 ring-2 ring-sage-500/40'
                   : 'bg-zinc-100 dark:bg-zinc-800/80 hover:bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700/60'
               }`}
             >
               <span className={`text-4xl transition-transform duration-300 ${localSelected === 4 ? 'scale-125' : 'group-hover:scale-110'}`}>
                 💪
               </span>
-              <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 4 ? 'text-green-300 font-bold' : 'text-zinc-600 dark:text-zinc-400'}`}>
+              <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 4 ? 'text-sage-300 font-bold' : 'text-zinc-600 dark:text-zinc-400'}`}>
                 Completely true
               </span>
             </button>
@@ -171,7 +171,7 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
           <button 
             disabled={currentQuestionIndex === 0}
             onClick={onPrev}
-            className="flex items-center gap-1 hover:text-green-600 dark:text-green-400 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer transition-colors"
+            className="flex items-center gap-1 hover:text-sage-600 dark:text-sage-400 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer transition-colors"
           >
             <span className="material-symbols-outlined text-sm">arrow_back</span>
             Previous
@@ -179,7 +179,7 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
 
           <button 
             onClick={onCompleteQuest}
-            className="text-green-600 dark:text-green-400 hover:text-green-300 underline cursor-pointer transition-colors"
+            className="text-sage-600 dark:text-sage-400 hover:text-sage-300 underline cursor-pointer transition-colors"
           >
             View Quest Snapshot ➔
           </button>
@@ -193,7 +193,7 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
           disabled={!localSelected || isSaving}
           className={`w-full h-14 font-['Montserrat'] font-bold text-base rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-sm ${
             localSelected && !isSaving
-              ? 'bg-green-500 text-black font-extrabold shadow-[0_8px_20px_rgba(34,197,94,0.3)] hover:bg-green-400 hover:scale-[0.99] active:scale-95 cursor-pointer'
+              ? 'bg-sage-500 text-black font-extrabold shadow-[0_8px_20px_rgba(92,131,88,0.3)] hover:bg-sage-400 hover:scale-[0.99] active:scale-95 cursor-pointer'
               : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 opacity-60 cursor-not-allowed border border-zinc-300 dark:border-zinc-700/50'
           }`}
         >

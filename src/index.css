@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+@theme {
+  --color-sage-50: #f4f6f4;
+  --color-sage-100: #e4ebe3;
+  --color-sage-200: #c9d9c7;
+  --color-sage-300: #a3bfa0;
+  --color-sage-400: #7ba277;
+  --color-sage-500: #5c8358;
+  --color-sage-600: #466743;
+  --color-sage-700: #395337;
+  --color-sage-800: #2f432d;
+  --color-sage-900: #273726;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @layer base {
@@ -29,7 +42,7 @@
 
 /* Background gradient for journey - Elegant Dark Glow */
 .journey-gradient {
-  @apply bg-[radial-gradient(circle_at_10%_20%,rgba(34,197,94,0.05)_0%,transparent_45%),radial-gradient(circle_at_90%_80%,rgba(59,130,246,0.04)_0%,transparent_45%),#f8fafc] dark:bg-[radial-gradient(circle_at_10%_20%,rgba(34,197,94,0.08)_0%,transparent_45%),radial-gradient(circle_at_90%_80%,rgba(59,130,246,0.06)_0%,transparent_45%),#09090b];
+  @apply bg-[radial-gradient(circle_at_10%_20%,rgba(92,131,88,0.05)_0%,transparent_45%),radial-gradient(circle_at_90%_80%,rgba(59,130,246,0.04)_0%,transparent_45%),#f8fafc] dark:bg-[radial-gradient(circle_at_10%_20%,rgba(92,131,88,0.08)_0%,transparent_45%),radial-gradient(circle_at_90%_80%,rgba(59,130,246,0.06)_0%,transparent_45%),#09090b];
 }
 
 /* Custom Theme Token Utilities */
