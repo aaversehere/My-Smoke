@@ -1,0 +1,6 @@
+{
+  "name": "SmokeFree Quest",
+  "description": "An interactive gamified journey to assess, learn, and live smoke-free with quest snapshots, skill breakdowns, and actionable intel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

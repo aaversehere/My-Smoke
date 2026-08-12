@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #09090b;
+    font-family: 'Quicksand', sans-serif;
+    color: #e4e4e7;
+  }
+  body {
+    overscroll-behavior: none;
+    min-height: 100dvh;
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+/* Scrollbar hide */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Background gradient for journey - Elegant Dark Glow */
+.journey-gradient {
+  background: radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+              radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 45%),
+              #09090b;
+}
+
+/* Custom Theme Token Utilities */
+@utility px-container-padding {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@utility py-section-margin {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+@utility p-container-padding {
+  padding: 24px;
+}
+@utility gap-element-gap {
+  gap: 16px;
+}
+@utility gap-section-margin {
+  gap: 40px;
+}
+@utility mb-element-gap {
+  margin-bottom: 16px;
+}
+@utility mb-section-margin {
+  margin-bottom: 40px;
+}
+@utility mt-element-gap {
+  margin-top: 16px;
+}
+@utility gap-base {
+  gap: 8px;
+}
+
+/* Typography Utilities */
+@utility font-headline-xl {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+}
+@utility font-headline-lg {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+}
+@utility font-headline-lg-mobile {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 32px;
+}
+@utility font-headline-md {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+}
+@utility font-body-lg {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+}
+@utility font-body-md {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+@utility font-label-caps {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Color Palette CSS Variables - Elegant Dark Theme */
+:root {
+  --surface: #09090b;
+  --surface-container: #18181b;
+  --surface-container-high: #27272a;
+  --on-surface: #ffffff;
+  --on-surface-variant: #a1a1aa;
+  --primary: #10b981;
+  --on-primary: #000000;
+  --primary-container: #059669;
+  --border-color: #27272a;
+}
+
