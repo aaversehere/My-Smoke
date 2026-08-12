@@ -60,7 +60,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
+                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -79,7 +79,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
+                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -98,7 +98,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
+                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -117,7 +117,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
+                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -136,7 +136,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
+                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -187,7 +187,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="flex-1 bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 py-6 rounded-xl font-bold text-xl transition-all hover:scale-[1.02]"
+                  className="flex-1 bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 py-6 rounded-xl font-bold text-xl transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>

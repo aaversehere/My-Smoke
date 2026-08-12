@@ -82,7 +82,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           {/* Skill 1: Support Seeking */}
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
-              <span className="font-['Quicksand'] font-bold text-zinc-200">Support Seeking</span>
+              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">Support Seeking</span>
               <span className="font-['Montserrat'] font-bold text-xs uppercase text-blue-400">
                 {stats.supportSeekingScore >= 75 ? 'High' : stats.supportSeekingScore >= 40 ? 'Moderate' : 'Growing'}
               </span>
@@ -98,7 +98,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           {/* Skill 2: Reflective Coping */}
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
-              <span className="font-['Quicksand'] font-bold text-zinc-200">Reflective Coping</span>
+              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">Reflective Coping</span>
               <span className="font-['Montserrat'] font-bold text-xs uppercase text-amber-400">
                 {stats.reflectiveCopingScore >= 75 ? 'High' : stats.reflectiveCopingScore >= 45 ? 'Moderate' : 'Growing'}
               </span>
@@ -114,7 +114,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           {/* Skill 3: Strategic Coping */}
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
-              <span className="font-['Quicksand'] font-bold text-zinc-200">Strategic Coping</span>
+              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">Strategic Coping</span>
               <span className="font-['Montserrat'] font-bold text-xs uppercase text-sage-600 dark:text-sage-400">
                 {stats.strategicCopingScore >= 75 ? 'High' : stats.strategicCopingScore >= 45 ? 'Moderate' : 'Growing'}
               </span>
@@ -130,7 +130,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           {/* Skill 4: Proactive Coping */}
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
-              <span className="font-['Quicksand'] font-bold text-zinc-200">Proactive Coping</span>
+              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">Proactive Coping</span>
               <span className="font-['Montserrat'] font-bold text-xs uppercase text-purple-400">
                 {stats.proactiveCopingScore >= 75 ? 'High' : stats.proactiveCopingScore >= 45 ? 'Moderate' : 'Growing'}
               </span>
@@ -146,7 +146,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           {/* Skill 5: Avoidance Coping */}
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
-              <span className="font-['Quicksand'] font-bold text-zinc-200">Avoidance Coping</span>
+              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">Avoidance Coping</span>
               <span className="font-['Montserrat'] font-bold text-xs uppercase text-red-400">
                 {stats.avoidanceCopingScore >= 75 ? 'High' : stats.avoidanceCopingScore >= 45 ? 'Moderate' : 'Needs Focus'}
               </span>
@@ -162,7 +162,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           {/* Skill 6: Preventive Coping */}
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
-              <span className="font-['Quicksand'] font-bold text-zinc-200">Preventive Coping</span>
+              <span className="font-['Quicksand'] font-bold text-zinc-700 dark:text-zinc-200">Preventive Coping</span>
               <span className="font-['Montserrat'] font-bold text-xs uppercase text-teal-400">
                 {stats.preventiveCopingScore >= 75 ? 'High' : stats.preventiveCopingScore >= 45 ? 'Moderate' : 'Growing'}
               </span>

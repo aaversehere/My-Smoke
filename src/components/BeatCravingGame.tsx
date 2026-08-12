@@ -57,7 +57,7 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
             <button
               key={opt.id}
               onClick={() => handleL1Choice(opt.id)}
-              className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 py-4 px-6 rounded-xl font-medium text-left transition-all hover:scale-[1.02]"
+              className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-sage-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 py-4 px-6 rounded-xl font-medium text-left transition-all hover:scale-[1.02]"
             >
               <span className="font-bold text-sage-500 mr-3">{opt.id}.</span>
               {opt.text}

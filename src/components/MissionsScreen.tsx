@@ -241,23 +241,23 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
         
         <h3 className="text-sage-600 dark:text-sage-400 font-bold text-lg mb-4">I will...</h3>
         <ul className="flex flex-col gap-3">
-          <li className="flex items-center gap-3 text-zinc-200">
+          <li className="flex items-center gap-3 text-zinc-700 dark:text-zinc-200">
             <span className="material-symbols-outlined text-sage-500">check_circle</span>
             Say "No, thanks."
           </li>
-          <li className="flex items-center gap-3 text-zinc-200">
+          <li className="flex items-center gap-3 text-zinc-700 dark:text-zinc-200">
             <span className="material-symbols-outlined text-sage-500">check_circle</span>
             Move away for a while.
           </li>
-          <li className="flex items-center gap-3 text-zinc-200">
+          <li className="flex items-center gap-3 text-zinc-700 dark:text-zinc-200">
             <span className="material-symbols-outlined text-sage-500">check_circle</span>
             Drink water.
           </li>
-          <li className="flex items-center gap-3 text-zinc-200">
+          <li className="flex items-center gap-3 text-zinc-700 dark:text-zinc-200">
             <span className="material-symbols-outlined text-sage-500">check_circle</span>
             Talk to a friend.
           </li>
-          <li className="flex items-center gap-3 text-zinc-200">
+          <li className="flex items-center gap-3 text-zinc-700 dark:text-zinc-200">
             <span className="material-symbols-outlined text-sage-500">check_circle</span>
             Do another activity.
           </li>
