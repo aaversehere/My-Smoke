@@ -2,14 +2,27 @@ import React from 'react';
 
 interface WelcomeScreenProps {
   onStart: () => void;
+  theme: 'dark' | 'light';
+  toggleTheme: () => void;
 }
 
-export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
+export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart, theme, toggleTheme }) => {
   return (
     <div className="flex flex-col md:flex-row w-full px-6 md:px-12 lg:px-24 py-10 gap-8 md:gap-12 lg:gap-20 items-center justify-center min-h-[calc(100vh-80px)] relative overflow-hidden max-w-7xl mx-auto">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-0 -ml-16 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Floating Theme Toggle */}
+      <button
+        onClick={toggleTheme}
+        className="absolute top-6 right-6 md:top-10 md:right-10 z-50 w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 flex items-center justify-center shadow hover:scale-105 active:scale-95 transition-all"
+        title="Toggle Light/Dark Mode"
+      >
+        <span className="material-symbols-outlined text-[20px]">
+          {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+        </span>
+      </button>
 
       {/* Hero Illustration Area */}
       <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg flex-1 aspect-square rounded-[2rem] bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.8)] flex items-center justify-center overflow-hidden z-10 group transition-transform duration-500 hover:scale-[1.02]">

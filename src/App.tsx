@@ -218,6 +218,8 @@ export default function App() {
         {currentScreen === 'welcome' && (
           <WelcomeScreen
             onStart={() => setCurrentScreen('minigame')}
+            theme={theme}
+            toggleTheme={toggleTheme}
           />
         )}
 
