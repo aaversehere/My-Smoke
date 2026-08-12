@@ -43,13 +43,13 @@ export const IntelScreen: React.FC<IntelScreenProps> = ({ onComplete, userXp }) 
         {/* Card 1: Nicotine */}
         <div 
           onClick={() => setExpandedCard(expandedCard === 1 ? null : 1)}
-          className={`mission-card relative bg-white dark:bg-zinc-900 rounded-xl p-5 shadow-lg transform transition-all duration-300 active:scale-95 cursor-pointer border-t-4 border-emerald-500 border-x border-b border-zinc-200 dark:border-zinc-800 ${
-            expandedCard === 1 ? 'ring-2 ring-emerald-500' : ''
+          className={`mission-card relative bg-white dark:bg-zinc-900 rounded-xl p-5 shadow-lg transform transition-all duration-300 active:scale-95 cursor-pointer border-t-4 border-green-500 border-x border-b border-zinc-200 dark:border-zinc-800 ${
+            expandedCard === 1 ? 'ring-2 ring-green-500' : ''
           }`}
         >
           <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shadow-inner">
-              <span className="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>
+            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center shadow-inner">
+              <span className="material-symbols-outlined text-green-600 dark:text-green-400 text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>
                 link
               </span>
             </div>
@@ -60,7 +60,7 @@ export const IntelScreen: React.FC<IntelScreenProps> = ({ onComplete, userXp }) 
               </p>
 
               {expandedCard === 1 && (
-                <div className="mt-3 pt-3 border-t border-zinc-200 dark:border-zinc-800 text-xs text-emerald-300 font-['Quicksand'] font-bold bg-zinc-100 dark:bg-zinc-800/80 p-2.5 rounded-lg animate-fadeIn">
+                <div className="mt-3 pt-3 border-t border-zinc-200 dark:border-zinc-800 text-xs text-green-300 font-['Quicksand'] font-bold bg-zinc-100 dark:bg-zinc-800/80 p-2.5 rounded-lg animate-fadeIn">
                   💡 <strong>Smart Counter-move:</strong> Oral substitutes like mints, sugar-free gum, or deep breathing delay cravings by 10 minutes until nicotine spikes pass.
                 </div>
               )}
@@ -148,10 +148,10 @@ export const IntelScreen: React.FC<IntelScreenProps> = ({ onComplete, userXp }) 
         <button
           onClick={handleGotIt}
           disabled={completed}
-          className={`w-full max-w-sm h-14 font-['Montserrat'] font-extrabold text-lg rounded-full shadow-[0_8px_20px_rgba(16,185,129,0.3)] flex items-center justify-center gap-2 transform transition-all duration-300 active:scale-95 overflow-hidden relative cursor-pointer ${
+          className={`w-full max-w-sm h-14 font-['Montserrat'] font-extrabold text-lg rounded-full shadow-[0_8px_20px_rgba(34,197,94,0.3)] flex items-center justify-center gap-2 transform transition-all duration-300 active:scale-95 overflow-hidden relative cursor-pointer ${
             completed
-              ? 'bg-emerald-400 text-black shadow-sm'
-              : 'bg-emerald-500 text-black hover:bg-emerald-400'
+              ? 'bg-green-400 text-black shadow-sm'
+              : 'bg-green-500 text-black hover:bg-green-400'
           }`}
         >
           {completed ? (

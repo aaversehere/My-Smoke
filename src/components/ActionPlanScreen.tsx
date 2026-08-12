@@ -52,7 +52,7 @@ export const ActionPlanScreen: React.FC<ActionPlanScreenProps> = ({ stats, onSav
     <div className="flex flex-col w-full gap-8 relative z-10 pb-16 pt-2 px-6 md:px-12 lg:px-24 min-h-[calc(100vh-80px)]">
       {/* Header */}
       <div className="flex flex-col items-center text-center gap-2 mt-2">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 rounded-full shadow-sm">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 rounded-full shadow-sm">
           <span className="material-symbols-outlined text-[16px]">verified_user</span>
           <span className="font-['Montserrat'] font-bold text-xs uppercase tracking-wider">
             Personal Action Plan
@@ -153,7 +153,7 @@ export const ActionPlanScreen: React.FC<ActionPlanScreenProps> = ({ stats, onSav
 
         <button
           onClick={() => onSavePlan(selectedTriggers, selectedToolkit)}
-          className="w-full py-3 text-sm text-zinc-600 dark:text-zinc-400 font-['Montserrat'] font-bold hover:text-emerald-600 dark:text-emerald-400 transition-colors text-center cursor-pointer"
+          className="w-full py-3 text-sm text-zinc-600 dark:text-zinc-400 font-['Montserrat'] font-bold hover:text-green-600 dark:text-green-400 transition-colors text-center cursor-pointer"
         >
           🏠 Save Plan & Return Home
         </button>

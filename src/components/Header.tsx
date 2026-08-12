@@ -24,13 +24,13 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="h-14 px-6 flex items-center justify-between w-full">
         <button 
           onClick={() => onNavigate('welcome')}
-          className="font-['Montserrat'] font-bold text-xl text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5 hover:opacity-90 transition-opacity"
+          className="font-['Montserrat'] font-bold text-xl text-green-600 dark:text-green-400 flex items-center gap-1.5 hover:opacity-90 transition-opacity"
         >
           SmokeFree Quest
         </button>
 
         <div className="flex items-center gap-2">
-          <span className="font-['Montserrat'] font-bold text-[12px] uppercase text-emerald-600 dark:text-emerald-400 tracking-wider bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+          <span className="font-['Montserrat'] font-bold text-[12px] uppercase text-green-600 dark:text-green-400 tracking-wider bg-green-500/10 border border-green-500/20 px-2.5 py-1 rounded-full">
             {respondentId}
           </span>
           <button
@@ -45,7 +45,7 @@ export const Header: React.FC<HeaderProps> = ({
           <button 
             onClick={() => onNavigate('snapshot')}
             title="View User Profile & Snapshot"
-            className="w-8 h-8 rounded-full bg-emerald-500 text-white dark:text-black flex items-center justify-center font-bold shadow-md hover:scale-105 active:scale-95 transition-all"
+            className="w-8 h-8 rounded-full bg-green-500 text-white dark:text-black flex items-center justify-center font-bold shadow-md hover:scale-105 active:scale-95 transition-all"
           >
             <span className="material-symbols-outlined text-[18px]">person</span>
           </button>
@@ -58,7 +58,7 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => onNavigate('welcome')}
           className={`whitespace-nowrap flex-shrink-0 px-3 py-1 rounded-full transition-all ${
             currentScreen === 'welcome' 
-              ? 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 shadow-xs' 
+              ? 'bg-green-500/20 text-green-600 dark:text-green-400 border border-green-500/30 shadow-xs' 
               : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-200'
           }`}
         >
@@ -68,7 +68,7 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => onNavigate('missions')}
           className={`whitespace-nowrap flex-shrink-0 px-3 py-1 rounded-full transition-all ${
             currentScreen === 'missions' 
-              ? 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 shadow-xs' 
+              ? 'bg-green-500/20 text-green-600 dark:text-green-400 border border-green-500/30 shadow-xs' 
               : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-200'
           }`}
         >
@@ -78,7 +78,7 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => onNavigate('game2')}
           className={`whitespace-nowrap flex-shrink-0 px-3 py-1 rounded-full transition-all ${
             currentScreen === 'game2' 
-              ? 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 shadow-xs' 
+              ? 'bg-green-500/20 text-green-600 dark:text-green-400 border border-green-500/30 shadow-xs' 
               : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-200'
           }`}
         >
@@ -88,7 +88,7 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => onNavigate('assessment')}
           className={`whitespace-nowrap flex-shrink-0 px-3 py-1 rounded-full transition-all ${
             currentScreen === 'assessment' 
-              ? 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 shadow-xs' 
+              ? 'bg-green-500/20 text-green-600 dark:text-green-400 border border-green-500/30 shadow-xs' 
               : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-200'
           }`}
         >
@@ -98,7 +98,7 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => onNavigate('snapshot')}
           className={`whitespace-nowrap flex-shrink-0 px-3 py-1 rounded-full transition-all ${
             currentScreen === 'snapshot' 
-              ? 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 shadow-xs' 
+              ? 'bg-green-500/20 text-green-600 dark:text-green-400 border border-green-500/30 shadow-xs' 
               : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-200'
           }`}
         >
@@ -108,7 +108,7 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => onNavigate('action_plan')}
           className={`whitespace-nowrap flex-shrink-0 px-3 py-1 rounded-full transition-all ${
             currentScreen === 'action_plan' 
-              ? 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 shadow-xs' 
+              ? 'bg-green-500/20 text-green-600 dark:text-green-400 border border-green-500/30 shadow-xs' 
               : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-200'
           }`}
         >
@@ -119,7 +119,7 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Progress Bar Header */}
       <div className="h-1 w-full bg-zinc-200 dark:bg-zinc-800 overflow-hidden">
         <div 
-          className="h-full bg-emerald-500 transition-all duration-500 rounded-r-full shadow-[0_0_10px_rgba(16,185,129,0.5)]"
+          className="h-full bg-green-500 transition-all duration-500 rounded-r-full shadow-[0_0_10px_rgba(34,197,94,0.5)]"
           style={{ width: `${Math.min(100, Math.max(5, progressPercent))}%` }}
         />
       </div>

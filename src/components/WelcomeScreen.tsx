@@ -10,7 +10,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart, theme, to
   return (
     <div className="flex flex-col md:flex-row w-full px-6 md:px-12 lg:px-24 py-10 gap-8 md:gap-12 lg:gap-20 items-center justify-center min-h-[calc(100vh-80px)] relative overflow-hidden max-w-7xl mx-auto">
       {/* Decorative Background Elements */}
-      <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-green-500/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-0 -ml-16 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Floating Theme Toggle */}
@@ -49,7 +49,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart, theme, to
         {/* CTA Button */}
         <button 
           onClick={onStart}
-          className="w-full relative overflow-hidden bg-emerald-500 hover:bg-emerald-400 text-black font-['Montserrat'] font-extrabold text-xl py-4 px-8 rounded-full shadow-[0_12px_24px_-8px_rgba(16,185,129,0.35)] transition-all duration-300 active:scale-[0.98] active:shadow-md hover:-translate-y-1 group mt-2 cursor-pointer"
+          className="w-full relative overflow-hidden bg-green-500 hover:bg-green-400 text-black font-['Montserrat'] font-extrabold text-xl py-4 px-8 rounded-full shadow-[0_12px_24px_-8px_rgba(34,197,94,0.35)] transition-all duration-300 active:scale-[0.98] active:shadow-md hover:-translate-y-1 group mt-2 cursor-pointer"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
           <span className="relative z-10 flex items-center justify-center gap-2 tracking-wide">

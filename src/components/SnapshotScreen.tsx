@@ -23,7 +23,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           </svg>
         </div>
 
-        <div className="relative z-10 bg-emerald-500/10 border border-emerald-500/20 w-20 h-20 rounded-full flex items-center justify-center mb-1 shadow-sm transform transition-transform hover:scale-105 duration-300">
+        <div className="relative z-10 bg-green-500/10 border border-green-500/20 w-20 h-20 rounded-full flex items-center justify-center mb-1 shadow-sm transform transition-transform hover:scale-105 duration-300">
           <span className="text-4xl">🌱</span>
         </div>
 
@@ -52,14 +52,14 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
 
         {/* Confidence Level */}
         <div className="bg-white dark:bg-zinc-900 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-lg relative overflow-hidden group border border-zinc-200 dark:border-zinc-800">
-          <div className="absolute top-0 inset-x-0 h-1 bg-emerald-500 group-hover:h-2 transition-all duration-300" />
-          <span className="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-3xl mb-2" style={{ fontVariationSettings: "'FILL' 1" }}>
+          <div className="absolute top-0 inset-x-0 h-1 bg-green-500 group-hover:h-2 transition-all duration-300" />
+          <span className="material-symbols-outlined text-green-600 dark:text-green-400 text-3xl mb-2" style={{ fontVariationSettings: "'FILL' 1" }}>
             trending_up
           </span>
           <span className="font-['Montserrat'] font-bold text-xs uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1">
             Confidence Level
           </span>
-          <span className="font-['Montserrat'] font-extrabold text-xl text-emerald-600 dark:text-emerald-400">
+          <span className="font-['Montserrat'] font-extrabold text-xl text-green-600 dark:text-green-400">
             {stats.confidenceLevel}
           </span>
         </div>
@@ -115,13 +115,13 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
               <span className="font-['Quicksand'] font-bold text-zinc-200">Strategic Coping</span>
-              <span className="font-['Montserrat'] font-bold text-xs uppercase text-emerald-600 dark:text-emerald-400">
+              <span className="font-['Montserrat'] font-bold text-xs uppercase text-green-600 dark:text-green-400">
                 {stats.strategicCopingScore >= 75 ? 'High' : stats.strategicCopingScore >= 45 ? 'Moderate' : 'Growing'}
               </span>
             </div>
             <div className="w-full h-3 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden border border-zinc-300 dark:border-zinc-700/50">
               <div 
-                className="h-full bg-emerald-500 rounded-full transition-all duration-1000 shadow-[0_0_8px_rgba(16,185,129,0.5)]" 
+                className="h-full bg-green-500 rounded-full transition-all duration-1000 shadow-[0_0_8px_rgba(34,197,94,0.5)]" 
                 style={{ width: `${stats.strategicCopingScore}%` }} 
               />
             </div>
@@ -179,13 +179,13 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
 
       {/* Feedback / Insight Section */}
       <div className="bg-white dark:bg-zinc-900 rounded-xl p-6 shadow-md relative overflow-hidden flex flex-col gap-4 border border-zinc-200 dark:border-zinc-800">
-        <div className="absolute right-0 top-0 opacity-10 transform translate-x-1/4 -translate-y-1/4 pointer-events-none text-emerald-600 dark:text-emerald-400">
+        <div className="absolute right-0 top-0 opacity-10 transform translate-x-1/4 -translate-y-1/4 pointer-events-none text-green-600 dark:text-green-400">
           <span className="material-symbols-outlined text-[120px]">psychiatry</span>
         </div>
 
         <div className="flex items-center gap-3 relative z-10">
-          <div className="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shadow-sm">
-            <span className="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-xl">lightbulb</span>
+          <div className="w-10 h-10 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 flex items-center justify-center shadow-sm">
+            <span className="material-symbols-outlined text-green-600 dark:text-green-400 text-xl">lightbulb</span>
           </div>
           <h3 className="font-['Montserrat'] font-bold text-2xl text-zinc-900 dark:text-white">Insight</h3>
         </div>
@@ -199,7 +199,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
       <div className="mt-2 pb-4 flex flex-col gap-3">
         <button 
           onClick={onProceed}
-          className="w-full h-14 bg-emerald-500 hover:bg-emerald-400 text-black font-['Montserrat'] font-extrabold text-lg rounded-full shadow-[0_8px_20px_rgba(16,185,129,0.3)] transform transition-all duration-200 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+          className="w-full h-14 bg-green-500 hover:bg-green-400 text-black font-['Montserrat'] font-extrabold text-lg rounded-full shadow-[0_8px_20px_rgba(34,197,94,0.3)] transform transition-all duration-200 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
         >
           <span>CREATE MY ACTION PLAN</span>
           <span className="material-symbols-outlined">arrow_forward</span>
@@ -207,7 +207,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
 
         <button
           onClick={onRetakeQuest}
-          className="w-full py-2 text-sm text-zinc-600 dark:text-zinc-400 font-['Montserrat'] font-bold hover:text-emerald-600 dark:text-emerald-400 transition-colors text-center cursor-pointer"
+          className="w-full py-2 text-sm text-zinc-600 dark:text-zinc-400 font-['Montserrat'] font-bold hover:text-green-600 dark:text-green-400 transition-colors text-center cursor-pointer"
         >
           ↺ Re-assess Questions
         </button>

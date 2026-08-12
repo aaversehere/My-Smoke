@@ -34,7 +34,7 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
 
   const renderLevel1 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-emerald-600 dark:text-emerald-400 mb-6 text-center">
+      <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-green-600 dark:text-green-400 mb-6 text-center">
         Game: Beat the Craving
       </h2>
       <div className="text-zinc-600 dark:text-zinc-400 uppercase tracking-widest font-bold mb-4">LEVEL 1</div>
@@ -57,9 +57,9 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
             <button
               key={opt.id}
               onClick={() => handleL1Choice(opt.id)}
-              className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-emerald-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 py-4 px-6 rounded-xl font-medium text-left transition-all hover:scale-[1.02]"
+              className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-green-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 py-4 px-6 rounded-xl font-medium text-left transition-all hover:scale-[1.02]"
             >
-              <span className="font-bold text-emerald-500 mr-3">{opt.id}.</span>
+              <span className="font-bold text-green-500 mr-3">{opt.id}.</span>
               {opt.text}
             </button>
           ))}
@@ -68,11 +68,11 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
         <div className="flex flex-col items-center animate-in zoom-in duration-300">
           {l1Choice === 'B' ? (
             <>
-              <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mb-4">
+              <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
                 <span className="text-4xl">✅</span>
               </div>
               <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">Great choice!</h3>
-              <p className="text-emerald-600 dark:text-emerald-400 text-lg mb-8">You prepared a healthier response.</p>
+              <p className="text-green-600 dark:text-green-400 text-lg mb-8">You prepared a healthier response.</p>
             </>
           ) : (
             <>
@@ -85,7 +85,7 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
           )}
           <button
             onClick={nextLevel}
-            className="bg-emerald-500 hover:bg-emerald-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(16,185,129,0.3)] flex items-center gap-2"
+            className="bg-green-500 hover:bg-green-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(34,197,94,0.3)] flex items-center gap-2"
           >
             Next Level <span className="material-symbols-outlined">arrow_forward</span>
           </button>
@@ -107,7 +107,7 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
 
     return (
       <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-        <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-emerald-600 dark:text-emerald-400 mb-4 text-center">
+        <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-green-600 dark:text-green-400 mb-4 text-center">
           Game: Beat the Craving
         </h2>
         <div className="text-zinc-600 dark:text-zinc-400 uppercase tracking-widest font-bold mb-4">LEVEL 2</div>
@@ -130,14 +130,14 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
                     onClick={() => handleL2Choice(opt.id)}
                     className={`flex items-center gap-4 p-4 rounded-xl border transition-all duration-300 ${
                       isSelected
-                        ? 'bg-emerald-500/20 border-emerald-500 scale-[1.02] shadow-[0_0_15px_rgba(16,185,129,0.2)]'
+                        ? 'bg-green-500/20 border-green-500 scale-[1.02] shadow-[0_0_15px_rgba(34,197,94,0.2)]'
                         : 'bg-zinc-100 dark:bg-zinc-800/80 border-zinc-300 dark:border-zinc-700 hover:border-zinc-500 hover:bg-zinc-100 dark:bg-zinc-800'
                     }`}
                   >
                     <span className="text-2xl">{opt.icon}</span>
                     <span className="text-zinc-900 dark:text-white font-bold">{opt.text}</span>
                     {isSelected && (
-                      <span className="material-symbols-outlined ml-auto text-emerald-500">check_circle</span>
+                      <span className="material-symbols-outlined ml-auto text-green-500">check_circle</span>
                     )}
                   </button>
                 );
@@ -149,7 +149,7 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
               disabled={l2Choices.length === 0}
               className={`font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all flex items-center gap-2 ${
                 l2Choices.length > 0
-                  ? 'bg-emerald-500 hover:bg-emerald-400 text-black shadow-[0_0_20px_rgba(16,185,129,0.3)]'
+                  ? 'bg-green-500 hover:bg-green-400 text-black shadow-[0_0_20px_rgba(34,197,94,0.3)]'
                   : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 cursor-not-allowed'
               }`}
             >
@@ -160,11 +160,11 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
           <div className="flex flex-col items-center animate-in zoom-in duration-300 w-full max-w-md">
             {hasGoodChoices && !hasBadChoice ? (
               <>
-                <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
                   <span className="text-4xl">✨</span>
                 </div>
                 <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">Excellent!</h3>
-                <p className="text-emerald-600 dark:text-emerald-400 text-lg mb-8 text-center">Replacing smoking with healthier habits helps beat stress effectively.</p>
+                <p className="text-green-600 dark:text-green-400 text-lg mb-8 text-center">Replacing smoking with healthier habits helps beat stress effectively.</p>
               </>
             ) : (
               <>
@@ -177,7 +177,7 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
             )}
             <button
               onClick={nextLevel}
-              className="bg-emerald-500 hover:bg-emerald-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(16,185,129,0.3)] flex items-center gap-2"
+              className="bg-green-500 hover:bg-green-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(34,197,94,0.3)] flex items-center gap-2"
             >
               Continue <span className="material-symbols-outlined">arrow_forward</span>
             </button>
@@ -189,28 +189,28 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
 
   const renderLevel3 = () => (
     <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-500 w-full">
-      <h2 className="font-['Montserrat'] font-black text-4xl md:text-5xl text-emerald-600 dark:text-emerald-400 mb-8 flex items-center gap-3">
+      <h2 className="font-['Montserrat'] font-black text-4xl md:text-5xl text-green-600 dark:text-green-400 mb-8 flex items-center gap-3">
         4D POWER <span className="text-5xl">⚡</span>
       </h2>
       
       <div className="flex flex-col gap-4 w-full max-w-sm mb-10 text-left">
-        <div className="bg-zinc-100 dark:bg-zinc-800/80 p-5 rounded-2xl border-l-4 border-emerald-500">
+        <div className="bg-zinc-100 dark:bg-zinc-800/80 p-5 rounded-2xl border-l-4 border-green-500">
           <h3 className="text-zinc-900 dark:text-white font-bold text-xl">Delay</h3>
         </div>
-        <div className="bg-zinc-100 dark:bg-zinc-800/80 p-5 rounded-2xl border-l-4 border-emerald-500">
+        <div className="bg-zinc-100 dark:bg-zinc-800/80 p-5 rounded-2xl border-l-4 border-green-500">
           <h3 className="text-zinc-900 dark:text-white font-bold text-xl">Deep Breathing</h3>
         </div>
-        <div className="bg-zinc-100 dark:bg-zinc-800/80 p-5 rounded-2xl border-l-4 border-emerald-500">
+        <div className="bg-zinc-100 dark:bg-zinc-800/80 p-5 rounded-2xl border-l-4 border-green-500">
           <h3 className="text-zinc-900 dark:text-white font-bold text-xl">Drink Water</h3>
         </div>
-        <div className="bg-zinc-100 dark:bg-zinc-800/80 p-5 rounded-2xl border-l-4 border-emerald-500">
+        <div className="bg-zinc-100 dark:bg-zinc-800/80 p-5 rounded-2xl border-l-4 border-green-500">
           <h3 className="text-zinc-900 dark:text-white font-bold text-xl">Do Something Else</h3>
         </div>
       </div>
 
       <button
         onClick={onComplete}
-        className="bg-emerald-500 hover:bg-emerald-400 text-black font-['Montserrat'] font-bold text-lg py-4 px-12 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(16,185,129,0.3)] flex items-center gap-2"
+        className="bg-green-500 hover:bg-green-400 text-black font-['Montserrat'] font-bold text-lg py-4 px-12 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(34,197,94,0.3)] flex items-center gap-2"
       >
         Start Assessment <span className="material-symbols-outlined">arrow_forward</span>
       </button>
@@ -226,7 +226,7 @@ export const BeatCravingGame: React.FC<BeatCravingGameProps> = ({ onComplete }) 
             <div 
               key={m} 
               className={`h-2 rounded-full transition-all duration-300 ${
-                m === level ? 'w-10 bg-emerald-400' : m < level ? 'w-3 bg-emerald-500/50' : 'w-3 bg-zinc-100 dark:bg-zinc-800'
+                m === level ? 'w-10 bg-green-400' : m < level ? 'w-3 bg-green-500/50' : 'w-3 bg-zinc-100 dark:bg-zinc-800'
               }`}
             />
           ))}

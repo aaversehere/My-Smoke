@@ -29,17 +29,17 @@ export const MicroBreakScreen: React.FC<MicroBreakScreenProps> = ({ onReady }) =
           <span className="font-['Montserrat'] font-bold text-sm text-zinc-600 dark:text-zinc-400 uppercase tracking-wider block mb-2">
             Progress
           </span>
-          <div className="font-['Montserrat'] font-black text-2xl text-emerald-600 dark:text-emerald-400">
+          <div className="font-['Montserrat'] font-black text-2xl text-green-600 dark:text-green-400">
             85% COMPLETE
           </div>
           <div className="w-full bg-zinc-100 dark:bg-zinc-800 rounded-full h-2 mt-4 overflow-hidden">
-            <div className="bg-emerald-500 h-full rounded-full transition-all duration-1000" style={{ width: '85%' }} />
+            <div className="bg-green-500 h-full rounded-full transition-all duration-1000" style={{ width: '85%' }} />
           </div>
         </div>
 
         <div className="flex flex-col items-center gap-4 mb-10">
-          <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mb-2">
-            <span className="font-['Montserrat'] font-black text-2xl text-emerald-600 dark:text-emerald-400">
+          <div className="w-16 h-16 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center mb-2">
+            <span className="font-['Montserrat'] font-black text-2xl text-green-600 dark:text-green-400">
               {timeLeft > 0 ? timeLeft : '✓'}
             </span>
           </div>
@@ -60,8 +60,8 @@ export const MicroBreakScreen: React.FC<MicroBreakScreenProps> = ({ onReady }) =
           onClick={onReady}
           className={`w-full py-4 rounded-full font-['Montserrat'] font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2 ${
             timeLeft === 0
-              ? 'bg-emerald-500 text-black hover:bg-emerald-400 hover:scale-[1.02] active:scale-95 shadow-[0_0_20px_rgba(16,185,129,0.3)]'
-              : 'bg-zinc-100 dark:bg-zinc-800 text-emerald-500 border border-emerald-500/50 hover:bg-emerald-500/10'
+              ? 'bg-green-500 text-black hover:bg-green-400 hover:scale-[1.02] active:scale-95 shadow-[0_0_20px_rgba(34,197,94,0.3)]'
+              : 'bg-zinc-100 dark:bg-zinc-800 text-green-500 border border-green-500/50 hover:bg-green-500/10'
           }`}
         >
           I'M READY {timeLeft > 0 && <span className="text-sm opacity-70">({timeLeft}s)</span>}
