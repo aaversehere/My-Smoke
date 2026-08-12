@@ -12,7 +12,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
       <div className="absolute bottom-10 left-0 -ml-16 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Hero Illustration Area */}
-      <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg flex-1 aspect-square rounded-[2rem] bg-zinc-900 border border-zinc-800 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.8)] flex items-center justify-center overflow-hidden z-10 group transition-transform duration-500 hover:scale-[1.02]">
+      <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg flex-1 aspect-square rounded-[2rem] bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.8)] flex items-center justify-center overflow-hidden z-10 group transition-transform duration-500 hover:scale-[1.02]">
         <div 
           className="absolute inset-0 bg-cover bg-center w-full h-full opacity-85 transition-transform duration-700 group-hover:scale-105 mix-blend-luminosity hover:mix-blend-normal" 
           style={{ 
@@ -25,10 +25,10 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
       {/* Content Section */}
       <div className="flex flex-col items-center md:items-start text-center md:text-left z-10 w-full max-w-md md:max-w-xl lg:max-w-2xl gap-6 flex-1 mt-6 md:mt-0">
         <div className="flex flex-col gap-3">
-          <h1 className="font-['Montserrat'] font-extrabold text-[36px] sm:text-[40px] md:text-[48px] lg:text-[56px] leading-[44px] sm:leading-[48px] md:leading-[56px] lg:leading-[64px] tracking-tight text-white">
+          <h1 className="font-['Montserrat'] font-extrabold text-[36px] sm:text-[40px] md:text-[48px] lg:text-[56px] leading-[44px] sm:leading-[48px] md:leading-[56px] lg:leading-[64px] tracking-tight text-zinc-900 dark:text-white">
             Welcome to SmokeFree Quest!
           </h1>
-          <p className="font-['Quicksand'] font-medium text-lg sm:text-xl text-zinc-400 max-w-[290px] md:max-w-md mx-auto md:mx-0 leading-relaxed">
+          <p className="font-['Quicksand'] font-medium text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 max-w-[290px] md:max-w-md mx-auto md:mx-0 leading-relaxed">
             Ready to discover how strong your plan is to live smoke-free?
           </p>
         </div>

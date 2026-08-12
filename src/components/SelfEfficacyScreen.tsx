@@ -56,17 +56,17 @@ export const SelfEfficacyScreen: React.FC<SelfEfficacyScreenProps> = ({ onComple
               Self-Efficacy Assessment
             </span>
           </div>
-          <span className="font-['Quicksand'] font-medium text-sm text-zinc-400 mt-1">
+          <span className="font-['Quicksand'] font-medium text-sm text-zinc-600 dark:text-zinc-400 mt-1">
             {currentQuestion.category}
           </span>
         </div>
-        <span className="font-['Quicksand'] font-bold text-zinc-400">
+        <span className="font-['Quicksand'] font-bold text-zinc-600 dark:text-zinc-400">
           {progressCount} / {totalCount}
         </span>
       </div>
 
       {/* Progress Bar */}
-      <div className="w-full bg-zinc-800 rounded-full h-2.5 mb-8 overflow-hidden flex relative border border-zinc-700/50">
+      <div className="w-full bg-zinc-100 dark:bg-zinc-800 rounded-full h-2.5 mb-8 overflow-hidden flex relative border border-zinc-300 dark:border-zinc-700/50">
         <div 
           className="bg-blue-500 h-full rounded-full transition-all duration-[600ms] ease-out shadow-[0_0_12px_rgba(59,130,246,0.5)]" 
           style={{ width: `${progressPercent}%` }}
@@ -77,12 +77,12 @@ export const SelfEfficacyScreen: React.FC<SelfEfficacyScreenProps> = ({ onComple
       <div className="flex-grow flex flex-col justify-center items-center relative z-10 w-full">
         <div className="absolute inset-0 bg-blue-500/10 rounded-[32px] -z-10 blur-2xl opacity-60 pointer-events-none" />
         
-        <div className="bg-zinc-900 rounded-[32px] shadow-2xl w-full p-6 transition-transform duration-300 transform scale-100 mb-4 relative overflow-hidden border border-zinc-800">
+        <div className="bg-white dark:bg-zinc-900 rounded-[32px] shadow-2xl w-full p-6 transition-transform duration-300 transform scale-100 mb-4 relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
           {/* Top accent line */}
           <div className="absolute top-0 left-0 w-full h-1.5 bg-blue-500" />
           
           {/* Question Title */}
-          <h2 className="font-['Montserrat'] font-bold text-[22px] sm:text-[26px] text-white mb-8 leading-tight mt-4">
+          <h2 className="font-['Montserrat'] font-bold text-[22px] sm:text-[26px] text-zinc-900 dark:text-white mb-8 leading-tight mt-4">
             {currentQuestion.text}
           </h2>
 
@@ -101,16 +101,16 @@ export const SelfEfficacyScreen: React.FC<SelfEfficacyScreenProps> = ({ onComple
                 className={`relative flex items-center justify-between p-4 rounded-xl transition-all duration-200 active:scale-[0.98] focus:outline-none cursor-pointer border ${
                   localSelected === opt.val
                     ? 'bg-blue-500/20 border-blue-500 shadow-md scale-[1.01] z-10 ring-1 ring-blue-500/40'
-                    : 'bg-zinc-800/80 hover:bg-zinc-800 border-zinc-700/60 text-zinc-400'
+                    : 'bg-zinc-100 dark:bg-zinc-800/80 hover:bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700/60 text-zinc-600 dark:text-zinc-400'
                 }`}
               >
                 <div className="flex items-center gap-4">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
-                    localSelected === opt.val ? 'bg-blue-500 text-black' : 'bg-zinc-700 text-zinc-400'
+                    localSelected === opt.val ? 'bg-blue-500 text-black' : 'bg-zinc-200 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-400'
                   }`}>
                     {opt.val}
                   </div>
-                  <span className={`font-['Quicksand'] font-bold ${localSelected === opt.val ? 'text-blue-300' : 'text-zinc-300'}`}>
+                  <span className={`font-['Quicksand'] font-bold ${localSelected === opt.val ? 'text-blue-300' : 'text-zinc-700 dark:text-zinc-300'}`}>
                     {opt.text}
                   </span>
                 </div>
@@ -123,7 +123,7 @@ export const SelfEfficacyScreen: React.FC<SelfEfficacyScreenProps> = ({ onComple
         </div>
 
         {/* Quick Question Navigation bar */}
-        <div className="flex items-center justify-start w-full px-2 mb-4 text-xs font-['Montserrat'] font-bold text-zinc-400">
+        <div className="flex items-center justify-start w-full px-2 mb-4 text-xs font-['Montserrat'] font-bold text-zinc-600 dark:text-zinc-400">
           <button 
             disabled={currentQuestionIndex === 0}
             onClick={handlePrev}
@@ -143,7 +143,7 @@ export const SelfEfficacyScreen: React.FC<SelfEfficacyScreenProps> = ({ onComple
           className={`w-full h-14 font-['Montserrat'] font-bold text-base rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-sm ${
             localSelected && !isSaving
               ? 'bg-blue-500 text-black font-extrabold shadow-[0_8px_20px_rgba(59,130,246,0.3)] hover:bg-blue-400 hover:scale-[0.99] active:scale-95 cursor-pointer'
-              : 'bg-zinc-800 text-zinc-500 opacity-60 cursor-not-allowed border border-zinc-700/50'
+              : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 opacity-60 cursor-not-allowed border border-zinc-300 dark:border-zinc-700/50'
           }`}
         >
           {isSaving ? (

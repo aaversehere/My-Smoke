@@ -33,12 +33,12 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
       case 0:
         return (
           <div className="flex flex-col items-center animate-in fade-in zoom-in duration-500">
-            <h2 className="font-['Montserrat'] font-bold text-3xl md:text-4xl text-emerald-400 mb-4">
+            <h2 className="font-['Montserrat'] font-bold text-3xl md:text-4xl text-emerald-600 dark:text-emerald-400 mb-4">
               Tell Us About Yourself 👋
             </h2>
-            <div className="bg-zinc-800/50 rounded-xl p-6 mb-8 w-full border border-zinc-700">
-              <p className="text-zinc-400 text-sm mb-1 uppercase tracking-wider font-bold">Your Participant Code</p>
-              <p className="text-white text-2xl font-mono tracking-wider">{respondentId}</p>
+            <div className="bg-zinc-100 dark:bg-zinc-800/50 rounded-xl p-6 mb-8 w-full border border-zinc-300 dark:border-zinc-700">
+              <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-1 uppercase tracking-wider font-bold">Your Participant Code</p>
+              <p className="text-zinc-900 dark:text-white text-2xl font-mono tracking-wider">{respondentId}</p>
             </div>
             <button
               onClick={nextStep}
@@ -52,7 +52,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
       case 1:
         return (
           <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-            <h2 className="font-['Montserrat'] font-bold text-2xl text-white mb-6">
+            <h2 className="font-['Montserrat'] font-bold text-2xl text-zinc-900 dark:text-white mb-6">
               How old are you?
             </h2>
             <div className="flex flex-col gap-3 w-full max-w-sm">
@@ -60,7 +60,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="bg-zinc-800/80 border border-zinc-700 hover:border-emerald-500 hover:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
+                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-emerald-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -71,7 +71,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
       case 2:
         return (
           <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-            <h2 className="font-['Montserrat'] font-bold text-2xl text-white mb-6">
+            <h2 className="font-['Montserrat'] font-bold text-2xl text-zinc-900 dark:text-white mb-6">
               Gender
             </h2>
             <div className="flex flex-col gap-3 w-full max-w-sm">
@@ -79,7 +79,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="bg-zinc-800/80 border border-zinc-700 hover:border-emerald-500 hover:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
+                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-emerald-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -90,7 +90,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
       case 3:
         return (
           <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-            <h2 className="font-['Montserrat'] font-bold text-2xl text-white mb-6">
+            <h2 className="font-['Montserrat'] font-bold text-2xl text-zinc-900 dark:text-white mb-6">
               School Grade
             </h2>
             <div className="flex flex-col gap-3 w-full max-w-sm">
@@ -98,7 +98,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="bg-zinc-800/80 border border-zinc-700 hover:border-emerald-500 hover:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
+                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-emerald-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -109,7 +109,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
       case 4:
         return (
           <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-            <h2 className="font-['Montserrat'] font-bold text-2xl text-white mb-6">
+            <h2 className="font-['Montserrat'] font-bold text-2xl text-zinc-900 dark:text-white mb-6">
               Do you currently smoke cigarettes?
             </h2>
             <div className="flex flex-col gap-3 w-full max-w-sm">
@@ -117,7 +117,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="bg-zinc-800/80 border border-zinc-700 hover:border-emerald-500 hover:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
+                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-emerald-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -128,7 +128,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
       case 5:
         return (
           <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-            <h2 className="font-['Montserrat'] font-bold text-2xl text-white mb-6 text-center">
+            <h2 className="font-['Montserrat'] font-bold text-2xl text-zinc-900 dark:text-white mb-6 text-center">
               How many cigarettes do you usually smoke per day?
             </h2>
             <div className="grid grid-cols-2 gap-3 w-full max-w-sm">
@@ -136,7 +136,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="bg-zinc-800/80 border border-zinc-700 hover:border-emerald-500 hover:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
+                  className="bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-emerald-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 p-4 rounded-xl font-bold transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -147,7 +147,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
       case 6:
         return (
           <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-            <h2 className="font-['Montserrat'] font-bold text-2xl text-white mb-6 text-center">
+            <h2 className="font-['Montserrat'] font-bold text-2xl text-zinc-900 dark:text-white mb-6 text-center">
               At what age did you first try smoking?
             </h2>
             <div className="flex items-center gap-4 mb-8">
@@ -155,12 +155,12 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 type="number"
                 value={smokeAgeInput}
                 onChange={(e) => setSmokeAgeInput(e.target.value)}
-                className="bg-zinc-900 border-2 border-zinc-700 focus:border-emerald-500 rounded-xl px-4 py-3 text-white text-xl text-center w-24 outline-none transition-colors"
+                className="bg-white dark:bg-zinc-900 border-2 border-zinc-300 dark:border-zinc-700 focus:border-emerald-500 rounded-xl px-4 py-3 text-zinc-900 dark:text-white text-xl text-center w-24 outline-none transition-colors"
                 placeholder="Age"
                 min="5"
                 max="30"
               />
-              <span className="text-zinc-400 text-lg">years</span>
+              <span className="text-zinc-600 dark:text-zinc-400 text-lg">years</span>
             </div>
             <button
               onClick={nextStep}
@@ -168,7 +168,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
               className={`font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all flex items-center gap-2 ${
                 smokeAgeInput 
                   ? 'bg-emerald-500 hover:bg-emerald-400 text-black shadow-[0_0_20px_rgba(16,185,129,0.3)]'
-                  : 'bg-zinc-800 text-zinc-500 cursor-not-allowed'
+                  : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 cursor-not-allowed'
               }`}
             >
               Next
@@ -179,7 +179,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
       case 7:
         return (
           <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-300 w-full">
-            <h2 className="font-['Montserrat'] font-bold text-2xl text-white mb-6">
+            <h2 className="font-['Montserrat'] font-bold text-2xl text-zinc-900 dark:text-white mb-6">
               Have you ever tried to quit smoking?
             </h2>
             <div className="flex gap-4 w-full max-w-xs">
@@ -187,7 +187,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
                 <button
                   key={opt}
                   onClick={handleChoice}
-                  className="flex-1 bg-zinc-800/80 border border-zinc-700 hover:border-emerald-500 hover:bg-zinc-800 text-zinc-200 py-6 rounded-xl font-bold text-xl transition-all hover:scale-[1.02]"
+                  className="flex-1 bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 hover:border-emerald-500 hover:bg-zinc-100 dark:bg-zinc-800 text-zinc-200 py-6 rounded-xl font-bold text-xl transition-all hover:scale-[1.02]"
                 >
                   {opt}
                 </button>
@@ -198,15 +198,15 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
       case 8:
         return (
           <div className="flex flex-col items-center animate-in fade-in slide-in-from-right-4 duration-500 w-full">
-            <h2 className="font-['Montserrat'] font-bold text-3xl md:text-4xl text-emerald-400 mb-4 flex items-center gap-3">
+            <h2 className="font-['Montserrat'] font-bold text-3xl md:text-4xl text-emerald-600 dark:text-emerald-400 mb-4 flex items-center gap-3">
               <span className="text-4xl">🎉</span> Profile Complete!
             </h2>
-            <p className="text-zinc-300 text-lg md:text-xl mb-8 text-center max-w-md">
+            <p className="text-zinc-700 dark:text-zinc-300 text-lg md:text-xl mb-8 text-center max-w-md">
               Now let's learn how you can prepare yourself for a smoke-free future.
             </p>
-            <div className="w-full max-w-sm bg-zinc-800/50 rounded-xl p-6 mb-8 border border-zinc-700">
-              <p className="text-zinc-400 text-sm mb-2 uppercase tracking-wider font-bold">Progress:</p>
-              <p className="text-emerald-400 text-2xl font-bold font-['Montserrat']">20% COMPLETE</p>
+            <div className="w-full max-w-sm bg-zinc-100 dark:bg-zinc-800/50 rounded-xl p-6 mb-8 border border-zinc-300 dark:border-zinc-700">
+              <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-2 uppercase tracking-wider font-bold">Progress:</p>
+              <p className="text-emerald-600 dark:text-emerald-400 text-2xl font-bold font-['Montserrat']">20% COMPLETE</p>
             </div>
             <button
               onClick={nextStep}
@@ -233,7 +233,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
               <div 
                 key={s} 
                 className={`h-1.5 rounded-full transition-all duration-300 ${
-                  s === step ? 'w-8 bg-emerald-400' : s < step ? 'w-2 bg-emerald-500/50' : 'w-2 bg-zinc-800'
+                  s === step ? 'w-8 bg-emerald-400' : s < step ? 'w-2 bg-emerald-500/50' : 'w-2 bg-zinc-100 dark:bg-zinc-800'
                 }`}
               />
             ))}
@@ -241,7 +241,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onComplete, respon
         )}
 
         {/* Card Container */}
-        <div className="bg-zinc-900/50 backdrop-blur-md rounded-[2rem] border border-zinc-800 p-8 md:p-12 text-center shadow-2xl relative overflow-hidden">
+        <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md rounded-[2rem] border border-zinc-200 dark:border-zinc-800 p-8 md:p-12 text-center shadow-2xl relative overflow-hidden">
           {renderCardContent()}
         </div>
       </div>

@@ -57,17 +57,17 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
       <div className="w-full flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="font-['Montserrat'] font-bold text-emerald-400 text-sm tracking-wider uppercase">
+          <span className="font-['Montserrat'] font-bold text-emerald-600 dark:text-emerald-400 text-sm tracking-wider uppercase">
             Quest Progress
           </span>
         </div>
-        <span className="font-['Quicksand'] font-bold text-zinc-400">
+        <span className="font-['Quicksand'] font-bold text-zinc-600 dark:text-zinc-400">
           {progressCount} / {totalCount}
         </span>
       </div>
 
       {/* Progress Bar */}
-      <div className="w-full bg-zinc-800 rounded-full h-2.5 mb-8 overflow-hidden flex relative border border-zinc-700/50">
+      <div className="w-full bg-zinc-100 dark:bg-zinc-800 rounded-full h-2.5 mb-8 overflow-hidden flex relative border border-zinc-300 dark:border-zinc-700/50">
         <div 
           className="bg-emerald-500 h-full rounded-full transition-all duration-[600ms] ease-out shadow-[0_0_12px_rgba(16,185,129,0.5)]" 
           style={{ width: `${progressPercent}%` }}
@@ -78,19 +78,19 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
       <div className="flex-grow flex flex-col justify-center items-center relative z-10 w-full">
         <div className="absolute inset-0 bg-emerald-500/10 rounded-[32px] -z-10 blur-2xl opacity-60 pointer-events-none" />
         
-        <div className="bg-zinc-900 rounded-[32px] shadow-2xl w-full p-6 transition-transform duration-300 transform scale-100 mb-4 relative overflow-hidden border border-zinc-800">
+        <div className="bg-white dark:bg-zinc-900 rounded-[32px] shadow-2xl w-full p-6 transition-transform duration-300 transform scale-100 mb-4 relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
           {/* Top accent line */}
           <div className="absolute top-0 left-0 w-full h-1.5 bg-emerald-500" />
           
           {/* Category Icon */}
-          <div className="w-12 h-12 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm rotate-3">
-            <span className="material-symbols-outlined text-emerald-400 text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>
+          <div className="w-12 h-12 bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm rotate-3">
+            <span className="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>
               {currentQuestion.icon || 'psychology'}
             </span>
           </div>
 
           {/* Question Title */}
-          <h2 className="font-['Montserrat'] font-bold text-[22px] sm:text-[26px] text-white mb-8 leading-tight">
+          <h2 className="font-['Montserrat'] font-bold text-[22px] sm:text-[26px] text-zinc-900 dark:text-white mb-8 leading-tight">
             "{currentQuestion.text}"
           </h2>
 
@@ -102,13 +102,13 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
               className={`emoji-btn relative flex flex-col items-center justify-center gap-2 p-4 rounded-2xl transition-all duration-200 active:scale-95 group focus:outline-none cursor-pointer ${
                 localSelected === 1
                   ? 'bg-emerald-500/20 border-2 border-emerald-500 shadow-lg scale-105 z-10 ring-2 ring-emerald-500/40'
-                  : 'bg-zinc-800/80 hover:bg-zinc-800 border border-zinc-700/60'
+                  : 'bg-zinc-100 dark:bg-zinc-800/80 hover:bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700/60'
               }`}
             >
               <span className={`text-4xl transition-transform duration-300 ${localSelected === 1 ? 'scale-125' : 'group-hover:scale-110'}`}>
                 😕
               </span>
-              <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 1 ? 'text-emerald-300 font-bold' : 'text-zinc-400'}`}>
+              <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 1 ? 'text-emerald-300 font-bold' : 'text-zinc-600 dark:text-zinc-400'}`}>
                 Not true at all
               </span>
             </button>
@@ -119,13 +119,13 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
               className={`emoji-btn relative flex flex-col items-center justify-center gap-2 p-4 rounded-2xl transition-all duration-200 active:scale-95 group focus:outline-none cursor-pointer ${
                 localSelected === 2
                   ? 'bg-emerald-500/20 border-2 border-emerald-500 shadow-lg scale-105 z-10 ring-2 ring-emerald-500/40'
-                  : 'bg-zinc-800/80 hover:bg-zinc-800 border border-zinc-700/60'
+                  : 'bg-zinc-100 dark:bg-zinc-800/80 hover:bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700/60'
               }`}
             >
               <span className={`text-4xl transition-transform duration-300 ${localSelected === 2 ? 'scale-125' : 'group-hover:scale-110'}`}>
                 🙂
               </span>
-              <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 2 ? 'text-emerald-300 font-bold' : 'text-zinc-400'}`}>
+              <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 2 ? 'text-emerald-300 font-bold' : 'text-zinc-600 dark:text-zinc-400'}`}>
                 Barely true
               </span>
             </button>
@@ -136,13 +136,13 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
               className={`emoji-btn relative flex flex-col items-center justify-center gap-2 p-4 rounded-2xl transition-all duration-200 active:scale-95 group focus:outline-none cursor-pointer ${
                 localSelected === 3
                   ? 'bg-emerald-500/20 border-2 border-emerald-500 shadow-lg scale-105 z-10 ring-2 ring-emerald-500/40'
-                  : 'bg-zinc-800/80 hover:bg-zinc-800 border border-zinc-700/60'
+                  : 'bg-zinc-100 dark:bg-zinc-800/80 hover:bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700/60'
               }`}
             >
               <span className={`text-4xl transition-transform duration-300 ${localSelected === 3 ? 'scale-125' : 'group-hover:scale-110'}`}>
                 😊
               </span>
-              <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 3 ? 'text-emerald-300 font-bold' : 'text-zinc-400'}`}>
+              <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 3 ? 'text-emerald-300 font-bold' : 'text-zinc-600 dark:text-zinc-400'}`}>
                 Somewhat true
               </span>
             </button>
@@ -153,13 +153,13 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
               className={`emoji-btn relative flex flex-col items-center justify-center gap-2 p-4 rounded-2xl transition-all duration-200 active:scale-95 group focus:outline-none cursor-pointer ${
                 localSelected === 4
                   ? 'bg-emerald-500/20 border-2 border-emerald-500 shadow-lg scale-105 z-10 ring-2 ring-emerald-500/40'
-                  : 'bg-zinc-800/80 hover:bg-zinc-800 border border-zinc-700/60'
+                  : 'bg-zinc-100 dark:bg-zinc-800/80 hover:bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700/60'
               }`}
             >
               <span className={`text-4xl transition-transform duration-300 ${localSelected === 4 ? 'scale-125' : 'group-hover:scale-110'}`}>
                 💪
               </span>
-              <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 4 ? 'text-emerald-300 font-bold' : 'text-zinc-400'}`}>
+              <span className={`font-['Quicksand'] text-sm text-center leading-tight ${localSelected === 4 ? 'text-emerald-300 font-bold' : 'text-zinc-600 dark:text-zinc-400'}`}>
                 Completely true
               </span>
             </button>
@@ -167,11 +167,11 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
         </div>
 
         {/* Quick Question Navigation bar */}
-        <div className="flex items-center justify-between w-full px-2 mb-4 text-xs font-['Montserrat'] font-bold text-zinc-400">
+        <div className="flex items-center justify-between w-full px-2 mb-4 text-xs font-['Montserrat'] font-bold text-zinc-600 dark:text-zinc-400">
           <button 
             disabled={currentQuestionIndex === 0}
             onClick={onPrev}
-            className="flex items-center gap-1 hover:text-emerald-400 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer transition-colors"
+            className="flex items-center gap-1 hover:text-emerald-600 dark:text-emerald-400 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer transition-colors"
           >
             <span className="material-symbols-outlined text-sm">arrow_back</span>
             Previous
@@ -179,7 +179,7 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
 
           <button 
             onClick={onCompleteQuest}
-            className="text-emerald-400 hover:text-emerald-300 underline cursor-pointer transition-colors"
+            className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-300 underline cursor-pointer transition-colors"
           >
             View Quest Snapshot ➔
           </button>
@@ -194,7 +194,7 @@ export const AssessmentScreen: React.FC<AssessmentScreenProps> = ({
           className={`w-full h-14 font-['Montserrat'] font-bold text-base rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-sm ${
             localSelected && !isSaving
               ? 'bg-emerald-500 text-black font-extrabold shadow-[0_8px_20px_rgba(16,185,129,0.3)] hover:bg-emerald-400 hover:scale-[0.99] active:scale-95 cursor-pointer'
-              : 'bg-zinc-800 text-zinc-500 opacity-60 cursor-not-allowed border border-zinc-700/50'
+              : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 opacity-60 cursor-not-allowed border border-zinc-300 dark:border-zinc-700/50'
           }`}
         >
           {isSaving ? (

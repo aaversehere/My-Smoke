@@ -52,16 +52,16 @@ export const ActionPlanScreen: React.FC<ActionPlanScreenProps> = ({ stats, onSav
     <div className="flex flex-col w-full gap-8 relative z-10 pb-16 pt-2 px-6 md:px-12 lg:px-24 min-h-[calc(100vh-80px)]">
       {/* Header */}
       <div className="flex flex-col items-center text-center gap-2 mt-2">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-full shadow-sm">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 rounded-full shadow-sm">
           <span className="material-symbols-outlined text-[16px]">verified_user</span>
           <span className="font-['Montserrat'] font-bold text-xs uppercase tracking-wider">
             Personal Action Plan
           </span>
         </div>
-        <h1 className="font-['Montserrat'] font-extrabold text-[26px] text-white">
+        <h1 className="font-['Montserrat'] font-extrabold text-[26px] text-zinc-900 dark:text-white">
           My SmokeFree Quest Plan
         </h1>
-        <p className="font-['Quicksand'] font-medium text-base text-zinc-400 max-w-xs">
+        <p className="font-['Quicksand'] font-medium text-base text-zinc-600 dark:text-zinc-400 max-w-xs">
           Your customized roadmap to conquer cravings and stay smoke-free.
         </p>
       </div>
@@ -69,12 +69,12 @@ export const ActionPlanScreen: React.FC<ActionPlanScreenProps> = ({ stats, onSav
 
 
       {/* Trigger Checklist */}
-      <div className="bg-zinc-900 rounded-2xl p-5 shadow-lg border border-zinc-800 flex flex-col gap-3">
-        <h3 className="font-['Montserrat'] font-bold text-lg text-white flex items-center gap-2">
+      <div className="bg-white dark:bg-zinc-900 rounded-2xl p-5 shadow-lg border border-zinc-200 dark:border-zinc-800 flex flex-col gap-3">
+        <h3 className="font-['Montserrat'] font-bold text-lg text-zinc-900 dark:text-white flex items-center gap-2">
           <span className="material-symbols-outlined text-amber-400">warning</span>
           My Key Triggers
         </h3>
-        <p className="font-['Quicksand'] text-xs text-zinc-400">
+        <p className="font-['Quicksand'] text-xs text-zinc-600 dark:text-zinc-400">
           Select situations where you feel the strongest urge:
         </p>
 
@@ -95,7 +95,7 @@ export const ActionPlanScreen: React.FC<ActionPlanScreenProps> = ({ stats, onSav
                 className={`p-3 rounded-xl border text-xs font-['Quicksand'] font-bold text-left transition-all flex items-center justify-between cursor-pointer ${
                   isChecked
                     ? 'bg-amber-500/15 border-amber-500/60 text-amber-300'
-                    : 'bg-zinc-800/80 border-zinc-700/60 text-zinc-300 hover:bg-zinc-800'
+                    : 'bg-zinc-100 dark:bg-zinc-800/80 border-zinc-300 dark:border-zinc-700/60 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:bg-zinc-800'
                 }`}
               >
                 <span>{trigger}</span>
@@ -109,12 +109,12 @@ export const ActionPlanScreen: React.FC<ActionPlanScreenProps> = ({ stats, onSav
       </div>
 
       {/* Coping Toolkit */}
-      <div className="bg-zinc-900 rounded-2xl p-5 shadow-lg border border-zinc-800 flex flex-col gap-3">
-        <h3 className="font-['Montserrat'] font-bold text-lg text-white flex items-center gap-2">
+      <div className="bg-white dark:bg-zinc-900 rounded-2xl p-5 shadow-lg border border-zinc-200 dark:border-zinc-800 flex flex-col gap-3">
+        <h3 className="font-['Montserrat'] font-bold text-lg text-zinc-900 dark:text-white flex items-center gap-2">
           <span className="material-symbols-outlined text-blue-400">handshake</span>
           My Coping Toolkit
         </h3>
-        <p className="font-['Quicksand'] text-xs text-zinc-400">
+        <p className="font-['Quicksand'] text-xs text-zinc-600 dark:text-zinc-400">
           Tools to replace smoking when a trigger happens:
         </p>
 
@@ -135,7 +135,7 @@ export const ActionPlanScreen: React.FC<ActionPlanScreenProps> = ({ stats, onSav
                 className={`p-3 rounded-xl border text-xs font-['Quicksand'] font-bold text-left transition-all flex items-center justify-between cursor-pointer ${
                   isChecked
                     ? 'bg-blue-500/15 border-blue-500/60 text-blue-300'
-                    : 'bg-zinc-800/80 border-zinc-700/60 text-zinc-300 hover:bg-zinc-800'
+                    : 'bg-zinc-100 dark:bg-zinc-800/80 border-zinc-300 dark:border-zinc-700/60 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:bg-zinc-800'
                 }`}
               >
                 <span>{tool}</span>
@@ -153,7 +153,7 @@ export const ActionPlanScreen: React.FC<ActionPlanScreenProps> = ({ stats, onSav
 
         <button
           onClick={() => onSavePlan(selectedTriggers, selectedToolkit)}
-          className="w-full py-3 text-sm text-zinc-400 font-['Montserrat'] font-bold hover:text-emerald-400 transition-colors text-center cursor-pointer"
+          className="w-full py-3 text-sm text-zinc-600 dark:text-zinc-400 font-['Montserrat'] font-bold hover:text-emerald-600 dark:text-emerald-400 transition-colors text-center cursor-pointer"
         >
           🏠 Save Plan & Return Home
         </button>

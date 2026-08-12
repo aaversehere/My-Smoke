@@ -15,7 +15,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
   return (
     <div className="flex flex-col w-full gap-8 relative z-10 pb-12 pt-4 px-6 md:px-12 lg:px-24 min-h-[calc(100vh-80px)]">
       {/* Celebration Header */}
-      <div className="flex flex-col items-center justify-center text-center gap-4 relative overflow-hidden rounded-2xl bg-zinc-900 p-6 shadow-xl border border-zinc-800">
+      <div className="flex flex-col items-center justify-center text-center gap-4 relative overflow-hidden rounded-2xl bg-white dark:bg-zinc-900 p-6 shadow-xl border border-zinc-200 dark:border-zinc-800">
         <div className="absolute inset-0 pointer-events-none opacity-20">
           <svg height="100%" preserveAspectRatio="none" viewBox="0 0 400 200" width="100%" xmlns="http://www.w3.org/2000/svg">
             <circle className="animate-pulse" cx="50" cy="50" fill="#10b981" r="100" style={{ animationDuration: '4s' }} />
@@ -27,22 +27,22 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           <span className="text-4xl">🌱</span>
         </div>
 
-        <h1 className="font-['Montserrat'] font-extrabold text-[26px] text-white relative z-10">
+        <h1 className="font-['Montserrat'] font-extrabold text-[26px] text-zinc-900 dark:text-white relative z-10">
           Quest Snapshot!
         </h1>
 
-        <p className="font-['Quicksand'] font-medium text-base text-zinc-400 max-w-sm relative z-10 leading-relaxed">
+        <p className="font-['Quicksand'] font-medium text-base text-zinc-600 dark:text-zinc-400 max-w-sm relative z-10 leading-relaxed">
           Every journey starts with understanding where you are. Here’s a look at your current strengths and growth areas.
         </p>
       </div>      {/* Key Metrics (Growth Framing) */}
       <div className="grid grid-cols-2 gap-4">
         {/* Coping Strength */}
-        <div className="bg-zinc-900 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-lg relative overflow-hidden group border border-zinc-800">
+        <div className="bg-white dark:bg-zinc-900 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-lg relative overflow-hidden group border border-zinc-200 dark:border-zinc-800">
           <div className="absolute top-0 inset-x-0 h-1 bg-amber-500 group-hover:h-2 transition-all duration-300" />
           <span className="material-symbols-outlined text-amber-400 text-3xl mb-2" style={{ fontVariationSettings: "'FILL' 1" }}>
             shield
           </span>
-          <span className="font-['Montserrat'] font-bold text-xs uppercase tracking-wider text-zinc-400 mb-1">
+          <span className="font-['Montserrat'] font-bold text-xs uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1">
             Coping Strength
           </span>
           <span className="font-['Montserrat'] font-extrabold text-xl text-amber-400">
@@ -51,29 +51,29 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
         </div>
 
         {/* Confidence Level */}
-        <div className="bg-zinc-900 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-lg relative overflow-hidden group border border-zinc-800">
+        <div className="bg-white dark:bg-zinc-900 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-lg relative overflow-hidden group border border-zinc-200 dark:border-zinc-800">
           <div className="absolute top-0 inset-x-0 h-1 bg-emerald-500 group-hover:h-2 transition-all duration-300" />
-          <span className="material-symbols-outlined text-emerald-400 text-3xl mb-2" style={{ fontVariationSettings: "'FILL' 1" }}>
+          <span className="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-3xl mb-2" style={{ fontVariationSettings: "'FILL' 1" }}>
             trending_up
           </span>
-          <span className="font-['Montserrat'] font-bold text-xs uppercase tracking-wider text-zinc-400 mb-1">
+          <span className="font-['Montserrat'] font-bold text-xs uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1">
             Confidence Level
           </span>
-          <span className="font-['Montserrat'] font-extrabold text-xl text-emerald-400">
+          <span className="font-['Montserrat'] font-extrabold text-xl text-emerald-600 dark:text-emerald-400">
             {stats.confidenceLevel}
           </span>
         </div>
       </div>
 
       {/* Domain Breakdown (PCSC) */}
-      <div className="bg-zinc-900 rounded-xl shadow-lg p-6 relative overflow-hidden border border-zinc-800">
+      <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-lg p-6 relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
         <div className="absolute top-0 inset-x-0 h-1 bg-blue-500" />
         
         <div className="flex items-center gap-2 mb-6">
           <span className="material-symbols-outlined text-blue-400 text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>
             analytics
           </span>
-          <h2 className="font-['Montserrat'] font-bold text-2xl text-white">
+          <h2 className="font-['Montserrat'] font-bold text-2xl text-zinc-900 dark:text-white">
             Skill Breakdown
           </h2>
         </div>
@@ -87,7 +87,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
                 {stats.supportSeekingScore >= 75 ? 'High' : stats.supportSeekingScore >= 40 ? 'Moderate' : 'Growing'}
               </span>
             </div>
-            <div className="w-full h-3 bg-zinc-800 rounded-full overflow-hidden border border-zinc-700/50">
+            <div className="w-full h-3 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden border border-zinc-300 dark:border-zinc-700/50">
               <div 
                 className="h-full bg-blue-500 rounded-full transition-all duration-1000 shadow-[0_0_8px_rgba(59,130,246,0.5)]" 
                 style={{ width: `${stats.supportSeekingScore}%` }} 
@@ -103,7 +103,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
                 {stats.reflectiveCopingScore >= 75 ? 'High' : stats.reflectiveCopingScore >= 45 ? 'Moderate' : 'Growing'}
               </span>
             </div>
-            <div className="w-full h-3 bg-zinc-800 rounded-full overflow-hidden border border-zinc-700/50">
+            <div className="w-full h-3 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden border border-zinc-300 dark:border-zinc-700/50">
               <div 
                 className="h-full bg-amber-500 rounded-full transition-all duration-1000 shadow-[0_0_8px_rgba(245,158,11,0.5)]" 
                 style={{ width: `${stats.reflectiveCopingScore}%` }} 
@@ -115,11 +115,11 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
               <span className="font-['Quicksand'] font-bold text-zinc-200">Strategic Coping</span>
-              <span className="font-['Montserrat'] font-bold text-xs uppercase text-emerald-400">
+              <span className="font-['Montserrat'] font-bold text-xs uppercase text-emerald-600 dark:text-emerald-400">
                 {stats.strategicCopingScore >= 75 ? 'High' : stats.strategicCopingScore >= 45 ? 'Moderate' : 'Growing'}
               </span>
             </div>
-            <div className="w-full h-3 bg-zinc-800 rounded-full overflow-hidden border border-zinc-700/50">
+            <div className="w-full h-3 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden border border-zinc-300 dark:border-zinc-700/50">
               <div 
                 className="h-full bg-emerald-500 rounded-full transition-all duration-1000 shadow-[0_0_8px_rgba(16,185,129,0.5)]" 
                 style={{ width: `${stats.strategicCopingScore}%` }} 
@@ -135,7 +135,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
                 {stats.proactiveCopingScore >= 75 ? 'High' : stats.proactiveCopingScore >= 45 ? 'Moderate' : 'Growing'}
               </span>
             </div>
-            <div className="w-full h-3 bg-zinc-800 rounded-full overflow-hidden border border-zinc-700/50">
+            <div className="w-full h-3 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden border border-zinc-300 dark:border-zinc-700/50">
               <div 
                 className="h-full bg-purple-500 rounded-full transition-all duration-1000 shadow-[0_0_8px_rgba(168,85,247,0.5)]" 
                 style={{ width: `${stats.proactiveCopingScore}%` }} 
@@ -151,7 +151,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
                 {stats.avoidanceCopingScore >= 75 ? 'High' : stats.avoidanceCopingScore >= 45 ? 'Moderate' : 'Needs Focus'}
               </span>
             </div>
-            <div className="w-full h-3 bg-zinc-800 rounded-full overflow-hidden border border-zinc-700/50">
+            <div className="w-full h-3 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden border border-zinc-300 dark:border-zinc-700/50">
               <div 
                 className="h-full bg-red-500 rounded-full transition-all duration-1000 shadow-[0_0_8px_rgba(239,68,68,0.5)]" 
                 style={{ width: `${stats.avoidanceCopingScore}%` }} 
@@ -167,7 +167,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
                 {stats.preventiveCopingScore >= 75 ? 'High' : stats.preventiveCopingScore >= 45 ? 'Moderate' : 'Growing'}
               </span>
             </div>
-            <div className="w-full h-3 bg-zinc-800 rounded-full overflow-hidden border border-zinc-700/50">
+            <div className="w-full h-3 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden border border-zinc-300 dark:border-zinc-700/50">
               <div 
                 className="h-full bg-teal-500 rounded-full transition-all duration-1000 shadow-[0_0_8px_rgba(20,184,166,0.5)]" 
                 style={{ width: `${stats.preventiveCopingScore}%` }} 
@@ -178,19 +178,19 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
       </div>
 
       {/* Feedback / Insight Section */}
-      <div className="bg-zinc-900 rounded-xl p-6 shadow-md relative overflow-hidden flex flex-col gap-4 border border-zinc-800">
-        <div className="absolute right-0 top-0 opacity-10 transform translate-x-1/4 -translate-y-1/4 pointer-events-none text-emerald-400">
+      <div className="bg-white dark:bg-zinc-900 rounded-xl p-6 shadow-md relative overflow-hidden flex flex-col gap-4 border border-zinc-200 dark:border-zinc-800">
+        <div className="absolute right-0 top-0 opacity-10 transform translate-x-1/4 -translate-y-1/4 pointer-events-none text-emerald-600 dark:text-emerald-400">
           <span className="material-symbols-outlined text-[120px]">psychiatry</span>
         </div>
 
         <div className="flex items-center gap-3 relative z-10">
-          <div className="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center shadow-sm">
-            <span className="material-symbols-outlined text-emerald-400 text-xl">lightbulb</span>
+          <div className="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shadow-sm">
+            <span className="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-xl">lightbulb</span>
           </div>
-          <h3 className="font-['Montserrat'] font-bold text-2xl text-white">Insight</h3>
+          <h3 className="font-['Montserrat'] font-bold text-2xl text-zinc-900 dark:text-white">Insight</h3>
         </div>
 
-        <p className="font-['Quicksand'] font-medium text-lg text-zinc-300 relative z-10 italic leading-relaxed">
+        <p className="font-['Quicksand'] font-medium text-lg text-zinc-700 dark:text-zinc-300 relative z-10 italic leading-relaxed">
           "Your Coping Skills Are Still Growing — You may still need more preparation and support... Small steps can make a big difference."
         </p>
       </div>
@@ -207,7 +207,7 @@ export const SnapshotScreen: React.FC<SnapshotScreenProps> = ({
 
         <button
           onClick={onRetakeQuest}
-          className="w-full py-2 text-sm text-zinc-400 font-['Montserrat'] font-bold hover:text-emerald-400 transition-colors text-center cursor-pointer"
+          className="w-full py-2 text-sm text-zinc-600 dark:text-zinc-400 font-['Montserrat'] font-bold hover:text-emerald-600 dark:text-emerald-400 transition-colors text-center cursor-pointer"
         >
           ↺ Re-assess Questions
         </button>

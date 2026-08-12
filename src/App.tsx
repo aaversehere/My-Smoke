@@ -20,6 +20,20 @@ export default function App() {
   // Default question index set to 0 (Question #1)
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   
+  // Theme state
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+
+  // Apply theme class to document element
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
+
+  const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  
   // User identity
   const [userId, setUserId] = useState<string | null>(null);
   const [respondentId, setRespondentId] = useState<string>('RESP-001');
@@ -186,7 +200,7 @@ export default function App() {
   const progressPercent = Math.round(((currentQuestionIndex + 1) / QUEST_QUESTIONS.length) * 100);
 
   return (
-    <div className="min-h-screen bg-[#09090b] font-['Quicksand'] text-zinc-100 journey-gradient relative flex flex-col">
+    <div className="min-h-screen bg-zinc-50 dark:bg-[#09090b] font-['Quicksand'] text-zinc-900 dark:text-zinc-100 journey-gradient relative flex flex-col transition-colors duration-300">
       {/* Header bar shown on all screens except initial welcome state */}
       {currentScreen !== 'welcome' && (
         <Header
@@ -194,6 +208,8 @@ export default function App() {
           onNavigate={setCurrentScreen}
           progressPercent={progressPercent}
           respondentId={stats.respondentId}
+          theme={theme}
+          toggleTheme={toggleTheme}
         />
       )}
 
