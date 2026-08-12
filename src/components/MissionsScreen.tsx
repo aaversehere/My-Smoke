@@ -8,6 +8,18 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
   const [mission, setMission] = useState(1);
   const [selectedReason, setSelectedReason] = useState<string | null>(null);
 
+  const [mission1Answers, setMission1Answers] = useState<Record<string, boolean | null>>({
+    nicotine: null,
+    tar: null,
+    co: null,
+  });
+
+  const handleMission1Answer = (id: string, answer: boolean) => {
+    setMission1Answers((prev) => ({ ...prev, [id]: answer }));
+  };
+
+  const isMission1Complete = Object.values(mission1Answers).every((a) => a !== null);
+
   const nextMission = () => {
     if (mission < 5) {
       setMission(mission + 1);
@@ -21,28 +33,65 @@ export const MissionsScreen: React.FC<MissionsScreenProps> = ({ onComplete }) =>
       <h2 className="font-['Montserrat'] font-bold text-2xl md:text-3xl text-emerald-400 mb-6 flex items-center justify-center gap-3">
         Mission 1 — What's Really Inside a Cigarette? <span className="text-3xl">🚬</span>
       </h2>
-      <div className="flex justify-center mb-8 w-24 h-24 bg-zinc-800/80 rounded-full items-center">
+      <div className="flex justify-center mb-6 w-24 h-24 bg-zinc-800/80 rounded-full items-center">
          <span className="material-symbols-outlined text-5xl text-emerald-500">pulmonology</span>
       </div>
+      <p className="text-white mb-6 font-bold text-lg">True or False?</p>
+      
       <div className="flex flex-col gap-4 w-full max-w-lg mb-8 text-left">
-        <div className="bg-zinc-800/50 p-4 rounded-xl border border-zinc-700">
-          <h3 className="text-white font-bold text-lg mb-1">Nicotine</h3>
-          <p className="text-zinc-400">Can make your body dependent on cigarettes.</p>
-        </div>
-        <div className="bg-zinc-800/50 p-4 rounded-xl border border-zinc-700">
-          <h3 className="text-white font-bold text-lg mb-1">Tar</h3>
-          <p className="text-zinc-400">Can damage your lungs.</p>
-        </div>
-        <div className="bg-zinc-800/50 p-4 rounded-xl border border-zinc-700">
-          <h3 className="text-white font-bold text-lg mb-1">Carbon Monoxide</h3>
-          <p className="text-zinc-400">Reduces the oxygen carried in your blood.</p>
-        </div>
+        {[
+          { id: 'nicotine', title: 'Nicotine', desc: 'Can make your body dependent on cigarettes.' },
+          { id: 'tar', title: 'Tar', desc: 'Can damage your lungs.' },
+          { id: 'co', title: 'Carbon Monoxide', desc: 'Reduces the oxygen carried in your blood.' },
+        ].map((q) => (
+          <div key={q.id} className="bg-zinc-800/50 p-4 rounded-xl border border-zinc-700">
+            <h3 className="text-white font-bold text-lg mb-1">{q.title}</h3>
+            <p className="text-zinc-400 mb-4">{q.desc}</p>
+            
+            <div className="flex gap-2 mb-2">
+              <button 
+                onClick={() => handleMission1Answer(q.id, true)}
+                className={`flex-1 py-2 rounded-lg font-bold text-sm transition-all ${
+                  mission1Answers[q.id] === true 
+                    ? 'bg-emerald-500 text-black shadow-[0_0_10px_rgba(16,185,129,0.5)]' 
+                    : 'bg-zinc-700 text-zinc-300 hover:bg-zinc-600'
+                }`}
+              >
+                True
+              </button>
+              <button 
+                onClick={() => handleMission1Answer(q.id, false)}
+                className={`flex-1 py-2 rounded-lg font-bold text-sm transition-all ${
+                  mission1Answers[q.id] === false 
+                    ? 'bg-red-500 text-white shadow-[0_0_10px_rgba(239,68,68,0.5)]' 
+                    : 'bg-zinc-700 text-zinc-300 hover:bg-zinc-600'
+                }`}
+              >
+                False
+              </button>
+            </div>
+            
+            {mission1Answers[q.id] !== null && (
+              <div className={`text-sm font-bold animate-in fade-in ${mission1Answers[q.id] === true ? 'text-emerald-400' : 'text-amber-400'}`}>
+                {mission1Answers[q.id] === true 
+                  ? '✅ Correct! This is a real danger.' 
+                  : '❌ Actually, this is True!'}
+              </div>
+            )}
+          </div>
+        ))}
       </div>
+      
       <button
         onClick={nextMission}
-        className="bg-emerald-500 hover:bg-emerald-400 text-black font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+        disabled={!isMission1Complete}
+        className={`font-['Montserrat'] font-bold text-lg py-3 px-10 rounded-full transition-all flex items-center justify-center gap-2 ${
+          isMission1Complete
+            ? 'bg-emerald-500 hover:bg-emerald-400 text-black shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:scale-105'
+            : 'bg-zinc-800 text-zinc-500 cursor-not-allowed'
+        }`}
       >
-        GOT IT!
+        GOT IT! <span className="material-symbols-outlined">arrow_forward</span>
       </button>
     </div>
   );
