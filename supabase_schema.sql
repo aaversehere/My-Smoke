@@ -2,11 +2,16 @@
 -- SUPABASE SCHEMA FOR SMOKEFREE QUEST
 -- ==========================================
 
+-- Drop existing tables if they exist to avoid 'relation already exists' errors
+DROP TABLE IF EXISTS public.action_plans CASCADE;
+DROP TABLE IF EXISTS public.quest_results CASCADE;
+DROP TABLE IF EXISTS public.users CASCADE;
+
 -- 1. Table: users
 -- Menyimpan data profil dasar responden/pemain
 CREATE TABLE public.users (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-    respondent_id TEXT UNIQUE NOT NULL, -- Contoh: 'RESP-001'
+    respondent_number SERIAL NOT NULL UNIQUE,
     total_xp INTEGER DEFAULT 0,
     current_level INTEGER DEFAULT 1,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL

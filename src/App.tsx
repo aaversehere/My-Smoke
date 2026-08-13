@@ -14,6 +14,7 @@ import { MicroBreakScreen } from './components/MicroBreakScreen';
 import { SnapshotScreen } from './components/SnapshotScreen';
 import { SelfEfficacyScreen } from './components/SelfEfficacyScreen';
 import { ActionPlanScreen } from './components/ActionPlanScreen';
+import { AuthScreen } from './components/AuthScreen';
 import { supabase } from './lib/supabase';
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<ScreenMode>('welcome');
@@ -41,37 +42,70 @@ export default function App() {
   // Initialize user
   useEffect(() => {
     const initUser = async () => {
-      const storedUser = localStorage.getItem('smokefree_user');
-      if (storedUser) {
-        try {
-          const user = JSON.parse(storedUser);
-          setUserId(user.id);
-          setRespondentId(user.respondent_id);
-          return;
-        } catch (e) { }
-      }
-
-      // Generate a new respondent ID
-      const newRespondentId = `RESP-${Math.floor(Math.random() * 90000) + 10000}`;
-      setRespondentId(newRespondentId);
-
-      // Insert into Supabase
-      const { data, error } = await supabase
-        .from('users')
-        .insert([{ respondent_id: newRespondentId }])
-        .select()
-        .single();
+      const { data: { session } } = await supabase.auth.getSession();
       
-      if (data && !error) {
-        setUserId(data.id);
-        localStorage.setItem('smokefree_user', JSON.stringify({
-          id: data.id,
-          respondent_id: newRespondentId
-        }));
+      if (session?.user) {
+        setUserId(session.user.id);
+        
+        // Fetch or create respondent profile
+        let { data: profile } = await supabase
+          .from('users')
+          .select('respondent_number')
+          .eq('id', session.user.id)
+          .single();
+          
+        if (profile) {
+          setRespondentId(`RESP-${profile.respondent_number}`);
+        } else {
+          // Insert only user ID; database will auto-generate respondent_number
+          const { data: newUser } = await supabase.from('users').insert([{ 
+            id: session.user.id 
+          }]).select('respondent_number').single();
+          
+          if (newUser) {
+            setRespondentId(`RESP-${newUser.respondent_number}`);
+          }
+        }
+      } else {
+        setCurrentScreen('auth');
       }
+
+      // Listen for auth changes
+      const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+        if (session?.user) {
+          setUserId(session.user.id);
+          let { data: profile } = await supabase
+            .from('users')
+            .select('respondent_number')
+            .eq('id', session.user.id)
+            .single();
+            
+          if (profile) {
+            setRespondentId(`RESP-${profile.respondent_number}`);
+          } else {
+            const { data: newUser } = await supabase.from('users').insert([{ 
+              id: session.user.id 
+            }]).select('respondent_number').single();
+            
+            if (newUser) {
+              setRespondentId(`RESP-${newUser.respondent_number}`);
+            }
+          }
+          if (currentScreen === 'auth') {
+             setCurrentScreen('welcome');
+          }
+        } else {
+          setUserId(null);
+          setCurrentScreen('auth');
+        }
+      });
+
+      return () => {
+        subscription.unsubscribe();
+      };
     };
     initUser();
-  }, []);
+  }, [currentScreen]);
   
   // User answers map
   const [answers, setAnswers] = useState<Record<number, EmojiValue>>(() => {
@@ -201,8 +235,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-[#09090b] font-['Quicksand'] text-zinc-900 dark:text-zinc-100 journey-gradient relative flex flex-col transition-colors duration-300">
-      {/* Header bar shown on all screens except initial welcome state */}
-      {currentScreen !== 'welcome' && (
+      {/* Header bar shown on all screens except initial states */}
+      {currentScreen !== 'welcome' && currentScreen !== 'auth' && (
         <Header
           currentScreen={currentScreen}
           onNavigate={setCurrentScreen}
@@ -214,7 +248,15 @@ export default function App() {
       )}
 
       {/* Main Screen Container with padding below header */}
-      <main className={`flex-1 w-full ${currentScreen !== 'welcome' ? 'pt-24' : ''}`}>
+      <main className={`flex-1 w-full ${currentScreen !== 'welcome' && currentScreen !== 'auth' ? 'pt-24' : ''}`}>
+        {currentScreen === 'auth' && (
+          <AuthScreen 
+            onSuccess={() => setCurrentScreen('welcome')}
+            theme={theme}
+            toggleTheme={toggleTheme}
+          />
+        )}
+
         {currentScreen === 'welcome' && (
           <WelcomeScreen
             onStart={() => setCurrentScreen('minigame')}

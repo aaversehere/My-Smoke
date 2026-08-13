@@ -1,4 +1,4 @@
-export type ScreenMode = 'welcome' | 'guidelines' | 'minigame' | 'profile' | 'missions' | 'game2' | 'assessment_intro' | 'assessment' | 'micro_break' | 'snapshot' | 'self_efficacy' | 'intel' | 'action_plan';
+export type ScreenMode = 'auth' | 'welcome' | 'guidelines' | 'minigame' | 'profile' | 'missions' | 'game2' | 'assessment_intro' | 'assessment' | 'micro_break' | 'snapshot' | 'self_efficacy' | 'intel' | 'action_plan';
 
 export interface Question {
   id: number;
